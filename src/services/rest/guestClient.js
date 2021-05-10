@@ -24,6 +24,15 @@ export const login = async userId => {
 	)
 }
 
+/**
+ * request userId (and session data) from api
+ */
+export const requestCredentials = async => {
+	return axios.get(
+		config.appConfig.endpoints.login
+	)
+}
+
 /***********************************************************************************************
 export
 ***********************************************************************************************/
@@ -31,4 +40,4 @@ export
 /**
  * @module greeter
  */
-export default { login }
+export default { login, requestCredentials }
