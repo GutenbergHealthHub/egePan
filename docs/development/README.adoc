@@ -6,7 +6,7 @@
 
 = Development Guide
 
-https://github.com/NUMde/compass-numapp[Main Repository] | link:../main/docs[List of Content]
+https://github.com/NUMde/compass-numapp[Main Repository] | link:../[List of Content]
 
 This section of the documentation will give a brief overview of some aspects that might be of help should you choose to actively take part in the development community.
 
@@ -63,15 +63,15 @@ This contains all react components that are not screens. Each component has a di
 
 ** */config* + 
 Holds various configurations files. For more information see: + 
-*`link:../main/docs/appConfiguration[-> App Configuration]`* + 
-*`link:../main/docs/content[-> Content Configuration]`* + 
+*`link:..//appConfiguration[-> App Configuration]`* + 
+*`link:..//content[-> Content Configuration]`* + 
 
 ** */CUSTOMIZATION* + 
 This contains the customization files that can be used to alter the style, content and some app options. 
 For more information see: + 
-*`link:../main/docs/appConfiguration[-> App Configuration]`* + 
-*`link:../main/docs/content[-> Content Configuration]`* + 
-*`link:../main/docs/theming[-> Theme Customization]`* + 
+*`link:..//appConfiguration[-> App Configuration]`* + 
+*`link:..//content[-> Content Configuration]`* + 
+*`link:..//theming[-> Theme Customization]`* + 
 
 ** */navigation* + 
 Provides the App-Navigator, basically the definition of which screen is provided under specific circumstances.
@@ -113,7 +113,7 @@ Used to handle the creation of a quationnaire response and to check the completi
 Handles all outgoing calls
 
 ** */theme* + 
-Holds the theme for the application, including spacing, colors, and typography. To updated it follow the steps provided by the *`link:../main/docs/theming[Theming Documentation]`*.
+Holds the theme for the application, including spacing, colors, and typography. To updated it follow the steps provided by the *`link:..//theming[Theming Documentation]`*.
 
 ** *store.js*
 Defines the appReducer by combining all state reducers.
@@ -205,7 +205,7 @@ A state is anything that changes over time (i.e. in a Counter App, the state cou
 link:https://redux.js.org/[Redux] provides a predictable state container to centralize the global store of an application. It includes features like `store`, `reducer`, `actions` and `middleware`s, and methods such as `connect`, `mapStateToProps`, `mapDispatchToProps`and `bindActionsCreator`. Those allow to easily create and manage applications and their states.
 
 === Global Store and Root Reducer
-The App component is wrapped in a `Provider` from `react-redux` (see *`link:../main/App.js[App.js]`*), which has a store as its props. This store is built by passing the **root reducer** to the `createStore()` method (see *`link:../main/src/store.js[App.js]`*).
+The App component is wrapped in a `Provider` from `react-redux` (see *`link:../../../../tree/main/App.js[App.js]`*), which has a store as its props. This store is built by passing the **root reducer** to the `createStore()` method (see *`link:../../../../tree/main/src/store.js[App.js]`*).
 This global store allows different components to share data.
 
 The root reducer combines all reducers (see section **Reducers**) of an application together. The reducers are linked to the root reducer in the `store.js` file by calling `combineReducers()`.
@@ -254,18 +254,11 @@ Follow the instructions in the README of the link:https://github.com/ibm-bluemix
 
 You necessarily need a developer provisioning profile & corresponding signing certificate, to be able to run and test the app with notifications on your device. The Simulator isn't able to register & receive push notifications.
 
-Also there is currently a bug with some React-Native versions which causes the following error: 
-```bash
-Illegal callback invocation from native module react native push notifications
-```
-A new version (1.4.4) with a fix will be published soon. A patch has been provided: https://github.ibm.com/OHPC/gcs-app/tree/UMGCS-90/patches
-
-
-To test the notifications on your phone, you have to clone [gcs-backend](https://github.ibm.com/OHPC/gcs-backend) as well and start the server locally. After starting the server you have to forward the localhost listening port to be available for the iPhone, e.g. expose with ngrok
+To test the notifications on your phone, you have to clone link:https://github.com/NUMde/compass-numapp-backend[COMPASS mobile back end] as well and start the server locally. After starting the server you have to forward the localhost listening port to be available for the iPhone, e.g. expose with ngrok
 ```bash
 ngrok http 8080
 ```
-Additionally, the value of *baseUriDevelopment* url (located in *`link:../main/src/config/appConfig.js[appConfig.js]`*) has to be set to this public url.
+Additionally, the value of *baseUriDevelopment* url (located in *`link:../../../../tree/main/src/config/appConfig.js[appConfig.js]`*) has to be set to this public url.
 
 To trigger a notification just send a HTTP GET request to http://localhost:8080/api/test (e.g. via browser)
 

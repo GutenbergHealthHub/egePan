@@ -12,7 +12,7 @@ initial state
 ***********************************************************************************************/
 
 const initialState = {
-	userId: null,
+	subjectId: null,
 	session: null,
 	loading: false,
 	loggedIn: false,
@@ -71,7 +71,7 @@ const actionHandlers = {
 	['SEND_CREDENTIALS_SUCCESS']: (state, values) => {
 		return {
 			...state,
-			userId: values.userId,
+			subjectId: values.subjectId,
 			session: {
 				...state.session,
 				...values.session,
@@ -99,14 +99,14 @@ const actionHandlers = {
 	},
 	
 	/**
-	 * just updates the userId
+	 * just updates the subjectId
 	 * @param  {object} state redux state
 	 * @param  {object} values values to be set
 	 */
-	['UPDATE_USER_ID']: (state, values) => {
+	['UPDATE_SUBJECT_ID']: (state, values) => {
 		return {
 			...state,
-			userId: values.userId
+			subjectId: values.subjectId
 		}
 	},
 
@@ -118,7 +118,7 @@ const actionHandlers = {
 	['LOADING_USER_FROM_CACHE']: (state, values) => {
 		return {
 			...state,
-			userId: values.lastUserId,
+			subjectId: values.lastSubjectId,
 			session: {
 				...state.session,
 				...values.session,
@@ -135,7 +135,7 @@ const actionHandlers = {
 	['LOGOUT']: state => {
 		return {
 			...state,
-			userId: '',
+			subjectId: '',
 			session: null,
 			loginError: null,
 			loggedIn: false,

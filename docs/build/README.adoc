@@ -1,6 +1,6 @@
 == Production Build & Deployment to the Stores
 
-https://github.com/NUMde/compass-numapp[Main Repository] | link:../main/docs[List of Content]
+https://github.com/NUMde/compass-numapp[Main Repository] | link:../[List of Content]
 
 The production build is the one that's going to be published on Google Play, respectively the App Store. To deploy the application, a production build is first needed. After the generation of those builds Android Studio and XCode need to be used to complete the deployment process.
 
@@ -13,7 +13,7 @@ npm run build_apk
 ....
 
 *The generated .akp-file can be found here:* + 
-*`link:../main/android/app/build/outputs/apk/release[android/app/build/outputs/apk/release]`*
+*`link:../../../../tree/main/android/app/build/outputs/apk/release[android/app/build/outputs/apk/release]`*
 
 *To generate a .aab-file run:*
 ....
@@ -21,7 +21,7 @@ npm run build_aab
 ....
 
 *The generated .aap-file can be found here:* + 
-*`link:../main/android/app/build/outputs/bundle/release[android/app/build/outputs/bundle/release]`*
+*`link:../../../../tree/main/android/app/build/outputs/bundle/release[android/app/build/outputs/bundle/release]`*
 
 
 TIP: App bundles can be inspected by using link:https://github.com/google/bundletool[bundletool]
