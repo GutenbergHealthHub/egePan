@@ -26,6 +26,31 @@ action handlers
 
 const actionHandlers = {
 
+	['REQUEST_CREDENTIALS_START']: state => {
+		return {
+			...state,
+			loading: true,
+			loggedIn: false
+		}
+	},
+
+	['REQUEST_CREDENTIALS_SUCCESS'] :(state, values) => {
+		return {
+			...state,
+			loading: false,
+			loggedIn: true,
+			userId: values.userId,
+		}
+	},
+	['REQUEST_CREDENTIALS_FAIL']: (state, values) => {
+		return {
+			...state,
+			loading: false,
+			loggedIn:false,
+			loggedInError: values.error
+		}
+	}, 
+
 	/**
 	 * start of the login
 	 * @param  {object}	state redux state

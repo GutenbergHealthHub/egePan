@@ -62,7 +62,7 @@ class LandingScreen extends Component {
 								<View style={localStyle.bottom}>
 									<TouchableOpacity style={localStyle.button}
 										onPress={() => {
-											this.props.navigation.navigate('Login')
+											this.props.actions.requestCredentials()
 										}}
 										accessibilityLabel={config.text.login.landing.buttonText}
 										accessibilityRole={config.text.accessibility.types.button}
