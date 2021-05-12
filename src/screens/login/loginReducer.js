@@ -39,7 +39,11 @@ const actionHandlers = {
 			...state,
 			loading: false,
 			loggedIn: true,
-			userId: values.userId,
+			subjectId: values.subjectId,
+			session: {
+				...state.session,
+				...values.session
+			}
 		}
 	},
 	['REQUEST_CREDENTIALS_FAIL']: (state, values) => {

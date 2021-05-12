@@ -28,9 +28,9 @@ actions
  * @param {string} userId the id for the user
  * @param {object} session session data 
  */
-export const requestCredentialsSuccess = (userId, session) => ({
+export const requestCredentialsSuccess = (subjectId, session) => ({
 	type: 'REQUEST_CREDENTIALS_SUCCESS',
-	userId,
+	subjectId,
 	session: session || null
 });
 
@@ -45,11 +45,11 @@ export const requestCredentialsFail = error => ({
 export const requestCredentials = () => async dispatch =>  {
 	dispatch(requestCredentrialsStart());
 	await guestClient.requestCredentials().then((res) => {
-		localStorage.persistLastUserId(res.data.study_id)
-		const sesion = {
-			accessToken: res.data.session ? res.data.session.accessToken : '',
-			recipientCertificatePemString: res.data.session ? res.data.session.recipientCertificatePemString : '' }
-		setTimeout(() => dispatch(requestCredentialsSuccess(res.data.study_id, res.data.session)), 0)
+		localStorage.persistLastSubjectId(res.data.study_id)
+		const session = {
+			accessToken: res.data.session ? res.data.session.accessToken : res.data.study_id,
+			recipientCertificatePemString: res.data.session ? res.data.session.recipientCertificatePemString : 'certificate' }
+		setTimeout(() => dispatch(requestCredentialsSuccess(res.data.study_id, session)), 0)
 	}).catch((err) => {
 		dispatch(requestCredentialsFail(err))
 	})
