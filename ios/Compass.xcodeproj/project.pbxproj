@@ -33,6 +33,7 @@
 		BA78BE572520D2640063C353 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA78BE472520D2640063C353 /* EvilIcons.ttf */; };
 		BA78BE582520D2640063C353 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA78BE482520D2640063C353 /* SimpleLineIcons.ttf */; };
 		BA78BE592520D2640063C353 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA78BE492520D2640063C353 /* MaterialIcons.ttf */; };
+		DFB416D1264AA44000CD94F7 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB416D1264AA44000CD94F7 /* JavaScriptCore.framework in Frameworks */,
 				4D132C81EE2FFCDFF6666C3C /* Pods_Compass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,7 +524,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.num.compass.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = de.num.compass.egepan;
 				PRODUCT_NAME = Compass;
 				PROVISIONING_PROFILE_SPECIFIER = "Compass Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "Compass-Bridging-Header.h";
@@ -551,7 +553,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.num.compass.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = de.num.compass.egepan;
 				PRODUCT_NAME = Compass;
 				PROVISIONING_PROFILE_SPECIFIER = Compass;
 				SWIFT_OBJC_BRIDGING_HEADER = "Compass-Bridging-Header.h";
