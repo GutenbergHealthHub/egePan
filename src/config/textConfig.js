@@ -60,6 +60,8 @@ export default {
 
 		"logoutHint": "Starts logout process and redirects to login page.",
 		"loginHint": "Starts login process and redirects to QRCode scanner.",
+		"loginManuallyHint": "Enter existing id when already registered",
+		"submitHint": "Submit",
 
 		"questionnaire": {
 			"middleButtonFinished": "Next question. question is answered.",
@@ -106,6 +108,7 @@ export default {
 		"qrInfo":"Please point the camera onto the qr-code.",
 		"errorUserGeneric":"There occured a problem during login.",
 		"permissionDialog":"Please allow the app to access your camera.",
+		"studyIdHint":"Enter existing study id",
 
 		/** contains all strings of the landing-screen */
 		"landing":{

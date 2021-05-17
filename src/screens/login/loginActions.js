@@ -14,6 +14,12 @@ import localStorage from '../../services/localStorage/localStorage'
 actions
 ***********************************************************************************************/
 
+
+export const setId = id => ({
+	type: 'SET_ID',
+	id	
+})
+
 /**
  * 
  * @returns just a redux message

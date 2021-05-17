@@ -17,7 +17,8 @@ const initialState = {
 	loading: false,
 	loggedIn: false,
 	loginError: null,
-	loginUnauthorized: false
+	loginUnauthorized: false,
+	manualId: null
 }
 
 /***********************************************************************************************
@@ -26,6 +27,27 @@ action handlers
 
 const actionHandlers = {
 
+	/**
+	 * set the temporary id for the manual login process
+	 * also reset error
+	 * 
+	 * @param {object} state 
+	 * @param {object} values 
+	 */
+	['SET_ID']: (state, values) => {
+		return {
+			...state,
+			manualId: values.id,
+			loginError: null
+		}
+	},
+
+	/**
+	 * start requesting credentials
+	 * @param {object} state 
+	 * @param {object} values 
+	 * @returns 
+	 */
 	['REQUEST_CREDENTIALS_START']: state => {
 		return {
 			...state,
@@ -34,6 +56,12 @@ const actionHandlers = {
 		}
 	},
 
+	/**
+	 * update user and session data if request was successful
+	 * @param {object} state 
+	 * @param {object} values 
+	 * @returns 
+	 */
 	['REQUEST_CREDENTIALS_SUCCESS'] :(state, values) => {
 		return {
 			...state,

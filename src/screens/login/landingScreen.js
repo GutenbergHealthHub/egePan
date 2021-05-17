@@ -13,6 +13,9 @@ import config from '../../config/configProvider'
 import Banner from '../../components/banner/banner'
 import Spinner from '../../components/spinner/spinner'
 import ScrollIndicatorWrapper from '../../components/scrollIndicatorWrapper/scrollIndicatorWrapper'
+import { TextInput } from 'react-native-gesture-handler'
+import { Button } from 'react-native-elements/dist/buttons/Button'
+import { Input } from 'react-native-elements/dist/input/Input'
 
 /***********************************************************************************************
 component:
@@ -72,6 +75,30 @@ class LandingScreen extends Component {
 											{config.text.login.landing.buttonText}
 										</Text>
 									</TouchableOpacity>
+									{/* Input to manually log in */}
+									<View style={localStyle.inputWrapper}>
+										<Input
+											containerStyle={localStyle.input}
+											inputContainerStyle={localStyle.inputContainer}
+											inputStyle={localStyle.textInput}
+											renderErrorMessage={false}
+											placeholder={config.text.login.studyIdHint}
+											value={this.props.manualId}
+											onChangeText={this.props.actions.setId}
+											errorMessage={this.props.loginError ? config.text.login.errorUserGeneric : null}
+											accessibilityLabel={config.text.login.studyIdHint}
+											accessibilityHint={config.text.accessibility.loginManuallyHint}
+											/>
+										<Button
+											type="clear"
+											title={config.text.login.submit}
+											titleStyle={localStyle.loginButton}
+											onPress={() => this.props.actions.sendCredentials(this.props.manualId)}
+											accessibilityLabel={config.text.login.submit}
+											accessibilityRole={config.text.accessibility.types.button}
+											accessibilityHint={config.text.accessibility.submitHint}
+											/>
+									</View>
 								</View>
 							</View>
 						}
@@ -142,7 +169,31 @@ const localStyle = StyleSheet.create({
 
 	buttonLabel: {
 		...config.theme.classes.buttonLabel
+	},
+	inputWrapper: {
+		flexDirection: 'row',
+		width: '80%',
+		alignSelf: 'center',
+		alignItems: 'center',
+		borderColor: config.theme.colors.secondary,
+		borderRadius: 50,
+		borderWidth: 1,
+		marginTop: 10,
+		paddingHorizontal: 10,
+	},
+	input: {
+		width:'80%',
+	},
+	textInput: {
+		fontSize: config.theme.classes.button.fontSize
+	},
+	inputContainer: {
+		borderBottomWidth: 0
+	},
+	loginButton: {
+		fontSize: config.theme.classes.button.fontSize
 	}
+
 })
 
 /***********************************************************************************************
