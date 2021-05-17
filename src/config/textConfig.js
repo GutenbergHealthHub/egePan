@@ -144,6 +144,7 @@ export default {
 		"subTitle":"Subtitle of the about-screen",
 	   	"logout":"Logout (just on DEV)",
 		"delete":"Delete all & logout (just on DEV)",
+		"userIdTitle":"Your StudyID: ",
 
 		/** contains the strings for the optional LegalInformation Screen */
 		"legal": {
