@@ -103,7 +103,7 @@ const actionHandlers = {
 	['SEND_CREDENTIALS_SUCCESS']: (state, values) => {
 		return {
 			...state,
-			subjectId: values.subjectId,
+			subjectId: values.subject_Id,
 			session: {
 				...state.session,
 				...values.session,

@@ -68,7 +68,7 @@ class AboutScreen extends Component {
 												{config.text.about.userIdTitle}
 											</ListItem.Title>
 											<ListItem.Subtitle style={localStyle.subtTitle}>
-												{store.getState().CheckIn.user.subjectId}
+												{store.getState().CheckIn.user.subject_id}
 											</ListItem.Subtitle>
 										</ListItem.Content>
 										<ListItem.Chevron
