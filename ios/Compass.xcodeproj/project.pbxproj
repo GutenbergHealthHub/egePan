@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Compass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* egePan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = egePan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Compass/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Compass/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Compass/Images.xcassets; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Compass.app */,
+				13B07F961A680F5B00A75B9A /* egePan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,7 +261,7 @@
 			);
 			name = Compass;
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* Compass.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* egePan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -525,7 +525,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.num.egepan.ios;
-				PRODUCT_NAME = Compass;
+				PRODUCT_NAME = egePan;
 				PROVISIONING_PROFILE_SPECIFIER = "Compass Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "Compass-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -554,7 +554,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.num.egepan.ios;
-				PRODUCT_NAME = Compass;
+				PRODUCT_NAME = egePan;
 				PROVISIONING_PROFILE_SPECIFIER = Compass;
 				SWIFT_OBJC_BRIDGING_HEADER = "Compass-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -613,6 +613,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = egePan;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -660,6 +661,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = egePan;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
