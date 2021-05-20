@@ -1,4 +1,4 @@
-package de.num.compass.android;
+package de.num.egePan.android;
 
 import android.app.Application;
 
@@ -10,7 +10,7 @@ import com.facebook.react.PackageList;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
-import de.num.compass.android.generated.BasePackageList;
+import de.num.egePan.android.generated.BasePackageList;
 
 import org.unimodules.adapters.react.ReactAdapterPackage;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;

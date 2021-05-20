@@ -1,4 +1,4 @@
-package de.num.compass.android;
+package de.num.egePan.android;
 
 import android.content.Intent;
 import android.os.Bundle;

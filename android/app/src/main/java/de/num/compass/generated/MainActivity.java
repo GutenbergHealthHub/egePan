@@ -1,4 +1,4 @@
-package de.num.compass.android;
+package de.num.egePan.android;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
