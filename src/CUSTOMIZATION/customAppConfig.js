@@ -130,23 +130,23 @@ const conf = {
 
   /** local storage identifier:
    * persist the questionnaireItemMap */
-  localStorageMap: "@COMPASS_STORE:persisted_survey",
+  localStorageMap: "@EGEPAN_STORE:persisted_survey",
 
   /** local storage identifier:
    * persists the questionnaireItemMap */
-  localStorageList: "@COMPASS_STORE:persisted_survey_list",
+  localStorageList: "@EGEPAN__STORE:persisted_survey_list",
 
   /** local storage identifier:
    * the user id of the user last logged in */
-  lastUserId: "@COMPASS_STORE:last_active_user",
+  lastUserId: "@EGEPAN__STORE:last_active_user",
 
   /** local storage identifier:
    * the id of the last active questionnaire of the last active user */
-  lastQuestionnaireId: "@COMPASS_STORE:last_questionnaire_id",
+  lastQuestionnaireId: "@EGEPAN__STORE:last_questionnaire_id",
 
   /** local storage identifier:
    * persists all relevant information about the notification-service */
-  notificationState: "@COMPASS_STORE:notification_state",
+  notificationState: "@EGEPAN__STORE:notification_state",
 
   // rest endpoints
   /*-----------------------------------------------------------------------------------*/
