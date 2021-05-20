@@ -524,7 +524,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.num.compass.egepan;
+				PRODUCT_BUNDLE_IDENTIFIER = de.num.egepan.ios;
 				PRODUCT_NAME = Compass;
 				PROVISIONING_PROFILE_SPECIFIER = "Compass Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "Compass-Bridging-Header.h";
@@ -553,7 +553,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.num.compass.egepan;
+				PRODUCT_BUNDLE_IDENTIFIER = de.num.egepan.ios;
 				PRODUCT_NAME = Compass;
 				PROVISIONING_PROFILE_SPECIFIER = Compass;
 				SWIFT_OBJC_BRIDGING_HEADER = "Compass-Bridging-Header.h";
