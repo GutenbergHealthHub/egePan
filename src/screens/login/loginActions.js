@@ -51,10 +51,10 @@ export const requestCredentialsFail = error => ({
 export const requestCredentials = () => async dispatch =>  {
 	dispatch(requestCredentrialsStart());
 	await guestClient.requestCredentials().then((res) => {
-		localStorage.persistLastSubjectId(res.data.study_id)
+		localStorage.persistLastSubjectId(res.data.subject_id)
 		const session = {
 			accessToken: res.data.session ? res.data.session.accessToken : res.data.subject_id,
-			recipientCertificatePemString: res.data.session ? res.data.session.recipientCertificatePemString : 'certificate' }
+			recipientCertificatePemString: res.data.session ? res.data.session.recipient_certificate_pem_string : config.appConfig.defaultRecipientCertificatePemString }
 		setTimeout(() => dispatch(requestCredentialsSuccess(res.data.subject_id, session)), 0)
 	}).catch((err) => {
 		dispatch(requestCredentialsFail(err))

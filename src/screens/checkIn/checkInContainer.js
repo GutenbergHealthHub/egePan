@@ -382,7 +382,7 @@ class CheckInContainer extends Component {
 			.sendQuestionnaire(
 				exportData.body,
 				exportData.triggerMap,
-				this.props.user.subjectId,
+				this.props.user.subject_id,
 				this.props.user.current_questionnaire_id,
 				this.props.user.current_instance_id
 			)
