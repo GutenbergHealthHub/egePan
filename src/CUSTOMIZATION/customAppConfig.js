@@ -40,7 +40,7 @@ const { width } = Dimensions.get("window");
 
 // production-base-backend-uri
 // TODO: add uri for production
-const baseUriProductive = "https://mobile-backend-test-egepan.umopenshift03-27c74fb079246a1ac53f0d02625326eb-0000.eu-de.containers.appdomain.cloud/api/";
+const baseUriProductive = "https://mobile-backend-test-egepan-prod.umopenshift03-27c74fb079246a1ac53f0d02625326eb-0000.eu-de.containers.appdomain.cloud/api/";
 
 // development-base-backend-uri
 const baseUriDevelopment = "http://localhost:8080/api/";
@@ -187,6 +187,17 @@ const conf = {
    */
   allowAccessToLegalInformationScreen: true,
 
+	/** ui:
+	* adds a progressbar to the bottom of the questionnaireModal
+	*/
+	useProgressBar: true,
+
+	/** ui:
+	* when true: calculates the exact position of the progress in relation to the given answers.
+	* when false: uses absolute values to calculate the position.
+	*/
+	useStrictModeProgressBar: true,
+
   /**
    * the font-scaling function:
    * this function is meant to provide an additional means of scaling the fonts of the
@@ -269,8 +280,42 @@ const conf = {
 		  20ClX5Ccxcn4BVa3x1U+fVOZ7Fm/ACR2++fmpFWlCeghtRr4QNoMzqNY/3mK4SLr
 		  hqHSzFGp8HN2Ui5QWVSu7DgLIvkW
 		  -----END CERTIFICATE-----`
-    : // the prod-certificate
-      `...`,
+   : // the prod-certificate
+      `-----BEGIN CERTIFICATE-----
+      MIIGDDCCA/QCCQCZiGco81PYezANBgkqhkiG9w0BAQsFADCBxzELMAkGA1UEBhMC
+      REUxGDAWBgNVBAgMD1JoZWlubGFuZC1QZmFsejEOMAwGA1UEBwwFTWFpbnoxJTAj
+      BgNVBAoMHFVuaXZlcnNpdMODwqR0c21lZGl6aW4gTWFpbnoxHTAbBgNVBAsMFEd1
+      dGVuYmVyZyBIZWFsdGggSHViMSAwHgYDVQQDDBdnaGgudW5pbWVkaXppbi1tYWlu
+      ei5kZTEmMCQGCSqGSIb3DQEJARYXZ2hoQHVuaW1lZGl6aW4tbWFpbnouZGUwHhcN
+      MjEwNTMxMDgzMzQ1WhcNMjQwNTMwMDgzMzQ1WjCBxzELMAkGA1UEBhMCREUxGDAW
+      BgNVBAgMD1JoZWlubGFuZC1QZmFsejEOMAwGA1UEBwwFTWFpbnoxJTAjBgNVBAoM
+      HFVuaXZlcnNpdMODwqR0c21lZGl6aW4gTWFpbnoxHTAbBgNVBAsMFEd1dGVuYmVy
+      ZyBIZWFsdGggSHViMSAwHgYDVQQDDBdnaGgudW5pbWVkaXppbi1tYWluei5kZTEm
+      MCQGCSqGSIb3DQEJARYXZ2hoQHVuaW1lZGl6aW4tbWFpbnouZGUwggIiMA0GCSqG
+      SIb3DQEBAQUAA4ICDwAwggIKAoICAQDEi+rGrGLJlYngoZN6E1FqsMfvp+Pw5CQJ
+      yNo4aONyLlfBFPMbF84oFiCba0JSJuphiD2p3sGYfZ0r+YfUe0Qf+ctfRvvuWpxo
+      5PH4wd4w/UZHfBk+D9drybxA2/ztfUBgq0QGz+dvJAk2XScD8qGTt0KTR6GvTnvv
+      85zVQSoEEbdRccMwOIfmdmdbHBsny4QvpEq+eR9h81bYUorcjhC+ybZCnR1i3yJn
+      n1tNeuExPSLhhA7zU12W/0l1dCcwJu6RnLOjpbAgst7CHpxySs+9y/CM0mp6K16e
+      29VhqQeP6IrpOAUlJMW9BCHo8q+M7TgFnlRdY7ZIDM05zZQApFzpQri5kcCBaZmE
+      UjwX4F8WCqFitRMbi5dOB+jmnUQ6Jq6QjZ3HAwCFLRdkpIIR1FcN5Yrj9IF/kM0d
+      KqJbY+YJSBQJV3t+Y4g/chZC0qDQ8wE+QEW2H6XSG8Rcw2LFGtHAn2C/gOPa7RPH
+      8GljIahP+Yr6yccAwUHEdbmmlczzBvmyYRwCkPr0A4khPanqadaDPjYp1ABqnQT8
+      2nhLk/7eyZzgk+K7eOr+5N7Qo8dQO3YqH72Gyu6T88KINki8nshuzptrqrcCFBO5
+      tMq2Mj7PcQodieF7SFP8Hgfwii7d0PssmpaN9AedMb79bu1KG72uWFjlKnfB/yeE
+      NFmeNkbffQIDAQABMA0GCSqGSIb3DQEBCwUAA4ICAQCLB2qC2CGNe2XRiwbA0keW
+      msyyteJ9vWPU405Ey7C+mGFDiugUIoINFQOIRGsFY5E7jL/+55C464ZfHAD/8Vc+
+      QKWnDSRLFO8u2uMihdDG+4wKshrlemEJn+Q0r7xBdCJHLT+w2ZnI7hFmO6ABi8Gt
+      J9FVf65/DX4x7ztmWx6U2d3hKf0IZvIW9wZQJsRTB6gELIvHPoFxBGdEMlUqo9AA
+      QtTmiBPw2fxsX51GU61JUWxgu0O9ZI48dib7GCtxtqBI/B8hS4QumxCHGR2lET7p
+      9SpJTHdBzvtqvBWdtuEwwCT5YmvkT2O0W3pEVkMCaJp3Ih7c8j+DxS2h1fkS1Qoy
+      iZCBV1H+rfbCNUj8fDczv6Ftaoe4N4chpqHZqTrAVvK3qseQuuDqaUbWuCf/SyyI
+      Zg5IGYKzg4M2L7ah4KoJKIX5miVhoo6UwxXjrHn6g9oCB9T6SwpTc307I3nZC6+T
+      yfth6vGW1BickkL9z4CBC/VSJPdbRvMtaZWZg7iMzzKlkYqcA9IxOgZlISCpI86r
+      FHKVyyllvg6ocKFY2r2fYFG6JX3kYa72Y7k0AZX6HpHL2q4O+DpSR+HpI6v3O8PB
+      u3s22UYNDvm1inusoVZgjawEHN5pD9Er4iJ1gimtPNK8eDhWyF22cN00kdM1MRs6
+      fFIBLXm3S8hNxAYRPO0aYg==
+      -----END CERTIFICATE-----`,
 };
 
 /***********************************************************************************************
