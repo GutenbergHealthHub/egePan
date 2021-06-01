@@ -40,7 +40,7 @@ const { width } = Dimensions.get("window");
 
 // production-base-backend-uri
 // TODO: add uri for production
-const baseUriProductive = "";
+const baseUriProductive = "https://mobile-backend-test-egepan.umopenshift03-27c74fb079246a1ac53f0d02625326eb-0000.eu-de.containers.appdomain.cloud/api/";
 
 // development-base-backend-uri
 const baseUriDevelopment = "http://localhost:8080/api/";
@@ -235,11 +235,6 @@ const conf = {
    * and their corresponding answers that would trigger that particular rule.
    * of the return object of the function createResponseJSON() located in src/services/export
    */
-  defaultRulesConfig: [
-    {
-
-    },
-  ],
 
   /** the name of the attribute used to signal a special report */
   defaultReportAttribute: "basicTrigger",
