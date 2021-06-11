@@ -9,7 +9,7 @@
     "client_info": {
       "mobilesdk_app_id": "TO BE UPDATED",
       "android_client_info": {
-        "package_name": "de.num.compass.android"
+        "package_name": "de.num.egepan.android"
       }
     },
     "oauth_client": [{
