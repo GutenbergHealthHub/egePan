@@ -49,7 +49,7 @@ class LandingScreen extends Component {
 					noMenu
 				/>
 
-				{/* scollindicator */}
+				{/* scrollIndicator */}
 				<View style={{ ...localStyle.flexi, ...localStyle.wrapper }}>
 					<ScrollIndicatorWrapper
 						contentData={
@@ -110,7 +110,7 @@ class LandingScreen extends Component {
 }
 
 /***********************************************************************************************
-localstyle
+localStyle
 ***********************************************************************************************/
 
 const localStyle = StyleSheet.create({
