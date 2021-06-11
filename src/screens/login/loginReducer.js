@@ -17,7 +17,8 @@ const initialState = {
 	loading: false,
 	loggedIn: false,
 	loginError: null,
-	loginUnauthorized: false
+	loginUnauthorized: false,
+	manualId: null
 }
 
 /***********************************************************************************************
@@ -25,6 +26,62 @@ action handlers
 ***********************************************************************************************/
 
 const actionHandlers = {
+
+	/**
+	 * set the temporary id for the manual login process
+	 * also reset error
+	 * 
+	 * @param {object} state 
+	 * @param {object} values 
+	 */
+	['SET_ID']: (state, values) => {
+		return {
+			...state,
+			manualId: values.id,
+			loginError: null
+		}
+	},
+
+	/**
+	 * start requesting credentials
+	 * @param {object} state 
+	 * @param {object} values 
+	 * @returns 
+	 */
+	['REQUEST_CREDENTIALS_START']: state => {
+		return {
+			...state,
+			loading: true,
+			loggedIn: false
+		}
+	},
+
+	/**
+	 * update user and session data if request was successful
+	 * @param {object} state 
+	 * @param {object} values 
+	 * @returns 
+	 */
+	['REQUEST_CREDENTIALS_SUCCESS'] :(state, values) => {
+		return {
+			...state,
+			loading: false,
+			loggedIn: true,
+			subjectId: values.subjectId,
+			session: {
+				...state.session,
+				...values.session
+			}
+		}
+	},
+	['REQUEST_CREDENTIALS_FAIL']: (state, values) => {
+		return {
+			...state,
+			loading: false,
+			loggedIn:false,
+			loggedInError: values.error
+		}
+	}, 
 
 	/**
 	 * start of the login
@@ -46,7 +103,7 @@ const actionHandlers = {
 	['SEND_CREDENTIALS_SUCCESS']: (state, values) => {
 		return {
 			...state,
-			subjectId: values.subjectId,
+			subjectId: values.subject_Id,
 			session: {
 				...state.session,
 				...values.session,
