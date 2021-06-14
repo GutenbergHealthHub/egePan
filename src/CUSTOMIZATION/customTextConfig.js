@@ -117,7 +117,7 @@ export default {
 		},
 	},
 
-	/** strings with genric purpose that can be used throughout the application */
+	/** strings with generic purpose that can be used throughout the application */
 	"generic":{
 		"ok":"OK",
 		"error":"Fehler",
@@ -183,11 +183,11 @@ export default {
 		"sendFinished":"Fragebogen abschicken",
 		"send":"Fragebogen abschicken",
 		"subTitle":"",
-		"surverySubTitle":"Auszufüllen bis:  ",
-		"surveryTitle":"Ihr aktueller Fragebogen",
+		"surveySubTitle":"Auszufüllen bis:  ",
+		"surveyTitle":"Ihr aktueller Fragebogen",
 		"inputPlaceholder":"Bitte geben sie Ihre Antwort ein",
 		"noQuestionnaireTitle":"Fragebogen wurde nicht gefunden",
-		"subTitleCheckin":"",
+		"subTitleCheckIn":"",
 		"loadingQuestionnaire":"Fragebogen wird geladen",
 		"inputPlaceholderTime":"Bitte Datum eingeben",
 		"sessionTimeout":"Your user could not re recognized",
@@ -220,7 +220,7 @@ export default {
 	},
 
 	/** each entry in this array will generate a new listItem on the about-screen. When clicked on such an item, a webView will open that
-	 * can diplay any website. "iconType" is the name of a free Webfont and the title is the name of the particular icon. .
+	 * can display any website. "iconType" is the name of a free Webfont and the title is the name of the particular icon. .
 	 * as this app is using react-native-elements, the list of compatible fonts can be found in its documentation:
 	 * https://reactnativeelements.com/docs/icon
 	 */
@@ -244,14 +244,14 @@ export default {
 	],
 
 	/** each entry in this array will generate a new listItem on the about-screen. When clicked on such an item, a modal will open
-	 * that informs the user that he/she is beeing redirected to their local browser. "iconType" is the name of a free Webfont and the title is the name of the particular icon. .
+	 * that informs the user that he/she is being redirected to their local browser. "iconType" is the name of a free Webfont and the title is the name of the particular icon. .
 	 * as this app is using react-native-elements, the list of compatible fonts can be found in its documentation:
 	 * https://reactnativeelements.com/docs/icon
 	 */
 	"modalLinks": [
 		{
 			"title":"First Link",
-			"subTitle": "This is a regular link. It will open a modal before redicrecting the user to his/her own browser."	,
+			"subTitle": "This is a regular link. It will open a modal before redirecting the user to his/her own browser."	,
 			"text": "your are now being redirected.",
 			"uri": 'https://github.blog/',
 			"iconTitle": "link",

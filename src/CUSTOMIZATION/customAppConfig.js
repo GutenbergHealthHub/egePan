@@ -51,7 +51,7 @@ configuration
 
 /**
  * this object contains the configuration for the application. some options are only valid in
- * developemt environment.
+ * development environment.
  */
 const conf = {
   // DEVELOPMENT OPTIONS
@@ -169,7 +169,7 @@ const conf = {
 
     /** rest:
      * endpoint to post the questionnaire to */
-    sendQuestionnare:
+    sendQuestionnaire:
       (__DEV__ ? baseUriDevelopment : baseUriProductive) + "queue/",
 
     /** rest:
@@ -209,7 +209,7 @@ const conf = {
     let scaleFonts = true;
 
     // the base parameter for the font-scaling
-    // (devicewidth / guidelineBaseWidthFontScaling * fontsize)
+    // (device width / guidelineBaseWidthFontScaling * fontsize)
     let guidelineBaseWidthFontScaling = 400;
 
     // returns the new size
@@ -231,7 +231,7 @@ const conf = {
     let scaleUi = true;
 
     // the base parameter for the ui-scaling
-    // (devicewidth / guidelineBaseWidthUiScaling * size)
+    // (device width / guidelineBaseWidthUiScaling * size)
     let guidelineBaseWidthUiScaling = 430 / rescaleValue;
 
     // returns the new size
@@ -241,7 +241,7 @@ const conf = {
   // rules
   /*-----------------------------------------------------------------------------------*/
 
-  /** default values, should there be no ruleset coming from the server with the user-update.
+  /** default values, should there be no rule-set coming from the server with the user-update.
    * each entry contains definitions of questions (from the questionnaire)
    * and their corresponding answers that would trigger that particular rule.
    * of the return object of the function createResponseJSON() located in src/services/export
