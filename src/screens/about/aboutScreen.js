@@ -15,6 +15,8 @@ import AboutListItem from '../../components/about/aboutListItem'
 import AboutListLink from '../../components/about/aboutListLink'
 import ScrollIndicatorWrapper from '../../components/scrollIndicatorWrapper/scrollIndicatorWrapper'
 
+import store from '../../store';
+
 import config from '../../config/configProvider'
 
 /***********************************************************************************************
@@ -59,7 +61,24 @@ class AboutScreen extends Component {
 							<View style={localStyle.wrapper}>
 								{/* holds the list-items */}
 								<View style={localStyle.wrapper}>
-
+									{/*Display the users id*/}
+									<ListItem containerStyle={localStyle.containerStyle}> 
+										<ListItem.Content>
+											<ListItem.Title style={localStyle.title}>
+												{config.text.about.userIdTitle}
+											</ListItem.Title>
+											<ListItem.Subtitle style={localStyle.subtTitle}>
+												{store.getState().CheckIn.user.subject_id}
+											</ListItem.Subtitle>
+										</ListItem.Content>
+										<ListItem.Chevron
+											type="entypo"
+											name="light-bulb"
+											color={config.theme.colors.startedButNotFinished}
+											reverse={true}
+											size={12}
+										/>
+									</ListItem>
 									{/* links to the LegalInformationScreen */}
 									{config.appConfig.allowAccessToLegalInformationScreen && (
 										<ListItem 

@@ -1,4 +1,4 @@
-package de.num.compass.android.generated;
+package de.num.egepan.android.generated;
 
 import java.util.Arrays;
 import java.util.List;
