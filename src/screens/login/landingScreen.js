@@ -7,8 +7,8 @@ imports
 
 import React, { Component } from 'react'
 import { Text } from 'react-native-elements'
-import { StyleSheet, TouchableOpacity, View } from 'react-native'
-
+import { StyleSheet, View, TouchableOpacity } from 'react-native'
+import { CheckBox } from 'react-native-elements/dist/checkbox/CheckBox'
 import config from '../../config/configProvider'
 import Banner from '../../components/banner/banner'
 import Spinner from '../../components/spinner/spinner'
@@ -16,6 +16,7 @@ import ScrollIndicatorWrapper from '../../components/scrollIndicatorWrapper/scro
 import { TextInput } from 'react-native-gesture-handler'
 import { Button } from 'react-native-elements/dist/buttons/Button'
 import { Input } from 'react-native-elements/dist/input/Input'
+import theme from '../../theme/theme'
 
 /***********************************************************************************************
 component:
@@ -31,6 +32,12 @@ class LandingScreen extends Component {
 	*/
 	constructor(props) {
 		super(props)
+		this.state = {checked: false}
+		this.handleCheck = this.handleCheck.bind(this)
+	}
+
+	handleCheck() {
+		this.setState(prevState => ({...prevState, checked: !prevState.checked}))
 	}
 
 	render() {
@@ -63,9 +70,17 @@ class LandingScreen extends Component {
 
 								{/* bottom login button */}
 								<View style={localStyle.bottom}>
-									<TouchableOpacity style={localStyle.button}
+									<CheckBox
+										title="Datenschutzbestimmungen akzeptieren"
+										checked={this.state.checked}
+										onPress={this.handleCheck}
+										containerStyle={localStyle.checkBoxContainer}
+									/>
+									<TouchableOpacity
+										activeOpacity={this.state.checked ? 0.2 : 1}
+										style={this.state.checked ? localStyle.button : [localStyle.button, {backgroundColor: theme.colors.accent1}] }
 										onPress={() => {
-											this.props.actions.requestCredentials()
+											if (this.state.checked) this.props.actions.requestCredentials();	
 										}}
 										accessibilityLabel={config.text.login.landing.buttonText}
 										accessibilityRole={config.text.accessibility.types.button}
@@ -155,6 +170,15 @@ const localStyle = StyleSheet.create({
 		textAlign: 'center',
 		alignSelf: 'center',
 		...config.theme.fonts.header2,
+	},
+
+	checkBoxContainer: {
+		width: '80%',
+		alignSelf: 'center',
+		borderRadius: 50,
+		marginBottom: 10,
+		backgroundColor: 'white',
+		borderColor: config.theme.colors.primary
 	},
 
 	button: {
