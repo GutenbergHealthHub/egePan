@@ -112,7 +112,7 @@ export default {
 			"buttonText":"Registrieren",
 			"title":"",
 			"subTitle":"",
-		   	"welcomeTitle":"Willkommen in der egePan-Studien-App",
+		   	"welcomeTitle":"Willkommen in der S.A.M.-Studien-App",
 		   	"text":"Klicken Sie auf den \"Registrieren\"-Button, um sich neu zu registrieren.\n\n Falls sie bereits registriert sind, geben Sie bitte Ihre Probanden-ID ein, um sich wieder anzumelden."
 		},
 	},
