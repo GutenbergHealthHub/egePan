@@ -184,7 +184,7 @@ class Banner extends Component {
 local styling
 ***********************************************************************************************/
 
-let bannerHeight = Platform.OS === "ios" ? config.appConfig.scaleUiFkt(290, 0.7) : config.appConfig.scaleUiFkt(290, 0.6)
+let bannerHeight = Platform.OS === "ios" ? config.appConfig.scaleUiFkt(290, 1) : config.appConfig.scaleUiFkt(290, 0.9)
 let bannerWidth = Dimensions.get('window').width
 
 const localStyle = StyleSheet.create({
@@ -261,25 +261,22 @@ const localStyle = StyleSheet.create({
     bannerImageLogoUnderSubtitleAndTitle: {
         position: 'relative',
         alignSelf: 'center',
-        maxHeight: config.appConfig.scaleUiFkt(bannerHeight, 0.4),
-        maxWidth: bannerWidth - 100,
-        bottom: config.appConfig.scaleUiFkt(15, 0.3)
+        maxHeight: config.appConfig.scaleUiFkt(bannerHeight, (Platform.OS === 'ios' ? 0.8 : 0.8)),
+        bottom: -15
     },
 
     bannerImageLogoUnderTitle: {
         position: 'relative',
         alignSelf: 'center',
-        maxHeight: config.appConfig.scaleUiFkt(bannerHeight, 0.5),
-        maxWidth: bannerWidth - 100,
-        bottom: config.appConfig.scaleUiFkt(15, 0.5)
+        maxHeight: config.appConfig.scaleUiFkt(bannerHeight, (Platform.OS === 'ios' ? 1 : 1.1)),
+        bottom: -40
     },
 
     bannerImageLogoFullSize: {
         position: 'relative',
         alignSelf: 'center',
-        maxHeight: config.appConfig.scaleUiFkt(bannerHeight, 0.7),
-        maxWidth: bannerWidth - 100,
-        bottom: config.appConfig.scaleUiFkt(15, 0.7)
+        maxHeight: config.appConfig.scaleUiFkt(bannerHeight, 1.2),
+        bottom: -50
     },
 
     bannerFull: {

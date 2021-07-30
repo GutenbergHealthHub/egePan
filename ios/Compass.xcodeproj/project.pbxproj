@@ -34,11 +34,12 @@
 		BA78BE572520D2640063C353 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA78BE472520D2640063C353 /* EvilIcons.ttf */; };
 		BA78BE582520D2640063C353 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA78BE482520D2640063C353 /* SimpleLineIcons.ttf */; };
 		BA78BE592520D2640063C353 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA78BE492520D2640063C353 /* MaterialIcons.ttf */; };
+		DFB416D1264AA44000CD94F7 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Compass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* S.A.M..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = S.A.M..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Compass/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Compass/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Compass/Images.xcassets; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB416D1264AA44000CD94F7 /* JavaScriptCore.framework in Frameworks */,
 				4D132C81EE2FFCDFF6666C3C /* Pods_Compass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,7 +205,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Compass.app */,
+				13B07F961A680F5B00A75B9A /* S.A.M..app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,7 +265,7 @@
 			);
 			name = Compass;
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* Compass.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* S.A.M..app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -346,7 +348,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		13C095EFFA04AD9953CAF2B3 /* [CP-User] [RNFB] Core Configuration */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -556,8 +558,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.num.compass.ios;
-				PRODUCT_NAME = Compass;
+				PRODUCT_BUNDLE_IDENTIFIER = de.num.egepan.ios;
+				PRODUCT_NAME = S.A.M.;
 				PROVISIONING_PROFILE_SPECIFIER = "Compass Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "Compass-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -585,8 +587,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.num.compass.ios;
-				PRODUCT_NAME = Compass;
+				PRODUCT_BUNDLE_IDENTIFIER = de.num.egepan.ios;
+				PRODUCT_NAME = S.A.M.;
 				PROVISIONING_PROFILE_SPECIFIER = Compass;
 				SWIFT_OBJC_BRIDGING_HEADER = "Compass-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -645,6 +647,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = S.A.M.;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -692,6 +695,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = S.A.M.;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;

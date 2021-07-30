@@ -3,7 +3,7 @@
     <item
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:drawable="@mipmap/background"
+        android:drawable="@mipmap/splash_screen"
         android:scaleType="centerCrop"
         />
 </layer-list>

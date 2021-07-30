@@ -1,4 +1,4 @@
-package de.num.compass.android;
+package de.num.egepan.android;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -18,7 +18,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "Compass";
+        return "S.A.M.";
     }
 
     @Override

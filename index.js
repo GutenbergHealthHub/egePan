@@ -19,4 +19,4 @@ if(Config.connectToFCM) {
     });
 }
 
-AppRegistry.registerComponent('Compass', () => App);
+AppRegistry.registerComponent('S.A.M.', () => App);
