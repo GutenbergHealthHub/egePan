@@ -1,5 +1,84 @@
 **Changelog**
 ==========================================
+**v1.0.23 (2021-07-22)**
+---------------------------------------------------------------------------
+* removed debug outputs
+* removed typos
+* corrected typo
+* Merge pull request #30 from NUMde/update-open-choice .Updating Choice- and Ope-Choice Handling
+* altered a phrase in the documentation
+* Merge pull request #28 from NUMde/firebase-integration. Firebase integration
+
+**v1.0.22 (2021-07-21)**
+---------------------------------------------------------------------------
+* added outputs to fcm-event-handlers to test push capabilites under iOS
+* added another eventhandler
+
+**v1.0.21 (2021-07-20)**
+---------------------------------------------------------------------------
+* added missing character '/' in appConfig.js
+* added FCM token to redux output (also in cases when no update is necessary)
+
+**v1.0.20 (2021-07-09)**
+---------------------------------------------------------------------------
+* updated example questionnaire
+* removed test-button
+
+**v1.0.19 (2021-07-08)**
+---------------------------------------------------------------------------
+* updated choice-handling
+* log
+
+**v1.0.18 (2021-07-06)**
+---------------------------------------------------------------------------
+* fixing bug from commit #19
+* implementation of extension-questionnaire-hidden
+* Merge branch 'main' of https://github.com/NUMde/compass-numapp-frontend (get changes from #27)
+* Merge pull request #29 from mahvaezi/main. Support for FHIR extension-questionnaire-hidden
+
+**v1.0.17 (2021-07-05)**
+---------------------------------------------------------------------------
+* Merge pull request #26 from mahvaezi/main
+(Changing the behaviour of ios Datetimepicker to work like android's.)
+
+**v1.0.16 (2021-07-01)**
+---------------------------------------------------------------------------
+* adjust the android Datetimepicker behaviour to work with changes from (the last commit)
+
+**v1.0.15 (2021-06-30)**
+---------------------------------------------------------------------------
+* fix structure of question with slider extension
+* change ios Datepicker to act like android's
+* Merge branch 'main' of https://github.com/NUMde/compass-numapp-frontend
+
+**v1.0.14 (2021-06-28)**
+---------------------------------------------------------------------------
+* Merge pull request #25 from NUMde/update-questionnaire-identifier
+Identify Questionnaires by concatenation of URL and VERSION, instead of the TITLE
+
+**v1.0.13 (2021-06-23)**
+---------------------------------------------------------------------------
+* Merge pull request #22 from NUMde/extend-extension-support
+* Merge pull request #24 from mahvaezi/main
+* updated extension used for low- and high-range-labels
+* updated the information used to identify a specific questionnaire
+
+**v1.0.12 (2021-06-20)**
+---------------------------------------------------------------------------
+* Add changelog
+* forgot ,
+* Merge branch 'NUMde:main' into main
+* Merge with NUM/Main
+
+**v1.0.11 (2021-06-17)**
+---------------------------------------------------------------------------
+* Merge branch 'main' into extend-extension-support
+
+**v1.0.10 (2021-06-16)**
+---------------------------------------------------------------------------
+* subjectId instead of appId
+* rename parameter appId to subjectId
+
 **v1.0.9 (2021-06-14)**
 ---------------------------------------------------------------------------
 * Update dependencies

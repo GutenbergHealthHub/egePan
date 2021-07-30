@@ -1,7 +1,6 @@
 {
   "project_info": {
     "project_number": "TO BE UPDATED",
-    "firebase_url": "TO BE UPDATED",
     "project_id": "TO BE UPDATED",
     "storage_bucket": "TO BE UPDATED"
   },
@@ -24,9 +23,31 @@
         "other_platform_oauth_client": [{
           "client_id": "TO BE UPDATED",
           "client_type": 3
-        }]
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "TO BE UPDATED"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "TO BE UPDATED",
+              "client_type": 3
+            },
+            {
+              "client_id": "TO BE UPDATED",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "TO BE UPDATED"
+              }
+            }
+          ]
+        }
       }
     }
-  }],
+  ],
   "configuration_version": "TO BE UPDATED"
 }

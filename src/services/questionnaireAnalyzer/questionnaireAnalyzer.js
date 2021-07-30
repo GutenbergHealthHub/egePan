@@ -338,15 +338,20 @@ const checkCompletionStateOfMultipleItems = (items, props) => {
 			}
 
 			// should the item be of type "choice"...
-			if (returnValue && item.type === 'choice') {
-				// ... make sure its not NULL
-				returnValue = questionnaireItemMap[item.linkId].answer != null
-			}
+			if (returnValue && (item.type === 'choice' || item.type === 'open-choice')) {
 
-			// should the item be of type "open-choice"...
-			if (returnValue && item.type === 'open-choice') {
-				// ... make sure its not NULL and not empty
-				returnValue = !(getCorrectlyFormattedAnswer(questionnaireItemMap[item.linkId]) === null || !questionnaireItemMap[item.linkId].answer.length)
+				// ... and only accept a single answer
+				if(!item.repeats) {
+					// ... make sure its not NULL
+					returnValue = questionnaireItemMap[item.linkId].answer != null
+				}
+				// if multiple answers are allowed
+				else {
+					// make sure there is something							
+					let isArray = (Array.isArray(questionnaireItemMap[item.linkId].answer) && questionnaireItemMap[item.linkId].answer.length )
+					let hasAdditionalAnswer = item.type === 'open-choice' && questionnaireItemMap[item.linkId].answerOption.filter(e => e.isOpenQuestionAnswer)[0].answer
+					returnValue = isArray || hasAdditionalAnswer
+				}
 			}
 		}
 		
@@ -398,9 +403,13 @@ const checkDependenciesOfSingleItem = item => {
 	let returnValue = false
 
 	let props = store.getState().CheckIn
-
+	
+	//if item is supposed to be hidden
+	if(item.extension && item.extension[0].valueBoolean && item.extension[0].valueBoolean === true){
+		returnValue = false
+	}
 	// if the item has a set of conditions
-	if (item && item.enableWhen) {
+	else if (item && item.enableWhen) {
 
 		// checks if the items mentioned in the conditions are even answered...
 		if (!checkIfAnswersToConditionsAreAvailable (item )) {
@@ -562,18 +571,10 @@ const createResponseJSON = () => {
 							break
 
 						case 'choice':
-							answerObject = createAnswerObject(itemDetails.answer)
-							// traverse the child-items, if there are any and add them to the answer
-							childItems = item.item ? createItems(item.item) : []
-							if (childItems.length !== 0) answerObject.item = childItems
-							newItem.answer = [answerObject]
-							break
-
 						case 'open-choice':
-							newItem.answer = []
-							// if there are any answers, they will be located in an array - so we have to traverse it
+							// if there are multiple answers
 							if (Array.isArray(itemDetails.answer)) {
-								// see?
+								// iterates over all answers
 								itemDetails.answer.forEach(function (answer) {
 									// so now we create an object for each set answer
 									answerObject = createAnswerObject(answer)
@@ -583,8 +584,39 @@ const createResponseJSON = () => {
 									if (childItems.length !== 0) answerObject.item = childItems
 									newItem.answer.push(answerObject)
 								})
+
+								// should the type be open-choice and an extra answer is possible
+								if(itemDetails.type === 'open-choice') {
+									let additionalAnswer = itemDetails.answerOption.filter(e => e.isOpenQuestionAnswer)[0]
+									if(additionalAnswer.answer) newItem.answer.push(createAnswerObject(additionalAnswer.answer))
+								}
+							}
+							// if there is just a single answer
+							else {
+								answerObject = createAnswerObject(itemDetails.answer)
+								// traverse the child-items, if there are any and add them to the answer
+								childItems = item.item ? createItems(item.item) : []
+								if (childItems.length !== 0) answerObject.item = childItems
+								newItem.answer = [answerObject]
 							}
 							break
+
+						// case 'open-choice':
+						// 	newItem.answer = []
+						// 	// if there are any answers, they will be located in an array - so we have to traverse it
+						// 	if (Array.isArray(itemDetails.answer)) {
+						// 		// see?
+						// 		itemDetails.answer.forEach(function (answer) {
+						// 			// so now we create an object for each set answer
+						// 			answerObject = createAnswerObject(answer)
+						// 			// and check if there are any child-items.
+						// 			// if yes: traverse the child-items and add them to the answer
+						// 			childItems = item.item ? createItems(item.item, answer): []
+						// 			if (childItems.length !== 0) answerObject.item = childItems
+						// 			newItem.answer.push(answerObject)
+						// 		})
+						// 	}
+						// 	break
 
 						case 'string':
 							newItem.answer = [
@@ -653,22 +685,17 @@ const createResponseJSON = () => {
 	const cleanItem = (rootItem) => {
 
 		if(Array.isArray(rootItem)) {
-
-			rootItem.forEach((item, index) => {
-
-				if(!cleanItem(item)) rootItem.splice(index, 1)
-			})
-
+			let newRootItem = []
+			rootItem.forEach((item) => { if(cleanItem(item)) newRootItem.push(item) })
+			rootItem = [...newRootItem]
 			return rootItem.length > 0
 		}
 
 		if (typeof rootItem === 'string' || rootItem instanceof String) {
-
 			return rootItem && rootItem.length && rootItem !== "NaN-NaN-NaN"
 		}
 
 		if((typeof rootItem === "object" || typeof rootItem === 'function') && (rootItem !== null)){
-
 			let hasProperties = false
 
 			for (let key in rootItem) {
@@ -686,9 +713,8 @@ const createResponseJSON = () => {
 				}
 			}
 
-			return rootItem.linkId ? rootItem.item || rootItem.answer ? hasProperties : false : hasProperties
+			return rootItem.linkId ? ((rootItem.item || rootItem.answer) ? hasProperties : false) : hasProperties
 		}
-
 		return rootItem !== undefined && rootItem !== null && rootItem !== NaN
 	}
 	
@@ -697,13 +723,12 @@ const createResponseJSON = () => {
 	* @type {QuestionnaireResponse}
 	*/
 	let questionnaireResponse = {
+		authored: new Date().toISOString(),
 		item: createItems(props.categories),
 		resourceType: 'QuestionnaireResponse',
-		status: props.questionnaireItemMap.done ? 'completed' : 'in-progress',
-		authored: new Date().toString(),
+		questionnaire: props.questionnaireItemMap.url,
 		identifier: props.questionnaireItemMap.identifier,
-		resourceType: 'QuestionnaireResponse',
-		questionnaire: props.questionnaireItemMap.url
+		status: props.questionnaireItemMap.done ? 'completed' : 'in-progress'
 	}
 
 	// removes empty entries
