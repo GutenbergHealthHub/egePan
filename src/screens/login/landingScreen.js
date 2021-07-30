@@ -6,16 +6,12 @@ imports
 ***********************************************************************************************/
 
 import React, { Component } from 'react'
-import { Text } from 'react-native-elements'
+import { Text, Button, Input, CheckBox} from 'react-native-elements'
 import { StyleSheet, View, TouchableOpacity } from 'react-native'
-import { CheckBox } from 'react-native-elements/dist/checkbox/CheckBox'
 import config from '../../config/configProvider'
 import Banner from '../../components/banner/banner'
 import Spinner from '../../components/spinner/spinner'
 import ScrollIndicatorWrapper from '../../components/scrollIndicatorWrapper/scrollIndicatorWrapper'
-import { TextInput } from 'react-native-gesture-handler'
-import { Button } from 'react-native-elements/dist/buttons/Button'
-import { Input } from 'react-native-elements/dist/input/Input'
 import theme from '../../theme/theme'
 
 /***********************************************************************************************
@@ -73,7 +69,7 @@ class LandingScreen extends Component {
 									<CheckBox
 										title="Datenschutzbestimmungen akzeptieren"
 										checked={this.state.checked}
-										onPress={this.handleCheck}
+										onPress={this.toggleTOS}
 										containerStyle={localStyle.checkBoxContainer}
 									/>
 									<TouchableOpacity
