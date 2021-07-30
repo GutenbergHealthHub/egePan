@@ -69,7 +69,7 @@ class LandingScreen extends Component {
 									<CheckBox
 										title="Datenschutzbestimmungen akzeptieren"
 										checked={this.state.checked}
-										onPress={this.toggleTOS}
+										onPress={this.handleCheck}
 										containerStyle={localStyle.checkBoxContainer}
 									/>
 									<TouchableOpacity
