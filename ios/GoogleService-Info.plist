@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>TO BE UPDATED</string>
+	<string>817017461017-ar5qkq21rh0nkdenampk8k3qcrpg38ds.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>TO BE UPDATED</string>
+	<string>com.googleusercontent.apps.817017461017-ar5qkq21rh0nkdenampk8k3qcrpg38ds</string>
 	<key>API_KEY</key>
-	<string>TO BE UPDATED</string>
+	<string>AIzaSyCzvaRt5QL4j4jW_UKnECvcyfp2t75RgEs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>TO BE UPDATED</string>
+	<string>817017461017</string>
 	<key>PLIST_VERSION</key>
-	<string>TO BE UPDATED</string>
+	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>TO BE UPDATED</string>
+	<string>de.num.egepan.ios</string>
 	<key>PROJECT_ID</key>
-	<string>TO BE UPDATED</string>
+	<string>egepan-7d047</string>
 	<key>STORAGE_BUCKET</key>
-	<string>TO BE UPDATED</string>
+	<string>egepan-7d047.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>TO BE UPDATED</string>
+	<string>1:817017461017:ios:8613471d63faadbdf44d88</string>
 </dict>
 </plist>
