@@ -1,5 +1,5 @@
 
-// (C) Copyright IBM Deutschland GmbH 2020.  All rights reserved.
+// (C) Copyright IBM Deutschland GmbH 2021.  All rights reserved.
 
 // ================================================================================================
 // ================================================================================================
@@ -65,7 +65,7 @@ const conf = {
 
 	/** dev-option:
 	 * skips the QR login after 500ms */
-	automateQrLogin: __DEV__ && true,
+	automateQrLogin: __DEV__ && false,
 
 	/** dev-option:
 	 * subject-id for automated login */
@@ -96,11 +96,11 @@ const conf = {
 
 	/** dev-option:
 	 * used the locally available questionnaire.js instead of the procured one from the backend */
-	useLocalQuestionnaireInsteadOftheReceivedOne: __DEV__ && true,
+	useLocalQuestionnaireInsteadOftheReceivedOne: __DEV__ && false,
 
 	/** dev-option:
 	 * skips the id-comparison */
-	skipIncomingQuestionnaireCheck: true,
+	skipIncomingQuestionnaireCheck: __DEV__ && false,
 
 	// login
 	/*-----------------------------------------------------------------------------------*/
