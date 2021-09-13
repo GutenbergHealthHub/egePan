@@ -47,7 +47,7 @@ describe('APP START AND RENDERING:', () => {
     test ('User is navigated to <LandingScreen /> after app start', () => {
     
         // checks if right now the login-button is rendered
-        const loginButton = createAppTree().getByText('Navigate to Login Screen')
+        const loginButton = createAppTree().getByText('Registrieren');
         
         expect(loginButton).toBeTruthy()
     })

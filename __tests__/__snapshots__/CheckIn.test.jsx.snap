@@ -4,7 +4,7 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#F8F9FA",
+      "backgroundColor": "#FFFFFF",
       "flexDirection": "column",
       "height": "100%",
     }
@@ -17,7 +17,7 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "#1F2532",
+          "backgroundColor": "#376991",
           "bottom": 0,
           "flex": 1,
           "left": 0,
@@ -42,7 +42,7 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
       >
         <ActivityIndicator
           animating={true}
-          color="#EB576A"
+          color="#a5353e"
           hidesWhenStopped={true}
           size="large"
           style={
@@ -59,9 +59,9 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
       Object {
         "alignContent": "stretch",
         "alignItems": "stretch",
-        "backgroundColor": "#F8F9FA",
+        "backgroundColor": "#FFFFFF",
         "flexDirection": "column",
-        "height": 354.06976744186045,
+        "height": 505.8139534883721,
         "justifyContent": "flex-start",
         "overflow": "hidden",
         "paddingTop": 30,
@@ -111,7 +111,7 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
           }
         >
           <View
-            accessibilityHint="Re-fetches the questionnaire and status. The current page will be updated."
+            accessibilityHint="Lädt den Fragebogen sowie dessen Status erneut. Die Seite wird neu geladen"
             accessibilityLabel="refresh"
             accessibilityRole="button"
             accessibilityState={
@@ -173,7 +173,7 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "#EB576A",
+                            "color": "#a5353e",
                             "fontSize": 48.83720930232558,
                           },
                           Object {
@@ -232,8 +232,8 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
           }
         >
           <View
-            accessibilityHint="Opens new page with additional informations and links."
-            accessibilityLabel="Additional Information"
+            accessibilityHint="Öffnet eine neue Seite mit zusätzlichen Informationen und Links"
+            accessibilityLabel="Zusätzliche Informationen"
             accessibilityRole="button"
             accessibilityState={
               Object {
@@ -294,7 +294,7 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "#EB576A",
+                            "color": "#a5353e",
                             "fontSize": 48.83720930232558,
                           },
                           Object {
@@ -326,33 +326,6 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
           "flex": 1,
           "flexDirection": "column",
           "justifyContent": "flex-end",
-          "left": 0,
-          "position": "absolute",
-          "top": 0,
-        }
-      }
-    >
-      <Image
-        resizeMode="cover"
-        source={
-          Object {
-            "testUri": "../../../src/assets/images/defaultLogoBackground.png",
-          }
-        }
-        style={
-          Object {
-            "height": 354.06976744186045,
-            "width": 750,
-          }
-        }
-      />
-    </View>
-    <View
-      style={
-        Object {
-          "flex": 1,
-          "flexDirection": "column",
-          "justifyContent": "flex-end",
         }
       }
     >
@@ -360,14 +333,14 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
         resizeMode="contain"
         source={
           Object {
-            "testUri": "../../../src/assets/images/defaultLogo.png",
+            "testUri": "../../../src/CUSTOMIZATION/images/logo.png",
           }
         }
         style={
           Object {
             "alignSelf": "center",
             "bottom": 13.081395348837209,
-            "maxHeight": 308.781773931855,
+            "maxHeight": 441.1168199026501,
             "maxWidth": 650,
             "position": "relative",
           }
@@ -378,7 +351,7 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#F8F9FA",
+        "backgroundColor": "#FFFFFF",
         "flex": 1,
         "flexDirection": "column",
         "height": "100%",
@@ -436,7 +409,7 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#F8F9FA",
+      "backgroundColor": "#FFFFFF",
       "flexDirection": "column",
       "height": "100%",
     }
@@ -449,7 +422,7 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "#1F2532",
+          "backgroundColor": "#376991",
           "bottom": 0,
           "flex": 1,
           "left": 0,
@@ -474,7 +447,7 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
       >
         <ActivityIndicator
           animating={true}
-          color="#EB576A"
+          color="#a5353e"
           hidesWhenStopped={true}
           size="large"
           style={
@@ -491,9 +464,9 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
       Object {
         "alignContent": "stretch",
         "alignItems": "stretch",
-        "backgroundColor": "#F8F9FA",
+        "backgroundColor": "#FFFFFF",
         "flexDirection": "column",
-        "height": 354.06976744186045,
+        "height": 505.8139534883721,
         "justifyContent": "flex-start",
         "overflow": "hidden",
         "paddingTop": 30,
@@ -543,7 +516,7 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
           }
         >
           <View
-            accessibilityHint="Re-fetches the questionnaire and status. The current page will be updated."
+            accessibilityHint="Lädt den Fragebogen sowie dessen Status erneut. Die Seite wird neu geladen"
             accessibilityLabel="refresh"
             accessibilityRole="button"
             accessibilityState={
@@ -605,7 +578,7 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "#EB576A",
+                            "color": "#a5353e",
                             "fontSize": 48.83720930232558,
                           },
                           Object {
@@ -664,8 +637,8 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
           }
         >
           <View
-            accessibilityHint="Opens new page with additional informations and links."
-            accessibilityLabel="Additional Information"
+            accessibilityHint="Öffnet eine neue Seite mit zusätzlichen Informationen und Links"
+            accessibilityLabel="Zusätzliche Informationen"
             accessibilityRole="button"
             accessibilityState={
               Object {
@@ -726,7 +699,7 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "#EB576A",
+                            "color": "#a5353e",
                             "fontSize": 48.83720930232558,
                           },
                           Object {
@@ -758,33 +731,6 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
           "flex": 1,
           "flexDirection": "column",
           "justifyContent": "flex-end",
-          "left": 0,
-          "position": "absolute",
-          "top": 0,
-        }
-      }
-    >
-      <Image
-        resizeMode="cover"
-        source={
-          Object {
-            "testUri": "../../../src/assets/images/defaultLogoBackground.png",
-          }
-        }
-        style={
-          Object {
-            "height": 354.06976744186045,
-            "width": 750,
-          }
-        }
-      />
-    </View>
-    <View
-      style={
-        Object {
-          "flex": 1,
-          "flexDirection": "column",
-          "justifyContent": "flex-end",
         }
       }
     >
@@ -792,14 +738,14 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
         resizeMode="contain"
         source={
           Object {
-            "testUri": "../../../src/assets/images/defaultLogo.png",
+            "testUri": "../../../src/CUSTOMIZATION/images/logo.png",
           }
         }
         style={
           Object {
             "alignSelf": "center",
             "bottom": 13.081395348837209,
-            "maxHeight": 308.781773931855,
+            "maxHeight": 441.1168199026501,
             "maxWidth": 650,
             "position": "relative",
           }
@@ -810,7 +756,7 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#F8F9FA",
+        "backgroundColor": "#FFFFFF",
         "flex": 1,
         "flexDirection": "column",
         "height": "100%",
@@ -929,7 +875,7 @@ exports[`CHECKIN RENDERING: <CheckInTiles /> can be rendered 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#F8F9FA",
+                      "color": "#FFFFFF",
                       "fontSize": 24,
                     },
                     Object {
@@ -986,7 +932,7 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#F8F9FA",
+      "backgroundColor": "#FFFFFF",
       "flex": 1,
       "flexDirection": "column",
     }
@@ -997,9 +943,9 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
       Object {
         "alignContent": "stretch",
         "alignItems": "stretch",
-        "backgroundColor": "#F8F9FA",
+        "backgroundColor": "#FFFFFF",
         "flexDirection": "column",
-        "height": 354.06976744186045,
+        "height": 505.8139534883721,
         "justifyContent": "flex-start",
         "overflow": "hidden",
         "paddingTop": 30,
@@ -1068,8 +1014,8 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
           }
         >
           <View
-            accessibilityHint="Opens new page with additional informations and links."
-            accessibilityLabel="Additional Information"
+            accessibilityHint="Öffnet eine neue Seite mit zusätzlichen Informationen und Links"
+            accessibilityLabel="Zusätzliche Informationen"
             accessibilityRole="button"
             accessibilityState={
               Object {
@@ -1130,7 +1076,7 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
                       style={
                         Array [
                           Object {
-                            "color": "#EB576A",
+                            "color": "#a5353e",
                             "fontSize": 48.83720930232558,
                           },
                           Object {
@@ -1180,33 +1126,6 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
           "flex": 1,
           "flexDirection": "column",
           "justifyContent": "flex-end",
-          "left": 0,
-          "position": "absolute",
-          "top": 0,
-        }
-      }
-    >
-      <Image
-        resizeMode="cover"
-        source={
-          Object {
-            "testUri": "../../../src/assets/images/defaultLogoBackground.png",
-          }
-        }
-        style={
-          Object {
-            "height": 354.06976744186045,
-            "width": 750,
-          }
-        }
-      />
-    </View>
-    <View
-      style={
-        Object {
-          "flex": 1,
-          "flexDirection": "column",
-          "justifyContent": "flex-end",
         }
       }
     >
@@ -1214,14 +1133,14 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
         resizeMode="contain"
         source={
           Object {
-            "testUri": "../../../src/assets/images/defaultLogo.png",
+            "testUri": "../../../src/CUSTOMIZATION/images/logo.png",
           }
         }
         style={
           Object {
             "alignSelf": "center",
             "bottom": 13.081395348837209,
-            "maxHeight": 308.781773931855,
+            "maxHeight": 441.1168199026501,
             "maxWidth": 650,
             "position": "relative",
           }
@@ -1250,7 +1169,7 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#F8F9FA",
+              "backgroundColor": "#FFFFFF",
               "flex": 1,
               "flexDirection": "column",
             }
@@ -1285,7 +1204,7 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#F8F9FA",
+              "backgroundColor": "#FFFFFF",
               "flex": 1,
               "flexDirection": "column",
             }

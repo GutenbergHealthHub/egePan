@@ -6,9 +6,9 @@ exports[`SHARED COMPONENTS: <Banner /> can be rendered 1`] = `
     Object {
       "alignContent": "stretch",
       "alignItems": "stretch",
-      "backgroundColor": "#F8F9FA",
+      "backgroundColor": "#FFFFFF",
       "flexDirection": "column",
-      "height": 354.06976744186045,
+      "height": 505.8139534883721,
       "justifyContent": "flex-start",
       "overflow": "hidden",
       "paddingTop": 30,
@@ -75,8 +75,8 @@ exports[`SHARED COMPONENTS: <Banner /> can be rendered 1`] = `
         }
       >
         <View
-          accessibilityHint="Opens new page with additional informations and links."
-          accessibilityLabel="Additional Information"
+          accessibilityHint="Öffnet eine neue Seite mit zusätzlichen Informationen und Links"
+          accessibilityLabel="Zusätzliche Informationen"
           accessibilityRole="button"
           accessibilityState={
             Object {
@@ -137,7 +137,7 @@ exports[`SHARED COMPONENTS: <Banner /> can be rendered 1`] = `
                     style={
                       Array [
                         Object {
-                          "color": "#EB576A",
+                          "color": "#a5353e",
                           "fontSize": 48.83720930232558,
                         },
                         Object {
@@ -187,33 +187,6 @@ exports[`SHARED COMPONENTS: <Banner /> can be rendered 1`] = `
         "flex": 1,
         "flexDirection": "column",
         "justifyContent": "flex-end",
-        "left": 0,
-        "position": "absolute",
-        "top": 0,
-      }
-    }
-  >
-    <Image
-      resizeMode="cover"
-      source={
-        Object {
-          "testUri": "../../../src/assets/images/defaultLogoBackground.png",
-        }
-      }
-      style={
-        Object {
-          "height": 354.06976744186045,
-          "width": 750,
-        }
-      }
-    />
-  </View>
-  <View
-    style={
-      Object {
-        "flex": 1,
-        "flexDirection": "column",
-        "justifyContent": "flex-end",
       }
     }
   >
@@ -221,14 +194,14 @@ exports[`SHARED COMPONENTS: <Banner /> can be rendered 1`] = `
       resizeMode="contain"
       source={
         Object {
-          "testUri": "../../../src/assets/images/defaultLogo.png",
+          "testUri": "../../../src/CUSTOMIZATION/images/logo.png",
         }
       }
       style={
         Object {
           "alignSelf": "center",
           "bottom": 18.313953488372093,
-          "maxHeight": 432.29448350459705,
+          "maxHeight": 617.56354786371,
           "maxWidth": 650,
           "position": "relative",
         }
@@ -254,7 +227,7 @@ exports[`SHARED COMPONENTS: <Progressbar /> can be rendered 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#1F2532",
+        "backgroundColor": "#376991",
         "borderRadius": 2.5,
         "height": 5,
         "width": "NaN%",
@@ -339,7 +312,7 @@ exports[`SHARED COMPONENTS: <RedirectModal /> can be rendered 1`] = `
             "justifyContent": "center",
           },
           Object {
-            "borderColor": "#F8F9FA",
+            "borderColor": "#FFFFFF",
             "borderRadius": 10,
             "justifyContent": "flex-end",
             "marginBottom": 0,
@@ -376,7 +349,7 @@ exports[`SHARED COMPONENTS: <RedirectModal /> can be rendered 1`] = `
       statusBarTranslucent={false}
       style={
         Object {
-          "borderColor": "#F8F9FA",
+          "borderColor": "#FFFFFF",
           "borderRadius": 10,
           "flex": 1,
           "justifyContent": "flex-end",
@@ -403,8 +376,8 @@ exports[`SHARED COMPONENTS: <RedirectModal /> can be rendered 1`] = `
       <View
         style={
           Object {
-            "backgroundColor": "#F8F9FA",
-            "borderColor": "#F8F9FA",
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "#FFFFFF",
             "borderTopLeftRadius": 10,
             "borderTopRightRadius": 10,
             "height": "auto",
@@ -430,7 +403,7 @@ exports[`SHARED COMPONENTS: <RedirectModal /> can be rendered 1`] = `
               <View
                 style={
                   Object {
-                    "borderBottomColor": "#F8F9FA",
+                    "borderBottomColor": "#FFFFFF",
                     "borderBottomWidth": 1,
                     "marginBottom": 10,
                   }
@@ -476,7 +449,7 @@ exports[`SHARED COMPONENTS: <RedirectModal /> can be rendered 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#F8F9FA",
+            "backgroundColor": "#FFFFFF",
             "flexDirection": "row",
             "flexWrap": "nowrap",
             "justifyContent": "space-between",
@@ -508,8 +481,8 @@ exports[`SHARED COMPONENTS: <RedirectModal /> can be rendered 1`] = `
           }
         >
           <View
-            accessibilityHint="Switches to default browser application, and opens link there."
-            accessibilityLabel="accept"
+            accessibilityHint="Wechsle zum Standardbrowser, um die Seite zu öffnen"
+            accessibilityLabel="Annehmen"
             accessibilityRole="button"
             accessibilityState={
               Object {
@@ -562,7 +535,7 @@ exports[`SHARED COMPONENTS: <RedirectModal /> can be rendered 1`] = `
                     style={
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "#1F2532",
+                        "backgroundColor": "#376991",
                         "borderRadius": 28,
                         "height": 52,
                         "justifyContent": "center",
@@ -655,7 +628,7 @@ exports[`SHARED COMPONENTS: <Spinner /> can be rendered 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#1F2532",
+        "backgroundColor": "#376991",
         "bottom": 0,
         "flex": 1,
         "left": 0,
@@ -680,7 +653,7 @@ exports[`SHARED COMPONENTS: <Spinner /> can be rendered 1`] = `
     >
       <ActivityIndicator
         animating={true}
-        color="#EB576A"
+        color="#a5353e"
         hidesWhenStopped={true}
         size="large"
         style={

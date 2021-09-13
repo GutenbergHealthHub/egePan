@@ -72,12 +72,14 @@ class LandingScreen extends Component {
                 {/* bottom login button */}
                 <View style={localStyle.bottom}>
                 <CheckBox
+                    testID="tosButton"
 										title="Datenschutzbestimmungen akzeptieren"
 										checked={checked}
 										onPress={this.handleCheck}
 										containerStyle={localStyle.checkBoxContainer}
 									/>
 									<TouchableOpacity
+                    testID="registerButton"
 										activeOpacity={checked ? 0.2 : 1}
 										style={checked ? localStyle.button : [localStyle.button, {backgroundColor: theme.colors.accent1}] }
 										onPress={() => {
