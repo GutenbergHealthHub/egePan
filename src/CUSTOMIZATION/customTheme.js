@@ -7,7 +7,6 @@
 // because of that, you won't loose the ability to merge updated from the repository.
 
 // necessary imports
-import { StyleSheet } from "react-native";
 import customAppConfig from "./customAppConfig";
 import originalAppConfig from "../config/appConfig";
 

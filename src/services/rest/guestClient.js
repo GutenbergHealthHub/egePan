@@ -23,11 +23,9 @@ const login = async (subjectId) =>
 /**
  * request userId (and session data) from api
  */
-export const requestCredentials = async => {
-	return axios.get(
+const requestCredentials = () => axios.get(
 		config.appConfig.endpoints.login
 	)
-}
 
 /***********************************************************************************************
 export

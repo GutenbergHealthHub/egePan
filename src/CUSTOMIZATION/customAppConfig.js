@@ -176,29 +176,29 @@ const conf = {
   endpoints: {
     /** rest:
      * endpoint to log the user in and retrieve the accessToken */
-    login: (__DEV__ ? baseUriDevelopment : baseUriProductive) + "participant/",
+    login: `${__DEV__ ? baseUriDevelopment : baseUriProductive  }participant/`,
 
     /** rest:
      * endpoint to get the user-profile */
-    getUser: (__DEV__ ? baseUriDevelopment : baseUriProductive) + "participant/",
+    getUser: `${__DEV__ ? baseUriDevelopment : baseUriProductive  }participant/`,
 
     /** rest:
      * endpoint for a special report */
-    report: (__DEV__ ? baseUriDevelopment : baseUriProductive) + "queue/",
+    report: `${__DEV__ ? baseUriDevelopment : baseUriProductive  }queue/`,
 
     /** rest:
      * endpoint to post the questionnaire to */
     sendQuestionnaire:
-      (__DEV__ ? baseUriDevelopment : baseUriProductive) + "queue/",
+      `${__DEV__ ? baseUriDevelopment : baseUriProductive  }queue/`,
 
     /** rest:
      * endpoint to receive the questionnaire */
     getQuestionnaire:
-      (__DEV__ ? baseUriDevelopment : baseUriProductive) + "questionnaire/",
+      `${__DEV__ ? baseUriDevelopment : baseUriProductive  }questionnaire/`,
 
     /** rest:
 		 * endpoint to receive the questionnaire */
-		updateToken: (__DEV__ ? baseUriDevelopment : baseUriProductive) + 'participant/update-device-token/',
+		updateToken: `${__DEV__ ? baseUriDevelopment : baseUriProductive  }participant/update-device-token/`,
   },
 
   // ui
@@ -229,11 +229,11 @@ const conf = {
    */
   scaleFontsFkt: (size) => {
     // scales the fontsize dynamically down for smaller devices
-    let scaleFonts = true;
+    const scaleFonts = true;
 
     // the base parameter for the font-scaling
     // (device width / guidelineBaseWidthFontScaling * fontsize)
-    let guidelineBaseWidthFontScaling = 400;
+    const guidelineBaseWidthFontScaling = 400;
 
     // returns the new size
     return scaleFonts ? (width / guidelineBaseWidthFontScaling) * size : size;
@@ -246,16 +246,14 @@ const conf = {
    * @param  {number} size base ui size
    * @param  {number} [rescaleValue] value used as an additional scale
    */
-  scaleUiFkt: (size, rescaleValue) => {
-    // normalization
-    rescaleValue = rescaleValue || 1;
+  scaleUiFkt: (size, rescaleValue = 1) => {
 
     // scales certain ui parts dynamically down for smaller devices
-    let scaleUi = true;
+    const scaleUi = true;
 
     // the base parameter for the ui-scaling
     // (device width / guidelineBaseWidthUiScaling * size)
-    let guidelineBaseWidthUiScaling = 430 / rescaleValue;
+    const guidelineBaseWidthUiScaling = 430 / rescaleValue;
 
     // returns the new size
     return scaleUi ? (width / guidelineBaseWidthUiScaling) * size : size;
