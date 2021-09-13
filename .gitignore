@@ -31,13 +31,21 @@ testem.log
 manifest.yml
 npm-debug.log
 yarn-error.log
+eslint_report.json
 
 # System Files
 .DS_Store
 Thumbs.db
 
-## User settings
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
 ios/*.xcworkspace
+xcuserdata/
 
 ## App packaging
 *.ipa

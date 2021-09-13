@@ -2,12 +2,6 @@
 // (C) Copyright IBM Deutschland GmbH 2021.  All rights reserved.
 
 /***********************************************************************************************
-import
-***********************************************************************************************/
-
-import config from '../../config/configProvider'
-
-/***********************************************************************************************
 initial state
 ***********************************************************************************************/
 
@@ -34,13 +28,11 @@ const actionHandlers = {
 	 * @param {object} state 
 	 * @param {object} values 
 	 */
-	['SET_ID']: (state, values) => {
-		return {
+	SET_ID: (state, values) => ({
 			...state,
 			manualId: values.id,
 			loginError: null
-		}
-	},
+		}),
 
 	/**
 	 * start requesting credentials
@@ -48,13 +40,11 @@ const actionHandlers = {
 	 * @param {object} values 
 	 * @returns 
 	 */
-	['REQUEST_CREDENTIALS_START']: state => {
-		return {
+	REQUEST_CREDENTIALS_START: state => ({
 			...state,
 			loading: true,
 			loggedIn: false
-		}
-	},
+		}),
 
 	/**
 	 * update user and session data if request was successful
@@ -62,8 +52,7 @@ const actionHandlers = {
 	 * @param {object} values 
 	 * @returns 
 	 */
-	['REQUEST_CREDENTIALS_SUCCESS'] :(state, values) => {
-		return {
+	REQUEST_CREDENTIALS_SUCCESS :(state, values) => ({
 			...state,
 			loading: false,
 			loggedIn: true,
@@ -72,36 +61,30 @@ const actionHandlers = {
 				...state.session,
 				...values.session
 			}
-		}
-	},
-	['REQUEST_CREDENTIALS_FAIL']: (state, values) => {
-		return {
+		}),
+	REQUEST_CREDENTIALS_FAIL: (state, values) => ({
 			...state,
 			loading: false,
 			loggedIn:false,
 			loggedInError: values.error
-		}
-	}, 
+		}),
 
 	/**
 	 * start of the login
 	 * @param  {object}	state redux state
 	 */
-	['SEND_CREDENTIALS_START']: state => {
-		return {
+	SEND_CREDENTIALS_START: state => ({
 			...state,
 			loading: true,
 			loggedIn: false
-		}
-	},
+		}),
 
 	/**
 	 * login success
 	 * @param  {object} state
 	 * @param  {object} values
 	 */
-	['SEND_CREDENTIALS_SUCCESS']: (state, values) => {
-		return {
+	SEND_CREDENTIALS_SUCCESS: (state, values) => ({
 			...state,
 			subjectId: values.subject_Id,
 			session: {
@@ -110,16 +93,14 @@ const actionHandlers = {
 			},
 			loggedIn: true,
 			loading: false
-		}
-	},
+		}),
 
 	/**
 	 * login error
 	 * @param  {object} state redux state
 	 * @param  {object} values values to be set
 	 */
-	['SEND_CREDENTIALS_FAIL']: (state, values) => {
-		return {
+	SEND_CREDENTIALS_FAIL: (state, values) => ({
 			...state,
 			loginError: values.error,
 			loading: false,
@@ -127,28 +108,24 @@ const actionHandlers = {
 				values.error.response &&
 				values.error.response.status &&
 				values.error.response.status === 401
-		}
-	},
+		}),
 	
 	/**
 	 * just updates the subjectId
 	 * @param  {object} state redux state
 	 * @param  {object} values values to be set
 	 */
-	['UPDATE_SUBJECT_ID']: (state, values) => {
-		return {
+	UPDATE_SUBJECT_ID: (state, values) => ({
 			...state,
 			subjectId: values.subjectId
-		}
-	},
+		}),
 
 	/**
 	 * sets the session values from an earlier login
 	 * @param  {object} state redux state
 	 * @param  {object} values values to be set
 	 */
-	['LOADING_USER_FROM_CACHE']: (state, values) => {
-		return {
+	LOADING_USER_FROM_CACHE: (state, values) => ({
 			...state,
 			subjectId: values.lastSubjectId,
 			session: {
@@ -157,23 +134,20 @@ const actionHandlers = {
 			},
 			loggedIn: true,
 			loading: false
-		}
-	},
+		}),
 
 	/**
 	 * logout
 	 * @param   {object} state redux state
 	 */
-	['LOGOUT']: state => {
-		return {
+	LOGOUT: state => ({
 			...state,
 			subjectId: '',
 			session: null,
 			loginError: null,
 			loggedIn: false,
 			loginUnauthorized: false
-		}
-	},
+		}),
 }
 
 

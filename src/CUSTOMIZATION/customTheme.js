@@ -1,4 +1,3 @@
-
 // (C) Copyright IBM Deutschland GmbH 2021.  All rights reserved.
 
 // the object provided by this file will be merged with the return-object of the module "theme.js".
