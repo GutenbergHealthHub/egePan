@@ -142,7 +142,7 @@ class LoginContainer extends Component {
       />
     ) : (
       // if on Landing route
-      <LandingScreen loading={loading} navigation={navigation} />
+      <LandingScreen loading={loading} navigation={navigation} actions={actions}/>
     );
   }
 }
