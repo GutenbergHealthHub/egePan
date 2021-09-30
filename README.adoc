@@ -4,6 +4,8 @@
 :caution-caption: :fire:
 :warning-caption: :warning:
 
+image:https://img.shields.io/badge/license-Apache2-green?style=flat-square[license: Apache2.0,link=https://opensource.org/licenses/Apache-2.0]
+
 = NUM-App (React Native Client - iOS & Android)
 
 https://github.com/NUMde/compass-numapp[Main Repository] | link:./docs[Frontend Documentation]

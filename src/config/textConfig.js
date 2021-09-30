@@ -109,6 +109,7 @@ export default {
 		"errorUserGeneric":"There occurred a problem during login.",
 		"permissionDialog":"Please allow the app to access your camera.",
 		"studyIdHint":"Enter existing study id",
+		"nextStepAfterError": "Please try to login again later.",
 
 		/** contains all strings of the landing-screen */
 		"landing":{

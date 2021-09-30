@@ -117,7 +117,7 @@ export const sendCredentials =
               res.data.recipient_certificate_pem_string ||
               config.appConfig.default_recipient_certificate_pem_string,
           };
-          // the id of the user will be persisted in the AsyncStorage (for the auto-login next time)
+          // the id of the user will be persisted in the LocalStorage (for the auto-login next time)
           localStorage.persistLastSubjectId(cleanedScanResult);
           // updates the state
           setTimeout(
@@ -129,13 +129,19 @@ export const sendCredentials =
           // reactivates the camera
           if (camera) camera.reactivate();
           // persists the error
-          dispatch(sendCredentialsFail(err));
+          dispatch(sendCredentialsFail({
+            loginError: err.error ?? textConf.login.errorUserGeneric,
+            loginUnauthorized: err.error?.response?.status === 401
+          }));
         });
     } else {
       // reactivates the camera
       if (camera) camera.reactivate();
       // persists a generic error
-      dispatch(sendCredentialsFail(textConf.login.noSubjectId));
+      dispatch(sendCredentialsFail({
+        loginError: textConf.login.noSubjectId,
+        loginUnauthorized: false
+      }));
     }
   };
 

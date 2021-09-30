@@ -7,6 +7,8 @@
 // because of that, you won't loose the ability to merge updated from the repository.
 
 // necessary imports
+// eslint-disable-next-line no-unused-vars
+import { StyleSheet } from "react-native"; // lgtm [js/unused-local-variable]
 import customAppConfig from "./customAppConfig";
 import originalAppConfig from "../config/appConfig";
 

@@ -126,7 +126,7 @@ const conf = {
   // local storage identifiers
   /*-----------------------------------------------------------------------------------*/
 
-  // these are identifiers for the items created in AsyncStorage. AsyncStorage will persist
+  // these are identifiers for the items created in LocalStorage. LocalStorage will persist
   // those data points until it is manually deleted, updated or the app was removed by the user.
   // ATTENTION: These are not encrypted!
 
@@ -166,7 +166,8 @@ const conf = {
    * */
   connectToFCM: false,
 
-  // updates the locally generated device token with the backend on each user update
+  /** push:
+   * updates the locally generated device token with the backend on each user update */
   reconnectOnEachUserUpdate: false,
 
   // rest endpoints
@@ -212,11 +213,11 @@ const conf = {
 
   /** ui:
    * adds another Tile to the CheckIn-Screen, which only appears if the participant is
-   * no longer part of the study (meaning the user property 'status' must hold 
+   * no longer part of the study (meaning the user property 'status' must hold
    * the value 'off-study'). a press on that button would remove all local data and log the
    * user out
    */
-   allowRemovalOfDataAtEndOfStudy: true,
+  allowRemovalOfDataAtEndOfStudy: true,
 
   /** ui:
    * adds another LinkList to the About-Screen, which navigates to LegalInformationScreen.
