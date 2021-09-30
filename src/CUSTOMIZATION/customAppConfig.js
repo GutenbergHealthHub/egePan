@@ -40,10 +40,10 @@ const { width } = Dimensions.get("window");
 
 // production-base-backend-uri
 // TODO: add uri for production
-const baseUriProductive = "https://mobile-backend-test-egepan-prod.umopenshift03-27c74fb079246a1ac53f0d02625326eb-0000.eu-de.containers.appdomain.cloud/api/";
+const baseUriProductive = "https://egepan-dev.izks-mainz.de/api/";
 
 // development-base-backend-uri
-const baseUriDevelopment = "http://localhost:8080/api/";
+const baseUriDevelopment = "https://egepan-dev.izks-mainz.de/api/";
 
 /***********************************************************************************************
 configuration
