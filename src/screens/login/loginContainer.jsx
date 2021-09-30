@@ -132,7 +132,7 @@ class LoginContainer extends Component {
   /*-----------------------------------------------------------------------------------*/
 
   render() {
-    const { loading, actions, navigation, loginUnauthorized, loginError } = this.props;
+    const { loading, actions, navigation, loginUnauthorized, loginError, manualId } = this.props;
     // checks the currently selected route
     return navigation.state.routeName === "Login" ? (
       // if on Login route
@@ -146,7 +146,7 @@ class LoginContainer extends Component {
       />
     ) : (
       // if on Landing route
-      <LandingScreen loading={loading} navigation={navigation} actions={actions}/>
+      <LandingScreen loading={loading} navigation={navigation} actions={actions} manualId={manualId}/>
     );
   }
 }
