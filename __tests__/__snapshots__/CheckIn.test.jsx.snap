@@ -339,9 +339,8 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
         style={
           Object {
             "alignSelf": "center",
-            "bottom": 13.081395348837209,
-            "maxHeight": 441.1168199026501,
-            "maxWidth": 650,
+            "bottom": -40,
+            "maxHeight": 882.2336398053002,
             "position": "relative",
           }
         }
@@ -744,9 +743,8 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
         style={
           Object {
             "alignSelf": "center",
-            "bottom": 13.081395348837209,
-            "maxHeight": 441.1168199026501,
-            "maxWidth": 650,
+            "bottom": -40,
+            "maxHeight": 882.2336398053002,
             "position": "relative",
           }
         }
@@ -1139,9 +1137,8 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
         style={
           Object {
             "alignSelf": "center",
-            "bottom": 13.081395348837209,
-            "maxHeight": 441.1168199026501,
-            "maxWidth": 650,
+            "bottom": -40,
+            "maxHeight": 882.2336398053002,
             "position": "relative",
           }
         }

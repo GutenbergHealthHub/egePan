@@ -200,9 +200,8 @@ exports[`SHARED COMPONENTS: <Banner /> can be rendered 1`] = `
       style={
         Object {
           "alignSelf": "center",
-          "bottom": 18.313953488372093,
-          "maxHeight": 617.56354786371,
-          "maxWidth": 650,
+          "bottom": -50,
+          "maxHeight": 1058.68036776636,
           "position": "relative",
         }
       }

@@ -303,9 +303,8 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                             style={
                               Object {
                                 "alignSelf": "center",
-                                "bottom": 18.313953488372093,
-                                "maxHeight": 617.56354786371,
-                                "maxWidth": 650,
+                                "bottom": -50,
+                                "maxHeight": 1058.68036776636,
                                 "position": "relative",
                               }
                             }
@@ -498,6 +497,7 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                       onChangeText={[Function]}
                                       placeholder="Probanden-ID eingeben"
                                       renderErrorMessage={false}
+                                      value={null}
                                     />
                                     <Themed.Button
                                       accessibilityHint="Abschicken"
@@ -774,6 +774,7 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                           }
                                           testID="RNE__Input__text-input"
                                           underlineColorAndroid="transparent"
+                                          value={null}
                                         />
                                       </View>
                                       <Text
