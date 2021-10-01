@@ -83,6 +83,15 @@ class SurveyScreen extends Component {
     };
   };
 
+	handleSubmit = () => {
+    const { user, navigation, exportAndUploadQuestionnaireResponse} = this.props;
+		if (user.current_questionnaire_id === 'weekly') {
+			navigation.navigate('Summary')
+		} else {
+			exportAndUploadQuestionnaireResponse()
+		}
+	}
+
   /**
    * renders a list of level-1 questionnaire items (i.e. the main-categories) which - when clicked on - opens the questionnaireModal
    * with the the sub-questions from that category loaded
@@ -139,7 +148,6 @@ class SurveyScreen extends Component {
       currentCategoryIndex,
       questionnaireItemMap,
       showQuestionnaireModal,
-      exportAndUploadQuestionnaireResponse,
     } = this.props;
     return (
       <View style={{ ...localStyle.flexi, ...localStyle.wrapper }}>
@@ -172,7 +180,7 @@ class SurveyScreen extends Component {
                     accessibilityHint={
                       config.text.accessibility.questionnaire.sendHint
                     }
-                    onPress={() => exportAndUploadQuestionnaireResponse()}
+                    onPress={this.handleSubmit}
                     style={{
                       ...localStyle.button,
                       ...localStyle.buttonComplete,

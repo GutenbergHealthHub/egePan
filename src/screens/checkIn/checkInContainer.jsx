@@ -20,6 +20,7 @@ import SurveyScreen from "./surveyScreen";
 import * as checkInActions from "./checkInActions";
 import CheckInScreen from "./checkInScreen";
 import config from "../../config/configProvider";
+import SummaryScreen from "./summaryScreen";
 
 /***********************************************************************************************
 component:
@@ -617,43 +618,55 @@ class CheckInContainer extends Component {
       showQuestionnaireModal,
       noNewQuestionnaireAvailableYet,
     } = this.props;
-    return navigation.state.routeName === "CheckIn" ? (
-      // if on CheckIn route
-      <CheckInScreen
-        navigation={navigation}
-        loading={loading}
-        categoriesLoaded={categoriesLoaded}
-        error401={error401}
-        questionnaireError={questionnaireError}
-        user={user}
-        noNewQuestionnaireAvailableYet={noNewQuestionnaireAvailableYet}
-        questionnaireItemMap={questionnaireItemMap}
-        getQuestionnaire={this.getQuestionnaire}
-        deleteLocalDataAndLogout={this.deleteLocalDataAndLogout}
+    if (navigation.state.routeName === "CheckIn")
+      return (
+        // if on CheckIn route
+        <CheckInScreen
+          navigation={navigation}
+          loading={loading}
+          categoriesLoaded={categoriesLoaded}
+          error401={error401}
+          questionnaireError={questionnaireError}
+          user={user}
+          noNewQuestionnaireAvailableYet={noNewQuestionnaireAvailableYet}
+          questionnaireItemMap={questionnaireItemMap}
+          getQuestionnaire={this.getQuestionnaire}
+          deleteLocalDataAndLogout={this.deleteLocalDataAndLogout}
+          exportAndUploadQuestionnaireResponse={
+            this.exportAndUploadQuestionnaireResponse
+          }
+          exportAndUploadQuestionnaireResponseStart={
+            this.exportAndUploadQuestionnaireResponseStart
+          }
+          sendReport={this.sendReport}
+          updateUser={this.updateUser}
+        />
+      );
+    // if on Survey route
+    if (navigation.state.routeName === "Survey")
+      return (
+        <SurveyScreen
+          navigation={navigation}
+          actions={actions}
+          user={user}
+          categories={categories}
+          currentPageIndex={currentPageIndex}
+          currentCategoryIndex={currentCategoryIndex}
+          showDatePicker={showDatePicker}
+          questionnaireItemMap={questionnaireItemMap}
+          showQuestionnaireModal={showQuestionnaireModal}
+          exportAndUploadQuestionnaireResponse={
+            this.exportAndUploadQuestionnaireResponse
+          }
+        />
+      );
+    return (
+      <SummaryScreen
         exportAndUploadQuestionnaireResponse={
           this.exportAndUploadQuestionnaireResponse
         }
-        exportAndUploadQuestionnaireResponseStart={
-          this.exportAndUploadQuestionnaireResponseStart
-        }
-        sendReport={this.sendReport}
-        updateUser={this.updateUser}
-      />
-    ) : (
-      // if on Survey route
-      <SurveyScreen
         navigation={navigation}
-        actions={actions}
-        user={user}
-        categories={categories}
-        currentPageIndex={currentPageIndex}
-        currentCategoryIndex={currentCategoryIndex}
-        showDatePicker={showDatePicker}
         questionnaireItemMap={questionnaireItemMap}
-        showQuestionnaireModal={showQuestionnaireModal}
-        exportAndUploadQuestionnaireResponse={
-          this.exportAndUploadQuestionnaireResponse
-        }
       />
     );
   }
