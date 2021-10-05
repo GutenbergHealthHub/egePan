@@ -1034,7 +1034,7 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
                       </Text>
                     </View>
                   }
-                  permissionDialogMessage="Please allow the app to access your camera."
+                  permissionDialogMessage="Bitte erlauben Sie der App, auf die Kamera zuzugreifen."
                   permissionDialogTitle="Info"
                   reactivate={false}
                   reactivateTimeout={0}
@@ -1058,7 +1058,7 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
                   }
                 }
               >
-                Please point the camera onto the qr-code.
+                Bitte richten Sie die Kamera auf den QR-Code.
               </Themed.Text>
             </View>
           </View>
@@ -1181,7 +1181,7 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
                   }
                 }
               >
-                Please point the camera onto the qr-code.
+                Bitte richten Sie die Kamera auf den QR-Code.
               </Text>
             </View>
           </View>
@@ -1539,7 +1539,7 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
                       </Text>
                     </View>
                   }
-                  permissionDialogMessage="Please allow the app to access your camera."
+                  permissionDialogMessage="Bitte erlauben Sie der App, auf die Kamera zuzugreifen."
                   permissionDialogTitle="Info"
                   reactivate={false}
                   reactivateTimeout={0}
@@ -1563,7 +1563,7 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
                   }
                 }
               >
-                Please point the camera onto the qr-code.
+                Bitte richten Sie die Kamera auf den QR-Code.
               </Themed.Text>
             </View>
           </View>
@@ -1686,7 +1686,7 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
                   }
                 }
               >
-                Please point the camera onto the qr-code.
+                Bitte richten Sie die Kamera auf den QR-Code.
               </Text>
             </View>
           </View>

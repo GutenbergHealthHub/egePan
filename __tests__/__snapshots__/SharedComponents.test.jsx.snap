@@ -480,7 +480,7 @@ exports[`SHARED COMPONENTS: <RedirectModal /> can be rendered 1`] = `
           }
         >
           <View
-            accessibilityHint="Wechsle zum Standardbrowser, um die Seite zu öffnen"
+            accessibilityHint="Zum Standardbrowser wechseln, um die Seite zu öffnen"
             accessibilityLabel="Annehmen"
             accessibilityRole="button"
             accessibilityState={

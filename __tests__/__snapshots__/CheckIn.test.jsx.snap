@@ -816,101 +816,7 @@ exports[`CHECKIN RENDERING: <CheckInTiles /> can be rendered 1`] = `
         "justifyContent": "center",
       }
     }
-  >
-    <View
-      accessibilityRole="button"
-      accessible={true}
-      focusable={false}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#DADADA",
-          "borderRadius": 5,
-          "color": "white",
-          "display": "flex",
-          "height": 191.86046511627907,
-          "justifyContent": "center",
-          "margin": 23.25581395348837,
-          "opacity": 1,
-          "padding": 10,
-          "width": 305.2325581395349,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "justifyContent": "space-around",
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "overflow": "hidden",
-            }
-          }
-        >
-          <View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "transparent",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Text
-                allowFontScaling={false}
-                style={
-                  Array [
-                    Object {
-                      "color": "#FFFFFF",
-                      "fontSize": 24,
-                    },
-                    Object {
-                      "backgroundColor": "transparent",
-                      "marginBottom": 5,
-                    },
-                    Object {
-                      "fontFamily": "Material Icons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                    Object {},
-                  ]
-                }
-                testID="iconIcon"
-              >
-                
-              </Text>
-            </View>
-          </View>
-        </View>
-        <Text
-          style={
-            Object {
-              "color": "white",
-              "fontFamily": "IBMPlexSans-SemiBold",
-              "fontSize": 26.25,
-              "lineHeight": 35.625,
-              "textAlign": "center",
-            }
-          }
-        >
-          Button: Send out Special Report
-        </Text>
-      </View>
-    </View>
-  </View>
+  />
 </View>
 `;
 
@@ -994,7 +900,7 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
             }
           }
         >
-          Questionnaire
+          Fragebogen
         </Text>
         <View
           style={
