@@ -53,7 +53,7 @@ class SummaryScreen extends React.Component {
       parseInt(questionnaireItemMap["1.3.5"].answer.code, 10) +
       parseInt(questionnaireItemMap["1.3.6"].answer.code, 10);
 
-    // this.setState({ scores: { ...scores } });
+    this.setState({ scores: { ...scores } });
   };
 
   render() {
