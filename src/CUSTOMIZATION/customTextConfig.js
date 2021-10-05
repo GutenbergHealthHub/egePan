@@ -50,7 +50,7 @@ export default {
 
 		"accept": "Annehmen",
 		"cancel": "Abbrechen",
-		"acceptHint": "Wechsle zum Standardbrowser, um die Seite zu öffnen",
+		"acceptHint": "Zum Standardbrowser wechseln, um die Seite zu öffnen",
 
 		"menu": "Zusätzliche Informationen",
 		"menuHint": "Öffnet eine neue Seite mit zusätzlichen Informationen und Links",
@@ -101,10 +101,10 @@ export default {
 		"waiting":"Sie werden eingeloggt...",
 		"errorPass":"Please try again.",
 		"noSubjectId":"no valid subjectId found",
-		"errorUserUnauthorized":"Invalid user data.",
-		"qrInfo":"Please point the camera onto the qr-code.",
-		"errorUserGeneric":"Beim Login ist ein Fehler aufgetreten",
-		"permissionDialog":"Please allow the app to access your camera.",
+		"errorUserUnauthorized":"Ungültige Nutzerdaten",
+		"qrInfo":"Bitte richten Sie die Kamera auf den QR-Code.",
+		"errorUserGeneric":"Beim Login ist ein Fehler aufgetreten.",
+		"permissionDialog":"Bitte erlauben Sie der App, auf die Kamera zuzugreifen.",
 		"studyIdHint":"Probanden-ID eingeben",
 
 		/** contains all strings of the landing-screen */
@@ -133,7 +133,7 @@ export default {
 		"sendError":"Beim Übermitteln der Daten ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
 		"eraseAllWarning":"This will delete all local data. Do you want to precede?",
 		"updateError":"Beim Abfragen der Daten ist ein Fehler aufgetreten. Bitte versuchen sie es erneut.",
-		"infoRemoval":"Der aktuell gespeicherte Fragebogen ist obsolet und wird  nun gelöscht.",
+		"infoRemoval":"Der aktuell gespeicherte Fragebogen ist veraltet und wird nun gelöscht.",
 		"reportWhileInIteratedMode":"Dialog to tell the user that he already sent in a special report and that he is right now on a special interval.",
 		"reportWhileQuestionnaire":"Dialog to tell the user that currently a questionnaire is available and that he might use that one to report about his condition.",
 	},
@@ -172,18 +172,18 @@ export default {
 	},
 
 	/** strings of the survey-screen */
-	"survery":{
+	"survey":{
 		"logout":"Ausloggen",
 		"title":"Fragebogen",
 		"isLoading":"Wird geladen...",
 		"yourAnswer":"Ihre Antwort",
 		"titleCheckIn":"Check-In",
-		/* TODO */"welcomeTitle":"[welcomeTitle: Titel nach Vollendung des ersten Fragebogens]",
+		"welcomeTitle":"Willkommen zurück in der S.A.M.-App",
 		"noUserTitle":"User not found",
 		"sendFinished":"Fragebogen abschicken",
 		"send":"Fragebogen abschicken",
 		"subTitle":"",
-		"surveySubTitle":"Auszufüllen bis:  ",
+		"surveySubTitle":"Bitte Füllen sie den aktuellen Fragebogen aus bis: ",
 		"surveyTitle":"Ihr aktueller Fragebogen",
 		"inputPlaceholder":"Bitte geben sie Ihre Antwort ein",
 		"noQuestionnaireTitle":"Fragebogen wurde nicht gefunden",
@@ -192,20 +192,20 @@ export default {
 		"inputPlaceholderTime":"Bitte Datum eingeben",
 		"sessionTimeout":"Your user could not re recognized",
 		"reloadingQuestionnaire":"Fragebogen wird erneut geladen",
-		/* TODO */"welcomeTitleFirstTime":"[welcomeTitleFirstTime: Titel bei erstmaligem Login]",
+		"welcomeTitleFirstTime":"Willkommen in der S.A.M.-App",
 		"surveryTitleFirstTime":"Ihr erster Fragebogen",
-		/* TODO */"welcomeTextFirstTimeUser2":"\n[welcomeTextFirstTimeUser2: (Optional) Weiterer Text, angezeigt für Nutzer nach erstmaliger Nutzung.]",
-		"noUserText":"Your ID could not be verified. Please try again.",
+		"welcomeTextFirstTimeUser2":"",
+		"noUserText":"Ihre ID konnte nicht verifiziert werden, Bitte versuche Sie es erneut.",
 		"noNewQuestionnaireAvailableYetTitle":"Kein Fragebogen verfügbar.",
 		"sendFinishedMessage":"Wollen Sie den Fragebogen wirklich abschicken?",
 		"sendUnfinishedMessageDenied":"Der aktuelle Fragebogen ist noch nicht vollständig ausgefüllt. Bitte beantworten Sie alle erforderlichen Fragen.",
-		"nextOne":"Der nächste Fragebogen ist zum folgenden Datum verfügbar: ",
+		"nextOne":"Der nächste Fragebogen kann ab dem folgenden Datum beantwortet werden: ",
 		"noQuestionnaireText":"Es gab einen Fehler beim Abrufen des Fragebogens. Bitte versuchen Sie es erneut.",
 		"noNewQuestionnaireAvailableYet":"Zurzeit ist noch kein neuer Fragebogen zur Beantwortung verfügbar.",
 		"nextOneNew":"Der nächste Fragebogen ist zum folgenden Datum verfügbar: ",
-		/* TODO */"furtherInfo":"[furtherInfo: Im \"Über\"-Bereich finden Sie ihre Probanden-ID. Bitte notieren Sie sich diese, damit Sie sich erneut anmelden können, sollten sie ausgeloggt werden.]",
-		/* TODO */"welcomeTextUser":"[welcomeTextUser: Willkommenstext bei weiterer Nutzung; Hinweis auf die Frist des aktuellen Fragebogens]",
-		/* TODO */"welcomeTextFirstTimeUser1":"[welcomeTextFirstTimeUser1: Text, der Nutzern bei erstmaliger Nutzung angezeigt wird; Hinweis zur Frist:]\n",
+		"furtherInfo":"Im Bereich \"Über die S.A.M.-App\" finden Sie Ihre Probanden-ID. Bitte notieren Sie sich diese, damit Sie sich erneut anmelden können, sollten Sie ausgeloggt werden. ",
+		"welcomeTextUser":"Es liegt ein Fragebogen zu Beantwortung vor. Bitte bis zum folgenden Datum ausfüllen und abschicken: ",
+		"welcomeTextFirstTimeUser1":"Wir laden Sie herzlich ein, Ihren ersten Fragebogen bis zum folgenden Datum auszufüllen: ",
 	},
 
 	/** strings for the special-report-flow */
@@ -250,20 +250,12 @@ export default {
 	 */
 	"modalLinks": [
 		{
-			"title":"First Link",
-			"subTitle": "This is a regular link. It will open a modal before redirecting the user to his/her own browser."	,
-			"text": "your are now being redirected.",
-			"uri": 'https://github.blog/',
+			"title":"EAP Unimed",
+			"subTitle": "Homepage des EAP Unimed-Projekts"	,
+			"text": "Sie werden nun weitergeleitet",
+			"uri": 'https://www.unimedizin-mainz.de/eap/',
 			"iconTitle": "link",
 			"iconType": "entypo"
 		},
-		{
-			"title":"Second Link",
-	   		"subTitle": "For each item you add to the 'modalLinks' property of textConfig.js another entry in this list is generated.",
-			"text": "your are now being redirected.",
-			"uri": 'https://ibm.com/',
-			"iconTitle": "link",
-			"iconType": "entypo"
-		}
 	]
 }
