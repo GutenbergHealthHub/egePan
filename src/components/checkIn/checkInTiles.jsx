@@ -48,7 +48,6 @@ class CheckInTiles extends PureComponent {
       questionnaireItemMap,
       user,
       exportAndUploadQuestionnaireResponse,
-      sendReport,
       deleteLocalDataAndLogout
     } = this.props;
     return (
@@ -87,33 +86,6 @@ class CheckInTiles extends PureComponent {
                 </TouchableOpacity>
               </View>
             )}
-
-          {/* the 'send report' button */}
-          {user?.status !== 'off-study' && (
-            <TouchableOpacity
-              onPress={sendReport}
-              // renders the button in grey if there is no questionnaire available
-              // or if the user already send out a report and is still on a special interval (additional_iterations_left will be greater than 0 if thats the case)
-              style={
-                noNewQuestionnaireAvailableYet ||
-                (user && user.additional_iterations_left > 0)
-                  ? localStyle.tile
-                  : localStyle.disabledTile
-              }
-              accessibilityRole={config.text.accessibility.types.button}
-            >
-              <View style={localStyle.buttonWrapper}>
-                <Icon
-                  name="error"
-                  color={config.theme.colors.white}
-                  iconStyle={localStyle.buttonIcon}
-                />
-                <Text style={localStyle.tileText}>
-                  {config.text.reporting.symptoms_header}
-                </Text>
-              </View>
-            </TouchableOpacity>
-          )}
 
           {/* the 'send report' button */}
           {user?.status === 'off-study' && config.appConfig.allowRemovalOfDataAtEndOfStudy && (
