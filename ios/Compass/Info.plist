@@ -8,12 +8,14 @@
 	<string>S.A.M.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>S.A.M.</string>
+	<string>SAM</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -22,6 +24,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -43,6 +47,8 @@
 	<string>Wir müssen auf Ihre Kamera zugreifen um den QR-Code lesen zu können. Vielen Dank.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Allow Compass experiences to access your contacts</string>
+	<key>NSHumanReadableCopyright</key>
+	<string></string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Allow Compass to access your microphone</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
