@@ -56,7 +56,7 @@ const traverseItem = (item, questionnaireItemMap) => {
  * @param  {any} questionnaire a FHIR questionnaire
  * @param  {any} subjectId subjectId of the user
  */
-const generateQuestionnaireItemMap = (questionnaire, subjectId) => {
+const generateQuestionnaireItemMap = (questionnaire, questionnaireId, subjectId) => {
   const questionnaireItemMap = {};
 
   // triggers the item-generation
@@ -71,7 +71,7 @@ const generateQuestionnaireItemMap = (questionnaire, subjectId) => {
   // used to determine if the questionnaire was even opened
   questionnaireItemMap.started = false;
   // used to identify the questionnaire
-  questionnaireItemMap.constructedId = `${questionnaire.url}|${questionnaire.version}`;
+  questionnaireItemMap.constructedId = questionnaireId;
   questionnaireItemMap.url = questionnaire.url;
   questionnaireItemMap.version = questionnaire.version;
   // used to build the questionnaire-response
@@ -297,7 +297,8 @@ const valuesHandlers = {
     // generates the questionnaireItemMap
     const questionnaireItemMap = generateQuestionnaireItemMap(
       values.questionnaire,
-      state.user.subjectId
+      state.user.current_questionnaire_id,
+      state.user.subjectId,
     );
 
     // generates the categories
