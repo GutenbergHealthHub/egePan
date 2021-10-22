@@ -13,52 +13,62 @@ import localStorage from "../../services/localStorage/localStorage";
 actions
 ***********************************************************************************************/
 
-
-export const setId = id => ({
-	type: 'SET_ID',
-	id	
-})
+export const setId = (id) => ({
+  type: "SET_ID",
+  id,
+});
 
 /**
- * 
+ *
  * @returns just a redux message
  */
- export const requestCredentrialsStart = () => ({
-	type: 'REQUEST_CREDENTIALS_START'
+export const requestCredentrialsStart = () => ({
+  type: "REQUEST_CREDENTIALS_START",
 });
 
 /**
  * process received data
- * 
+ *
  * @param {string} userId the id for the user
- * @param {object} session session data 
+ * @param {object} session session data
  */
 export const requestCredentialsSuccess = (subjectId, session) => ({
-	type: 'REQUEST_CREDENTIALS_SUCCESS',
-	subjectId,
-	session: session || null
+  type: "REQUEST_CREDENTIALS_SUCCESS",
+  subjectId,
+  session: session || null,
 });
 
-export const requestCredentialsFail = error => ({
-	type: 'REQUEST_CREDENTIALS_FAIL',
-	error
-})
+export const requestCredentialsFail = (error) => ({
+  type: "REQUEST_CREDENTIALS_FAIL",
+  error,
+});
 
 /**
  * request userid during initial login
  */
-export const requestCredentials = () => async dispatch =>  {
-	dispatch(requestCredentrialsStart());
-	await guestClient.requestCredentials().then((res) => {
-		localStorage.persistLastSubjectId(res.data.subject_id)
-		const session = {
-			accessToken: res.data.session ? res.data.session.accessToken : res.data.subject_id,
-			recipientCertificatePemString: res.data.session ? res.data.session.recipient_certificate_pem_string : config.appConfig.defaultRecipientCertificatePemString }
-		setTimeout(() => dispatch(requestCredentialsSuccess(res.data.subject_id, session)), 0)
-	}).catch((err) => {
-		dispatch(requestCredentialsFail(err))
-	})
-}
+export const requestCredentials = () => async (dispatch) => {
+  dispatch(requestCredentrialsStart());
+  await guestClient
+    .requestCredentials()
+    .then((res) => {
+      localStorage.persistLastSubjectId(res.data.subject_id);
+      const session = {
+        accessToken: res.data.session
+          ? res.data.session.accessToken
+          : res.data.subject_id,
+        recipientCertificatePemString: res.data.session
+          ? res.data.session.recipient_certificate_pem_string
+          : config.appConfig.defaultRecipientCertificatePemString,
+      };
+      setTimeout(
+        () => dispatch(requestCredentialsSuccess(res.data.subject_id, session)),
+        0
+      );
+    })
+    .catch((err) => {
+      dispatch(requestCredentialsFail(err));
+    });
+};
 
 /**
  * just a redux message
@@ -129,19 +139,23 @@ export const sendCredentials =
           // reactivates the camera
           if (camera) camera.reactivate();
           // persists the error
-          dispatch(sendCredentialsFail({
-            loginError: err.error ?? textConf.login.errorUserGeneric,
-            loginUnauthorized: err.error?.response?.status === 401
-          }));
+          dispatch(
+            sendCredentialsFail({
+              loginError: err.error ?? textConf.login.errorUserGeneric,
+              loginUnauthorized: err.error?.response?.status === 401,
+            })
+          );
         });
     } else {
       // reactivates the camera
       if (camera) camera.reactivate();
       // persists a generic error
-      dispatch(sendCredentialsFail({
-        loginError: textConf.login.noSubjectId,
-        loginUnauthorized: false
-      }));
+      dispatch(
+        sendCredentialsFail({
+          loginError: textConf.login.noSubjectId,
+          loginUnauthorized: false,
+        })
+      );
     }
   };
 

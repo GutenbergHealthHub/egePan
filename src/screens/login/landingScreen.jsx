@@ -38,7 +38,7 @@ class LandingScreen extends Component {
 	}
 
   render() {
-    const { loading, navigation, actions, manualId, loginError } = this.props;
+    const { loading, navigation, actions, manualId, loginError, autoLoginLastUser } = this.props;
     const {checked} = this.state;
     return (
       <View style={localStyle.wrapper}>
@@ -58,7 +58,31 @@ class LandingScreen extends Component {
         <View style={{ ...localStyle.flexi, ...localStyle.wrapper }}>
           <ScrollIndicatorWrapper
             contentData={
-              <View style={localStyle.wrapper}>
+              loginError ? (
+                <View style={localStyle.wrapper}>
+                  <View style={localStyle.top}>
+                    <Text style={localStyle.titleText}>
+                      {config.text.login.landing.autoLoginErrorTitle}
+                    </Text>
+                    <Text style={localStyle.infoText}>
+                      {config.text.login.landing.autoLoginError}
+                    </Text>
+                  </View>
+                  <View style={localStyle.bottom}>
+                    <TouchableOpacity
+                      style={localStyle.button}
+                      onPress={() => autoLoginLastUser()}
+                      accessibilityLabel={config.text.login.landing.retry}
+                      accessibilityRole={config.text.accessibility.types.Button}
+                      accessibilityHint={config.text.accessibility.retryHint}
+                    >
+                      <Text style={localStyle.buttonLabel}>
+                        {config.text.login.landing.retry}
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>):
+              (<View style={localStyle.wrapper}>
                 {/* top elements title & text */}
                 <View style={localStyle.top}>
                   <Text style={localStyle.titleText}>
@@ -118,7 +142,7 @@ class LandingScreen extends Component {
 											/>
 									</View>
                 </View>
-              </View>
+              </View>)
             }
           />
         </View>

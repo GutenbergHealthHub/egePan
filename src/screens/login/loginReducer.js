@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 // (C) Copyright IBM Deutschland GmbH 2021.  All rights reserved.
 
 /***********************************************************************************************
@@ -100,12 +101,10 @@ const actionHandlers = {
    */
   SEND_CREDENTIALS_FAIL: (state, values) => ({
     ...state,
-    loginError: values.error,
+    loginError: values.error.loginError,
+    loginUnauthorized: values.error.loginUnauthorized,
+    subjectId: null,
     loading: false,
-    loginUnauthorized:
-      values.error.response &&
-      values.error.response.status &&
-      values.error.response.status === 401,
   }),
 
   /**
