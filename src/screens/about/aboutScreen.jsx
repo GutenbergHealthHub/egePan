@@ -65,7 +65,10 @@ class AboutScreen extends PureComponent {
                 {/* holds the list-items */}
                 <View style={localStyle.wrapper}>
                   {/* Display the users id */}
-                  <ListItem containerStyle={localStyle.containerStyle}>
+                  <ListItem
+                    containerStyle={localStyle.containerStyle}
+                    selectable
+                  >
                     <ListItem.Content>
                       <ListItem.Title style={localStyle.title}>
                         {config.text.about.userIdTitle}
@@ -116,7 +119,6 @@ class AboutScreen extends PureComponent {
                       {/* the icon on the right-hand-side */}
                     </ListItem>
                   )}
-
                   {/* iterates over all items in config.text.wevViews */}
                   {config.text.webViews.map((webView) => (
                     // navigates to the webview screen
