@@ -5,13 +5,21 @@ imports
 ***********************************************************************************************/
 
 import React, { PureComponent } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Linking,
+} from "react-native";
 
 import config from "../../config/configProvider";
 import Banner from "../../components/banner/banner";
 import ScrollIndicatorWrapper from "../../components/scrollIndicatorWrapper/scrollIndicatorWrapper";
 
 let localStyle;
+
+const Licenses = require("../../assets/files/licenses.json");
 
 /***********************************************************************************************
 component:
@@ -51,6 +59,43 @@ class LegalInformationScreen extends PureComponent {
                   </Text>
                   <Text style={localStyle.infoText}>
                     {config.text.legalInformation.content}
+                  </Text>
+                  <Text style={localStyle.title}>
+                    {config.text.legalInformation.licenses.title}
+                  </Text>
+                  {Object.entries(Licenses).map((license) => (
+                    <View
+                      style={localStyle.licenseItem}
+                      key={license[1].licenseUrl}
+                    >
+                      <Text style={localStyle.licenseItemTitle}>
+                        {license[0]}
+                      </Text>
+                      <TouchableOpacity
+                        onPress={() =>
+                          Linking.openURL(
+                            license[1].licenseUrl.replace("/master/", "/HEAD/")
+                          )
+                        }
+                      >
+                        <Text>Lizenz(en): {license[1].licenses}</Text>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity
+                        onPress={() => Linking.openURL(license[1].repository)}
+                      >
+                        <Text style={localStyle.link}>Quelle</Text>
+                      </TouchableOpacity>
+                    </View>
+                  ))}
+                  <Text style={localStyle.infoText}>
+                    {config.text.legalInformation.licenses.ApacheLicense}
+                  </Text>
+                  <Text style={localStyle.infoText}>
+                    {config.text.legalInformation.licenses.MITLicense}
+                  </Text>
+                  <Text style={localStyle.infoText}>
+                    {config.text.legalInformation.licenses.BSD3License}
                   </Text>
                 </View>
               }
@@ -100,6 +145,7 @@ localStyle = StyleSheet.create({
     alignSelf: "auto",
     color: config.theme.colors.accent4,
     ...config.theme.fonts.body,
+    fontSize: 12,
   },
 
   titleText: {
@@ -107,6 +153,17 @@ localStyle = StyleSheet.create({
     textAlign: "center",
     alignSelf: "center",
     ...config.theme.fonts.header2,
+  },
+  licenseItem: {
+    width: "80%",
+    paddingVertical: 7,
+  },
+  licenseItemTitle: {
+    fontWeight: "600",
+    paddingBottom: 3,
+  },
+  link: {
+    color: config.theme.colors.primary,
   },
 });
 

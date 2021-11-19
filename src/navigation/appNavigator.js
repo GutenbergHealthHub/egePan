@@ -50,38 +50,38 @@ const SignedOutView = createStackNavigator({
 // creates the stack-navigator for the navigation while LOGGED IN
 
 const SignedInView = createStackNavigator(
-	{
-		CheckIn: {
-			screen: CheckIn,
-			navigationOptions: defaultNavigationStyle
-		},
-		Survey: {
-			screen: CheckIn,
-			navigationOptions: defaultNavigationStyle
-		},
-		Summary: {
-			screen:  CheckIn,
-			navigationOptions: defaultNavigationStyle
-		},
-		About: {
-			screen: About,
-			navigationOptions: defaultNavigationStyle
-		},
-		WebView: {
-			screen: About,
-			navigationOptions: defaultNavigationStyle
-		},
-		LegalInformation: {
-			screen: About,
-			navigationOptions: defaultNavigationStyle
-		}
-	},
-	{
-		defaultNavigationOptions: {
-			...TransitionPresets.SlideFromRightIOS,
-		}
-	}
-)
+  {
+    CheckIn: {
+      screen: CheckIn,
+      navigationOptions: defaultNavigationStyle,
+    },
+    Survey: {
+      screen: CheckIn,
+      navigationOptions: defaultNavigationStyle,
+    },
+    Summary: {
+      screen: CheckIn,
+      navigationOptions: defaultNavigationStyle,
+    },
+    About: {
+      screen: About,
+      navigationOptions: defaultNavigationStyle,
+    },
+    WebView: {
+      screen: About,
+      navigationOptions: defaultNavigationStyle,
+    },
+    LegalInformation: {
+      screen: About,
+      navigationOptions: defaultNavigationStyle,
+    },
+  },
+  {
+    defaultNavigationOptions: {
+      ...TransitionPresets.SlideFromRightIOS,
+    },
+  }
+);
 
 /**
  * creates the app container based on the two stack-navigators

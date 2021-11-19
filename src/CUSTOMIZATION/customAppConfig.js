@@ -1,29 +1,28 @@
-
 // (C) Copyright IBM Deutschland GmbH 2021.  All rights reserved.
 
 // the object provided by this file will be merged with the return-object of the module "appConfig.js".
 // should you want to update a value from that file (for example a rest-endpoint),
 // than copy the content of 'src/config/appConfig.js' below the marked comment at the end of this file.
-// this ensures that you do not need to touch the rest of the source code and because of that, you won't loose 
+// this ensures that you do not need to touch the rest of the source code and because of that, you won't loose
 // the ability to merge updated from the repository.
 
-//   /$$                                           /$$                                     /$$          
-//  |__/                                          | $$                                    | $$          
-//   /$$ /$$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$  /$$$$$$          /$$$$$$$  /$$$$$$   /$$$$$$$  /$$$$$$ 
+//   /$$                                           /$$                                     /$$
+//  |__/                                          | $$                                    | $$
+//   /$$ /$$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$  /$$$$$$          /$$$$$$$  /$$$$$$   /$$$$$$$  /$$$$$$
 //  | $$| $$__  $$ /$$_____/ /$$__  $$ /$$__  $$|_  $$_/         /$$_____/ /$$__  $$ /$$__  $$ /$$__  $$
 //  | $$| $$  \ $$|  $$$$$$ | $$$$$$$$| $$  \__/  | $$          | $$      | $$  \ $$| $$  | $$| $$$$$$$$
 //  | $$| $$  | $$ \____  $$| $$_____/| $$        | $$ /$$      | $$      | $$  | $$| $$  | $$| $$_____/
 //  | $$| $$  | $$ /$$$$$$$/|  $$$$$$$| $$        |  $$$$/      |  $$$$$$$|  $$$$$$/|  $$$$$$$|  $$$$$$$
-//  |__/|__/  |__/|_______/  \_______/|__/         \___/         \_______/ \______/  \_______/ \_______/                          
-//                                                                                                                                                                                               
-//   /$$                 /$$                                                                            
-//  | $$                | $$                                                                            
-//  | $$$$$$$   /$$$$$$ | $$  /$$$$$$  /$$  /$$  /$$                                                    
-//  | $$__  $$ /$$__  $$| $$ /$$__  $$| $$ | $$ | $$                                                    
-//  | $$  \ $$| $$$$$$$$| $$| $$  \ $$| $$ | $$ | $$                                                    
-//  | $$  | $$| $$_____/| $$| $$  | $$| $$ | $$ | $$                                                    
-//  | $$$$$$$/|  $$$$$$$| $$|  $$$$$$/|  $$$$$/$$$$/                                                    
-//  |_______/  \_______/|__/ \______/  \_____/\___/                                                     
+//  |__/|__/  |__/|_______/  \_______/|__/         \___/         \_______/ \______/  \_______/ \_______/
+//
+//   /$$                 /$$
+//  | $$                | $$
+//  | $$$$$$$   /$$$$$$ | $$  /$$$$$$  /$$  /$$  /$$
+//  | $$__  $$ /$$__  $$| $$ /$$__  $$| $$ | $$ | $$
+//  | $$  \ $$| $$$$$$$$| $$| $$  \ $$| $$ | $$ | $$
+//  | $$  | $$| $$_____/| $$| $$  | $$| $$ | $$ | $$
+//  | $$$$$$$/|  $$$$$$$| $$|  $$$$$$/|  $$$$$/$$$$/
+//  |_______/  \_______/|__/ \______/  \_____/\___/
 
 /***********************************************************************************************
                                     ADD BELOW THIS COMMENT
@@ -43,7 +42,8 @@ const { width } = Dimensions.get("window");
 const baseUriProductive = "https://egepan-dev.izks-mainz.de/api/";
 
 // development-base-backend-uri
-const baseUriDevelopment = "https://egepan-dev.izks-mainz.de/api/";
+// const baseUriDevelopment = "https://egepan-dev.izks-mainz.de/api/";
+const baseUriDevelopment = "http://localhost:8080/api/";
 
 /***********************************************************************************************
 configuration
@@ -144,28 +144,28 @@ const conf = {
    * the id of the last active questionnaire of the last active user */
   lastQuestionnaireId: "@EGEPAN__STORE:last_questionnaire_id",
 
-  	/** local storage identifier:
-	 * persists all relevant information about the notification-service */
-	FCMToken: '@COMPASS_STORE:fcm_token',
+  /** local storage identifier:
+   * persists all relevant information about the notification-service */
+  FCMToken: "@COMPASS_STORE:fcm_token",
 
-	// push notification
-	/*-----------------------------------------------------------------------------------*/
+  // push notification
+  /*-----------------------------------------------------------------------------------*/
 
-	/** push:
-	 * if set to true the app tries to connect to a FCM instance that in turn will be able 
-	 * to send out push notifications reminding the participants to open the app. 
-	 * 
-	 * To establish the connections three other files must be updated:
-	 * - AppDelegate.m // comment-in line 25
-	 * - google-services.json // replace with your FCM credentials
-	 * - GoogleService-Info.plist replace with your FCM credentials
-	 * 
-	 * WARNING: The app will NOT build if those files are not updated accordingly.
-	 * */
-	connectToFCM: true,
+  /** push:
+   * if set to true the app tries to connect to a FCM instance that in turn will be able
+   * to send out push notifications reminding the participants to open the app.
+   *
+   * To establish the connections three other files must be updated:
+   * - AppDelegate.m // comment-in line 25
+   * - google-services.json // replace with your FCM credentials
+   * - GoogleService-Info.plist replace with your FCM credentials
+   *
+   * WARNING: The app will NOT build if those files are not updated accordingly.
+   * */
+  connectToFCM: true,
 
-	// updates the locally generated device token with the backend on each user update
-	reconnectOnEachUserUpdate: false,
+  // updates the locally generated device token with the backend on each user update
+  reconnectOnEachUserUpdate: false,
 
   // rest endpoints
   /*-----------------------------------------------------------------------------------*/
@@ -176,29 +176,33 @@ const conf = {
   endpoints: {
     /** rest:
      * endpoint to log the user in and retrieve the accessToken */
-    login: `${__DEV__ ? baseUriDevelopment : baseUriProductive  }participant/`,
+    login: `${__DEV__ ? baseUriDevelopment : baseUriProductive}participant/`,
 
     /** rest:
      * endpoint to get the user-profile */
-    getUser: `${__DEV__ ? baseUriDevelopment : baseUriProductive  }participant/`,
+    getUser: `${__DEV__ ? baseUriDevelopment : baseUriProductive}participant/`,
 
     /** rest:
      * endpoint for a special report */
-    report: `${__DEV__ ? baseUriDevelopment : baseUriProductive  }queue/`,
+    report: `${__DEV__ ? baseUriDevelopment : baseUriProductive}queue/`,
 
     /** rest:
      * endpoint to post the questionnaire to */
-    sendQuestionnaire:
-      `${__DEV__ ? baseUriDevelopment : baseUriProductive  }queue/`,
+    sendQuestionnaire: `${
+      __DEV__ ? baseUriDevelopment : baseUriProductive
+    }queue/`,
 
     /** rest:
      * endpoint to receive the questionnaire */
-    getQuestionnaire:
-      `${__DEV__ ? baseUriDevelopment : baseUriProductive  }questionnaire/`,
+    getQuestionnaire: `${
+      __DEV__ ? baseUriDevelopment : baseUriProductive
+    }questionnaire/`,
 
     /** rest:
-		 * endpoint to receive the questionnaire */
-		updateToken: `${__DEV__ ? baseUriDevelopment : baseUriProductive  }participant/update-device-token/`,
+     * endpoint to receive the questionnaire */
+    updateToken: `${
+      __DEV__ ? baseUriDevelopment : baseUriProductive
+    }participant/update-device-token/`,
   },
 
   // ui
@@ -210,16 +214,16 @@ const conf = {
    */
   allowAccessToLegalInformationScreen: true,
 
-	/** ui:
-	* adds a progressbar to the bottom of the questionnaireModal
-	*/
-	useProgressBar: true,
+  /** ui:
+   * adds a progressbar to the bottom of the questionnaireModal
+   */
+  useProgressBar: true,
 
-	/** ui:
-	* when true: calculates the exact position of the progress in relation to the given answers.
-	* when false: uses absolute values to calculate the position.
-	*/
-	useStrictModeProgressBar: true,
+  /** ui:
+   * when true: calculates the exact position of the progress in relation to the given answers.
+   * when false: uses absolute values to calculate the position.
+   */
+  useStrictModeProgressBar: true,
 
   /**
    * the font-scaling function:
@@ -247,7 +251,6 @@ const conf = {
    * @param  {number} [rescaleValue] value used as an additional scale
    */
   scaleUiFkt: (size, rescaleValue = 1) => {
-
     // scales certain ui parts dynamically down for smaller devices
     const scaleUi = true;
 
@@ -301,41 +304,42 @@ const conf = {
 		  20ClX5Ccxcn4BVa3x1U+fVOZ7Fm/ACR2++fmpFWlCeghtRr4QNoMzqNY/3mK4SLr
 		  hqHSzFGp8HN2Ui5QWVSu7DgLIvkW
 		  -----END CERTIFICATE-----`
-   : // the prod-certificate
+    : // the prod-certificate
       `-----BEGIN CERTIFICATE-----
-      MIIGDDCCA/QCCQCZiGco81PYezANBgkqhkiG9w0BAQsFADCBxzELMAkGA1UEBhMC
-      REUxGDAWBgNVBAgMD1JoZWlubGFuZC1QZmFsejEOMAwGA1UEBwwFTWFpbnoxJTAj
-      BgNVBAoMHFVuaXZlcnNpdMODwqR0c21lZGl6aW4gTWFpbnoxHTAbBgNVBAsMFEd1
-      dGVuYmVyZyBIZWFsdGggSHViMSAwHgYDVQQDDBdnaGgudW5pbWVkaXppbi1tYWlu
-      ei5kZTEmMCQGCSqGSIb3DQEJARYXZ2hoQHVuaW1lZGl6aW4tbWFpbnouZGUwHhcN
-      MjEwNTMxMDgzMzQ1WhcNMjQwNTMwMDgzMzQ1WjCBxzELMAkGA1UEBhMCREUxGDAW
-      BgNVBAgMD1JoZWlubGFuZC1QZmFsejEOMAwGA1UEBwwFTWFpbnoxJTAjBgNVBAoM
-      HFVuaXZlcnNpdMODwqR0c21lZGl6aW4gTWFpbnoxHTAbBgNVBAsMFEd1dGVuYmVy
-      ZyBIZWFsdGggSHViMSAwHgYDVQQDDBdnaGgudW5pbWVkaXppbi1tYWluei5kZTEm
-      MCQGCSqGSIb3DQEJARYXZ2hoQHVuaW1lZGl6aW4tbWFpbnouZGUwggIiMA0GCSqG
-      SIb3DQEBAQUAA4ICDwAwggIKAoICAQDEi+rGrGLJlYngoZN6E1FqsMfvp+Pw5CQJ
-      yNo4aONyLlfBFPMbF84oFiCba0JSJuphiD2p3sGYfZ0r+YfUe0Qf+ctfRvvuWpxo
-      5PH4wd4w/UZHfBk+D9drybxA2/ztfUBgq0QGz+dvJAk2XScD8qGTt0KTR6GvTnvv
-      85zVQSoEEbdRccMwOIfmdmdbHBsny4QvpEq+eR9h81bYUorcjhC+ybZCnR1i3yJn
-      n1tNeuExPSLhhA7zU12W/0l1dCcwJu6RnLOjpbAgst7CHpxySs+9y/CM0mp6K16e
-      29VhqQeP6IrpOAUlJMW9BCHo8q+M7TgFnlRdY7ZIDM05zZQApFzpQri5kcCBaZmE
-      UjwX4F8WCqFitRMbi5dOB+jmnUQ6Jq6QjZ3HAwCFLRdkpIIR1FcN5Yrj9IF/kM0d
-      KqJbY+YJSBQJV3t+Y4g/chZC0qDQ8wE+QEW2H6XSG8Rcw2LFGtHAn2C/gOPa7RPH
-      8GljIahP+Yr6yccAwUHEdbmmlczzBvmyYRwCkPr0A4khPanqadaDPjYp1ABqnQT8
-      2nhLk/7eyZzgk+K7eOr+5N7Qo8dQO3YqH72Gyu6T88KINki8nshuzptrqrcCFBO5
-      tMq2Mj7PcQodieF7SFP8Hgfwii7d0PssmpaN9AedMb79bu1KG72uWFjlKnfB/yeE
-      NFmeNkbffQIDAQABMA0GCSqGSIb3DQEBCwUAA4ICAQCLB2qC2CGNe2XRiwbA0keW
-      msyyteJ9vWPU405Ey7C+mGFDiugUIoINFQOIRGsFY5E7jL/+55C464ZfHAD/8Vc+
-      QKWnDSRLFO8u2uMihdDG+4wKshrlemEJn+Q0r7xBdCJHLT+w2ZnI7hFmO6ABi8Gt
-      J9FVf65/DX4x7ztmWx6U2d3hKf0IZvIW9wZQJsRTB6gELIvHPoFxBGdEMlUqo9AA
-      QtTmiBPw2fxsX51GU61JUWxgu0O9ZI48dib7GCtxtqBI/B8hS4QumxCHGR2lET7p
-      9SpJTHdBzvtqvBWdtuEwwCT5YmvkT2O0W3pEVkMCaJp3Ih7c8j+DxS2h1fkS1Qoy
-      iZCBV1H+rfbCNUj8fDczv6Ftaoe4N4chpqHZqTrAVvK3qseQuuDqaUbWuCf/SyyI
-      Zg5IGYKzg4M2L7ah4KoJKIX5miVhoo6UwxXjrHn6g9oCB9T6SwpTc307I3nZC6+T
-      yfth6vGW1BickkL9z4CBC/VSJPdbRvMtaZWZg7iMzzKlkYqcA9IxOgZlISCpI86r
-      FHKVyyllvg6ocKFY2r2fYFG6JX3kYa72Y7k0AZX6HpHL2q4O+DpSR+HpI6v3O8PB
-      u3s22UYNDvm1inusoVZgjawEHN5pD9Er4iJ1gimtPNK8eDhWyF22cN00kdM1MRs6
-      fFIBLXm3S8hNxAYRPO0aYg==
+      MIIGSTCCBDGgAwIBAgIJALS94tmbCBH3MA0GCSqGSIb3DQEBCwUAMIG6MQswCQYD
+      VQQGEwJERTEYMBYGA1UECAwPUmhlaW5sYW5kLVBmYWx6MQ4wDAYDVQQHDAVNYWlu
+      ejElMCMGA1UECgwcVW5pdmVyc2l0w4PCpHRzbWVkaXppbiBNYWluejEdMBsGA1UE
+      CwwUR3V0ZW5iZXJnIEhlYWx0aCBIdWIxEzARBgNVBAMMCmRlLnVtbS5naGgxJjAk
+      BgkqhkiG9w0BCQEWF2doaEB1bmltZWRpemluLW1haW56LmRlMB4XDTIxMTEwMjE0
+      NDQ1NloXDTIyMTEwMjE0NDQ1NlowgboxCzAJBgNVBAYTAkRFMRgwFgYDVQQIDA9S
+      aGVpbmxhbmQtUGZhbHoxDjAMBgNVBAcMBU1haW56MSUwIwYDVQQKDBxVbml2ZXJz
+      aXTDg8KkdHNtZWRpemluIE1haW56MR0wGwYDVQQLDBRHdXRlbmJlcmcgSGVhbHRo
+      IEh1YjETMBEGA1UEAwwKZGUudW1tLmdoaDEmMCQGCSqGSIb3DQEJARYXZ2hoQHVu
+      aW1lZGl6aW4tbWFpbnouZGUwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoIC
+      AQCqG7EjTJxmzX95TBGsDunj68ieC/NOAR2tCa6gVUtMnldsOKcYqJmz7NzDNFaY
+      QE0XtyNqaM8MYzqKxct6kGYMbHlicrg1hsuj0LN2lsMa8r5DddcLd9mmUzK9BRzb
+      Gia31KtYNrmVLxTr6HqiWB1heclHl2YOY34Qk8Z4RK7vGOZ9LTtJC/cz0p1wOEPx
+      jjg23Fa6a/x1QH140wTHqNDZQUiTkzjCSuNgyzTsGkV8mggCe0pDyHKIeZp0JYqn
+      /Yd9Rl/BVIuwq3gFAjPcHHhCV6/PRlfEsW7XVeYYGvQoPKFDBygV5KDDemL12FB/
+      3eH4befqW1X7ny9jBJpE0vPdKyPBRg9Y+RRH83UV6b5O4J9z7UKt71Qv3/vhOuMC
+      2kNjLCHxSLb++6ObZtYf5Yr8PNs/HTSrDXkAuYMQ61LSmpamewoRBxk+SLkOEoqj
+      A4mAyQGuO9HbAqPgHrbEL4bGoC9jJ5qw+YsOdP+ayI9I4vE2Y2RBQrcYax4I9I4k
+      UO3WF42u6/I740+zHcqectZvJsYJSbVqOmjeuMWrJxb1Rf/9K2KCqp89rn/NnWXh
+      OcaERUWYqYc0zItJ/5/UgM8vq87IOTIu1frdgb6rU+SsYhNXZUtCw/WSIelYHS/p
+      BXamH5OOIsRZMO8qOoKDpYkSM45qr6bmP8U1RhsIuvq4KwIDAQABo1AwTjAdBgNV
+      HQ4EFgQU5+B8aEh7GnwUg0YBY+EAL1xbLc0wHwYDVR0jBBgwFoAU5+B8aEh7GnwU
+      g0YBY+EAL1xbLc0wDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAgEApOna
+      PrPKvGX+k6D4Kw1Pen3U5P3a1k4RqP+W1WIQWy/fNlllT5B+EPgmNyPNxzs4QmiQ
+      PhrTNSy++ZQ/k2M7Ckvo1JO3HU9XH01nzss3dKNYzZro41VerUMArm60s13lB7Yx
+      JTFE4MetNGdwmhndMhG+xDCheYAJ6auDVJfoib0yeXURvIevMLULSFk4CY2UKZaE
+      OBNww8W8g8E+JXhY3Nmj2dRiks/wF/02HAxyi4wsW/Abk0MHGBA864Xzx00atvwN
+      Zl/0DouLdeJF8Qe5FiCiMEOMXXpLTlRy8mMfzocUQ3fxANmkD6PnUG/loxevx8ZT
+      cMtzvYd29fLS81OPleR0+3ZNx3luDZFrRxpztTU/GNGpAAYnzk0lDg01Z1i12QXX
+      MeeZQDpnh3KJQLt+goZDNDxe3LexZuTZkJZoAqVIoOWDcr0GkKuKD/+5S4aA7OQQ
+      A2DRw+DVeHF7lZ/w8PTPtQb8s1Vwlbhi3WTxfgQkFIOdhuW/qEcN3xoYCf91dh+6
+      YU38E4IkxWRcIjux2UJBZiTnkWfpYjh3ZLDL7jyrKEcxsJl1aW4sHLH8Nh2QsL1y
+      XS+GP11zJce5q/Wp4iPt4pXjUaZCs0lEXEcATdP3k/5aCnRgw2g8wWfOCpNN8Lgl
+      1Q4NWU5cjE+b8FhEmxC6SZQriQcXLQR5+ybtM3Y=
       -----END CERTIFICATE-----`,
 };
 

@@ -1,4 +1,5 @@
 {
+  "name": "egepan",
   "scripts": {
     "start": "react-native start",
     "android": "react-native run-android",
@@ -9,7 +10,7 @@
     "test:watch": "jest --watchAll --verbose",
     "test": "jest --verbose",
     "coverage": "jest --collectCoverage",
-    "postinstall": "patch-package && jetify",
+    "postinstall": "patch-package && npm-license-crawler -onlyDirectDependencies -json ./src/assets/files/licenses.json",
     "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=19001'",
     "clean_install_macos": "watchman watch-del-all && rm -rf node_modules && npm i --legacy-peer-deps && cd ios && rm -rf Pods && rm -rf Podfile.lock && pod install && cd ..",
     "clean_install_windows": "npm i rimraf --no-save && npx rimraf node_modules && npm i --legacy-peer-deps",

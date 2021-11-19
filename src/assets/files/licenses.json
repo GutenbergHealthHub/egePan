@@ -1,0 +1,176 @@
+{
+    "@react-native-community/datetimepicker@3.5.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-native-community/datetimepicker",
+        "licenseUrl": "https://github.com/react-native-community/datetimepicker/raw/master/LICENSE.md",
+        "parents": "egepan"
+    },
+    "@react-native-community/masked-view@0.1.11": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-native-community/react-native-masked-view",
+        "licenseUrl": "https://github.com/react-native-community/react-native-masked-view",
+        "parents": "egepan"
+    },
+    "@react-native-community/slider@4.1.7": {
+        "licenses": "MIT",
+        "repository": "https://github.com/callstack/react-native-slider",
+        "licenseUrl": "https://github.com/callstack/react-native-slider",
+        "parents": "egepan"
+    },
+    "@react-native-firebase/app@12.8.0": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/invertase/react-native-firebase/tree/master/packages/app",
+        "licenseUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/app/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "@react-native-firebase/messaging@12.8.0": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/invertase/react-native-firebase/tree/master/packages/messaging",
+        "licenseUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/messaging/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "@react-native-picker/picker@2.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-native-picker/picker",
+        "licenseUrl": "https://github.com/react-native-picker/picker/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "axios@0.21.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/axios/axios",
+        "licenseUrl": "https://github.com/axios/axios/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "buffer@6.0.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/feross/buffer",
+        "licenseUrl": "https://github.com/feross/buffer/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "node-forge@0.10.0": {
+        "licenses": "(BSD-3-Clause OR GPL-2.0)",
+        "repository": "https://github.com/digitalbazaar/forge",
+        "licenseUrl": "https://github.com/digitalbazaar/forge/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-native-camera@4.2.1": {
+        "licenses": "MIT AND Apache-2.0 AND BSD-3-Clause",
+        "repository": "https://github.com/react-native-community/react-native-camera",
+        "licenseUrl": "https://github.com/react-native-community/react-native-camera/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-native-elements@3.4.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-native-elements/react-native-elements",
+        "licenseUrl": "https://github.com/react-native-elements/react-native-elements/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-native-encrypted-storage@4.0.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/emeraldsanto/react-native-encrypted-storage",
+        "licenseUrl": "https://github.com/emeraldsanto/react-native-encrypted-storage/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-native-gesture-handler@1.10.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/software-mansion/react-native-gesture-handler",
+        "licenseUrl": "https://github.com/software-mansion/react-native-gesture-handler/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-native-modal@13.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-native-community/react-native-modal",
+        "licenseUrl": "https://github.com/react-native-community/react-native-modal/raw/master/LICENSE.md",
+        "parents": "egepan"
+    },
+    "react-native-permissions@3.0.5": {
+        "licenses": "MIT",
+        "repository": "https://github.com/zoontek/react-native-permissions",
+        "licenseUrl": "https://github.com/zoontek/react-native-permissions/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-native-qrcode-scanner@1.5.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/moaazsidat/react-native-qrcode-scanner",
+        "licenseUrl": "https://github.com/moaazsidat/react-native-qrcode-scanner/raw/master/LICENSE.md",
+        "parents": "egepan"
+    },
+    "react-native-safe-area-context@3.3.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/th3rdwave/react-native-safe-area-context",
+        "licenseUrl": "https://github.com/th3rdwave/react-native-safe-area-context/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-native-splash-screen@3.2.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/crazycodeboy/react-native-splash-screen",
+        "licenseUrl": "https://github.com/crazycodeboy/react-native-splash-screen/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-native-vector-icons@8.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/oblador/react-native-vector-icons",
+        "licenseUrl": "https://github.com/oblador/react-native-vector-icons/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-native-webview@11.13.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-native-webview/react-native-webview",
+        "licenseUrl": "https://github.com/react-native-webview/react-native-webview/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-native@0.64.2": {
+        "licenses": "MIT",
+        "repository": "github:facebook/react-native",
+        "licenseUrl": "github:facebook/react-native",
+        "parents": "egepan"
+    },
+    "react-navigation-stack@2.10.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-navigation/react-navigation-stack",
+        "licenseUrl": "https://github.com/react-navigation/react-navigation-stack/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-navigation@4.4.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-navigation/react-navigation",
+        "licenseUrl": "https://github.com/react-navigation/react-navigation/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "react-redux@7.2.5": {
+        "licenses": "MIT",
+        "repository": "github:reduxjs/react-redux",
+        "licenseUrl": "github:reduxjs/react-redux",
+        "parents": "egepan"
+    },
+    "react@17.0.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/facebook/react",
+        "licenseUrl": "https://github.com/facebook/react/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "redux-devtools-extension@2.13.9": {
+        "licenses": "MIT",
+        "repository": "https://github.com/zalmoxisus/redux-devtools-extension",
+        "licenseUrl": "https://github.com/zalmoxisus/redux-devtools-extension",
+        "parents": "egepan"
+    },
+    "redux-logger@3.0.6": {
+        "licenses": "MIT",
+        "repository": "https://github.com/theaqua/redux-logger",
+        "licenseUrl": "https://github.com/theaqua/redux-logger/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "redux-thunk@2.3.0": {
+        "licenses": "MIT",
+        "repository": "github:reduxjs/redux-thunk",
+        "licenseUrl": "github:reduxjs/redux-thunk",
+        "parents": "egepan"
+    },
+    "redux@4.1.1": {
+        "licenses": "MIT",
+        "repository": "github:reduxjs/redux",
+        "licenseUrl": "github:reduxjs/redux",
+        "parents": "egepan"
+    }
+}
