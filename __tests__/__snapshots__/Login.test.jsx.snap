@@ -299,6 +299,8 @@ exports[`LOGIN RENDERING: <LandingScreen /> can be rendered 1`] = `
                 <ForwardRef(Themed.Input)
                   accessibilityHint="Bitte geben Sie Ihre Probanden-ID ein, sofern sie bereits registriert sind"
                   accessibilityLabel="Probanden-ID eingeben"
+                  autoCapitalize="none"
+                  autoCorrect={false}
                   containerStyle={
                     Object {
                       "width": "80%",
@@ -579,6 +581,8 @@ exports[`LOGIN RENDERING: <LandingScreen /> can be rendered 1`] = `
                       accessibilityHint="Bitte geben Sie Ihre Probanden-ID ein, sofern sie bereits registriert sind"
                       accessibilityLabel="Probanden-ID eingeben"
                       allowFontScaling={true}
+                      autoCapitalize="none"
+                      autoCorrect={false}
                       editable={true}
                       onChangeText={[MockFunction]}
                       placeholder="Probanden-ID eingeben"
