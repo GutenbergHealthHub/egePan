@@ -30,6 +30,8 @@ jobs:
           ${{ runner.OS }}-
     - name: install npm
       run: npm install -g npm@latest
+    - name: install license crawler
+      run: npm install -g npm-license-crawler
     - name: install node dependencies
       run: npm ci
       env:
@@ -60,6 +62,8 @@ jobs:
           ${{ runner.OS }}-
     - name: install npm
       run: npm install -g npm@latest
+    - name: install license crawler
+      run: npm install -g npm-license-crawler
     - name: install node dependencies
       run: npm ci
       env:
