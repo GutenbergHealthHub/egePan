@@ -224,7 +224,7 @@ class SummaryScreen extends React.Component {
                 5-8 ist ein neutraler Wert. Eine Ausprägung von 9 oder mehr ist
                 ein kritischer Wert. In einer vorangegangenen Studie aus
                 Deutschland lag der mittlere Wert in der Allgemeinbevölkerung
-                bei 4,8)3.
+                bei 4,8).
               </Text>
               <Text style={localStyle.title}>Burnout:</Text>
               <Text style={{ ...localStyle.p }}>
@@ -247,7 +247,7 @@ class SummaryScreen extends React.Component {
                   minimumTrackTintColor={config.theme.colors.accent1}
                   maximumTrackTintColor={config.theme.colors.accent1}
                   accessibilityHint={`6${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr wenig ängstlich${config.text.accessibility.questionnaire.sliderFieldAnd}30${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr ängstlich`}
-                  value={scores.anxiety}
+                  value={scores.burnout}
                   thumbProps={{
                     children: (
                       <View style={localStyle.thumbContainer}>
