@@ -115,8 +115,6 @@ class AboutScreen extends PureComponent {
                           size: 12,
                         }}
                       />
-
-                      {/* the icon on the right-hand-side */}
                     </ListItem>
                   )}
                   {/* iterates over all items in config.text.wevViews */}
@@ -140,6 +138,34 @@ class AboutScreen extends PureComponent {
                       modalLink={_modalLink}
                     />
                   ))}
+                  <ListItem
+                    containerStyle={localStyle.containerStyle}
+                    onPress={() => navigation.navigate("Help")}
+                  >
+                    {/* title & subtitle of the listItem - the strings a identified by the webView*/}
+                    <ListItem.Content>
+                      <ListItem.Title style={localStyle.title}>
+                        Hilfe in Notfällen
+                      </ListItem.Title>
+
+                      <ListItem.Subtitle style={localStyle.subTitle}>
+                        Hilfangebote & Kontaktstellen
+                      </ListItem.Subtitle>
+                    </ListItem.Content>
+
+                    {/* the icon on the right-hand-side */}
+                    <ListItem.Chevron
+                      {...{
+                        type: config.text.about.legal.iconType,
+                        name: config.text.about.legal.iconTitle,
+                        color: config.theme.values.legalListLinkIconColor,
+                        reverse: true,
+                        size: 12,
+                      }}
+                    />
+
+                    {/* the icon on the right-hand-side */}
+                  </ListItem>
                 </View>
 
                 {/* optional buttons on the bottom of the screen - JUST FOR DEVELOPMENT*/}
