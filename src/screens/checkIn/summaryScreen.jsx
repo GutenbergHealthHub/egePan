@@ -177,6 +177,16 @@ class SummaryScreen extends React.Component {
                 <Text style={localStyle.sliderTextMin}>0</Text>
                 <Text style={localStyle.sliderTextMax}>6</Text>
               </View>
+              <Text style={localStyle.p}>
+                Was bedeutet das?
+                {"\n\n"}
+                Eine Ausprägung von unter 3 ist neutraler Wert, eine Ausprägung
+                von 3 oder mehr ist ein kritischer Wert. In einer
+                vorangegangenen Studie aus Deutschland während der
+                COVID-19-Pandemie im Jahr 2020 lag der mittlere Wert in der
+                Allgemeinbevölkerung bei 1,05 (Männer: 0,89; Frauen: 1,19)1. Im
+                Jahr 2018 lag er bei 0,77 (Männer: 0,68; Frauen: 0,85).
+              </Text>
               <Text style={localStyle.title}>Stresserleben:</Text>
               <Text style={{ ...localStyle.p }}>
                 Als negatives Stresserleben bezeichnen wir körperlichen und
