@@ -164,12 +164,16 @@ const sendQuestionnaire = async (
  * @param  {string} questionnaireId id of the questionnaire that the user is supposed to fill out
  */
 const getBaseQuestionnaire = async (questionnaireId) =>
-  axios.get(config.appConfig.endpoints.getQuestionnaire + questionnaireId, {
-    headers: {
-      Authorization: createAuthorizationToken(),
-      Accept: "application/json",
-    },
-  });
+  axios.get(
+    config.appConfig.endpoints.getQuestionnaire +
+      encodeURIComponent(questionnaireId),
+    {
+      headers: {
+        Authorization: createAuthorizationToken(),
+        Accept: "application/json",
+      },
+    }
+  );
 
 /***********************************************************************************************
 export
