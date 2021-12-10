@@ -145,7 +145,7 @@ localStyle = StyleSheet.create({
     color: config.theme.colors.primary,
     justifyContent: "center",
     textAlign: "center",
-    paddingVertical: 5,
+    paddingVertical: 10,
   },
 });
 export default HelpScreen;
