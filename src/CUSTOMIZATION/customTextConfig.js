@@ -312,7 +312,7 @@ export default {
       iconType: "entypo",
     },
     {
-      title: "Tipps zum Ugang mit der Pandemie",
+      title: "Tipps zum Umgang mit der Pandemie",
       subTitle:
         "Tipps und Empfehlungen zum Umgang mit den psychischen Folgen der Corona-Pandemie",
       text: "Sie werden nun weitergeleitet",

@@ -189,7 +189,7 @@ class SummaryScreen extends React.Component {
               </Text>
               <Text style={localStyle.title}>Stresserleben:</Text>
               <Text style={{ ...localStyle.p }}>
-                Als negatives Stresserleben bezeichnen wir körperlichen und
+                Als negatives Stresserleben bezeichnen wir die körperlichen und
                 seelischen Belastungen, die erlebt werden, wenn man
                 Anforderungen ausgesetzt ist.
                 {"\n\n"}
