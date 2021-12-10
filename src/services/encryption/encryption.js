@@ -21,7 +21,7 @@ encryption
 const encrypt = (messageToBeEncrypted) => {
   // TODO: remove workaround
   let pemString =
-    store?.getState().Login?.session?.recipientCertificatePemString;
+    store?.getState().CheckIn?.user?.recipient_certificate_pem_string;
   pemString =
     pemString === "false" || !pemString
       ? config.appConfig.defaultRecipientCertificatePemString
