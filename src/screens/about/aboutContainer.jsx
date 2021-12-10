@@ -15,6 +15,7 @@ import AboutScreen from "./aboutScreen";
 import WebViewScreen from "./webViewScreen";
 import LegalInformationScreen from "./legalInformationScreen";
 import * as aboutActions from "./aboutActions";
+import HelpScreen from "./helpScreen";
 
 /***********************************************************************************************
 component:
@@ -92,27 +93,28 @@ class AboutContainer extends Component {
 
   render() {
     const { navigation, showModal, modalLink, actions } = this.props;
-    // checks if the currently selected route equals 'About'
-    if (navigation.state.routeName === "About") {
-      // then renders the About Screen
-      return (
-        <AboutScreen
-          navigation={navigation}
-          logout={this.logout}
-          clearAll={this.clearAll}
-          showModal={showModal}
-          modalLink={modalLink}
-          actions={actions}
-        />
-      );
+    switch (navigation.state.routeName) {
+      case "About":
+        return (
+          <AboutScreen
+            navigation={navigation}
+            logout={this.logout}
+            clearAll={this.clearAll}
+            showModal={showModal}
+            modalLink={modalLink}
+            actions={actions}
+          />
+        );
+      case "LegalInformation": // then renders the LegalInformation Screen
+        return <LegalInformationScreen navigation={navigation} />;
+      case "Webview":
+        // if on WebView route
+        return <WebViewScreen navigation={navigation} />; // if on WebView route
+      case "Help":
+        return <HelpScreen navigation={navigation} />;
+      default:
+        return <></>;
     }
-    // checks if the currently selected route equals 'LegalInformation'
-    if (navigation.state.routeName === "LegalInformation") {
-      // then renders the LegalInformation Screen
-      return <LegalInformationScreen navigation={navigation} />;
-    }
-    // if on WebView route
-    return <WebViewScreen navigation={navigation} />;
   }
 }
 

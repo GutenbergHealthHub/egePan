@@ -269,26 +269,7 @@ export default {
    * as this app is using react-native-elements, the list of compatible fonts can be found in its documentation:
    * https://reactnativeelements.com/docs/icon
    */
-  webViews: [
-    {
-      title: "A WebView",
-      subTitle:
-        "This is a listItem Element.\n\nIf clicked on, this ListItem will open the WebView-screen, which in turn will render a website right in the app.",
-      screenSubTitle: "Subtitle of this screen",
-      uri: "https://github.blog/",
-      iconTitle: "light-bulb",
-      iconType: "entypo",
-    },
-    {
-      title: "Another WebView",
-      subTitle:
-        "For each item you add to the 'webView' property of textConfig.js another entry in this list is generated. That way you can add more content by just hosting a website and add it to textConfig.js",
-      screenSubTitle: "Subtitle of this screen",
-      uri: "https://dmw.hih-2025.de/livestream/",
-      iconTitle: "light-bulb",
-      iconType: "entypo",
-    },
-  ],
+  webViews: [],
 
   /** each entry in this array will generate a new listItem on the about-screen. When clicked on such an item, a modal will open
    * that informs the user that he/she is being redirected to their local browser. "iconType" is the name of a free Webfont and the title is the name of the particular icon. .
@@ -301,6 +282,41 @@ export default {
       subTitle: "Homepage des EAP Unimed-Projekts",
       text: "Sie werden nun weitergeleitet",
       uri: "https://www.unimedizin-mainz.de/eap/",
+      iconTitle: "link",
+      iconType: "entypo",
+    },
+    {
+      title: "Übergreifende Beratungsangebote",
+      subTitle: "weiterführende übergreifende Beratung",
+      text: "Sie werden nun weitergeleitet",
+      uri: "https://www.unimedizin-mainz.de/eap/beratungsangebote.html",
+      iconTitle: "link",
+      iconType: "entypo",
+    },
+    {
+      title: "Resilienzambulanz",
+      subTitle:
+        "Resilienz-Ambulanz des Leibniz-Institutes für Resilienzforschung (LIR)",
+      text: "Sie werden nun weitergeleitet",
+      uri: "https://www.unimedizin-mainz.de/eap/beratungsangebote_kliniken.html",
+      iconTitle: "link",
+      iconType: "entypo",
+    },
+    {
+      title: "LIR - Beratungsangebote",
+      subTitle:
+        "Angebote des LIR  zu Workshops und Vorträgen zur betrieblichen Gesundheitsförderung",
+      text: "Sie werden nun weitergeleitet",
+      uri: "https://lir-mainz.de/oe-hr-beratung",
+      iconTitle: "link",
+      iconType: "entypo",
+    },
+    {
+      title: "Tipps zum Ugang mit der Pandemie",
+      subTitle:
+        "Tipps und Empfehlungen zum Umgang mit den psychischen Folgen der Corona-Pandemie",
+      text: "Sie werden nun weitergeleitet",
+      uri: "https://lir-mainz.de/corona-uebersicht",
       iconTitle: "link",
       iconType: "entypo",
     },
