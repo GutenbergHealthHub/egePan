@@ -103,6 +103,7 @@ class CheckInScreen extends PureComponent {
                     <CheckInTiles
                       user={user}
                       loading={loading}
+                      navigation={navigation}
                       categoriesLoaded={categoriesLoaded}
                       sendReport={sendReport}
                       deleteLocalDataAndLogout={deleteLocalDataAndLogout}

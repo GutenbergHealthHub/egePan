@@ -47,66 +47,80 @@ class CheckInTiles extends PureComponent {
       loading,
       questionnaireItemMap,
       user,
+      navigation,
       exportAndUploadQuestionnaireResponse,
-      deleteLocalDataAndLogout
+      deleteLocalDataAndLogout,
     } = this.props;
     return (
-
       <View style={localStyle.tileWrapper}>
         {/* checks if the user is still on the study */}
-        {<View style={localStyle.tileContainer}>
-          {/* if there is a completed questionnaire render the button to transmit the it*/}
-          {!noNewQuestionnaireAvailableYet &&
-            categoriesLoaded &&
-            user?.status !== 'off-study' &&
-            !loading &&
-            questionnaireItemMap.done && (
-              <View>
+        {
+          <View style={localStyle.tileContainer}>
+            {/* if there is a completed questionnaire render the button to transmit the it*/}
+            {!noNewQuestionnaireAvailableYet &&
+              categoriesLoaded &&
+              user?.status !== "off-study" &&
+              !loading &&
+              questionnaireItemMap.done && (
+                <View>
+                  <TouchableOpacity
+                    style={{ ...localStyle.tile, ...localStyle.buttonGreen }}
+                    disabled={user && noNewQuestionnaireAvailableYet}
+                    onPress={() => {
+                      if (
+                        user.current_questionnaire_id.indexOf("weekly") >= 0
+                      ) {
+                        navigation.navigate("Summary");
+                      } else {
+                        exportAndUploadQuestionnaireResponse();
+                      }
+                    }}
+                    accessibilityLabel={config.text.survey.send}
+                    accessibilityRole={config.text.accessibility.types.button}
+                    accessibilityHint={
+                      config.text.accessibility.questionnaire.sendHint
+                    }
+                  >
+                    <View style={localStyle.buttonWrapper}>
+                      <Icon
+                        name="school"
+                        color={config.theme.colors.white}
+                        iconStyle={localStyle.buttonIcon}
+                      />
+
+                      <Text style={localStyle.tileText}>
+                        {config.text.survey.send}
+                      </Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              )}
+
+            {/* the 'send report' button */}
+            {user?.status === "off-study" &&
+              config.appConfig.allowRemovalOfDataAtEndOfStudy && (
                 <TouchableOpacity
-                  style={{ ...localStyle.tile, ...localStyle.buttonGreen }}
-                  disabled={user && noNewQuestionnaireAvailableYet}
-                  onPress={exportAndUploadQuestionnaireResponse}
-                  accessibilityLabel={config.text.survey.send}
+                  onPress={deleteLocalDataAndLogout}
+                  style={{
+                    ...localStyle.tile,
+                    ...localStyle.deleteAndLogoutTile,
+                  }}
                   accessibilityRole={config.text.accessibility.types.button}
-                  accessibilityHint={
-                    config.text.accessibility.questionnaire.sendHint
-                  }
                 >
                   <View style={localStyle.buttonWrapper}>
                     <Icon
-                      name="school"
+                      name="warning"
                       color={config.theme.colors.white}
                       iconStyle={localStyle.buttonIcon}
                     />
-
                     <Text style={localStyle.tileText}>
-                      {config.text.survey.send}
+                      {config.text.generic.eraseLocalDataAtEndOfStudyTitle}
                     </Text>
                   </View>
                 </TouchableOpacity>
-              </View>
-            )}
-
-          {/* the 'send report' button */}
-          {user?.status === 'off-study' && config.appConfig.allowRemovalOfDataAtEndOfStudy && (
-            <TouchableOpacity
-              onPress={deleteLocalDataAndLogout}
-              style={{...localStyle.tile, ...localStyle.deleteAndLogoutTile}}
-              accessibilityRole={config.text.accessibility.types.button}
-            >
-              <View style={localStyle.buttonWrapper}>
-                <Icon
-                  name="warning"
-                  color={config.theme.colors.white}
-                  iconStyle={localStyle.buttonIcon}
-                />
-                <Text style={localStyle.tileText}>
-                  {config.text.generic.eraseLocalDataAtEndOfStudyTitle}
-                </Text>
-              </View>
-            </TouchableOpacity>
-          )}
-        </View>}
+              )}
+          </View>
+        }
       </View>
     );
   }
@@ -148,7 +162,7 @@ localStyle = StyleSheet.create({
   },
 
   deleteAndLogoutTile: {
-    backgroundColor: config.theme.colors.alert
+    backgroundColor: config.theme.colors.alert,
   },
 
   disabledTile: {
