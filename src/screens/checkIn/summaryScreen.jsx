@@ -124,8 +124,10 @@ class SummaryScreen extends React.Component {
                 </View>
               </View>
               <View style={localStyle.sliderLabel}>
-                <Text style={localStyle.sliderTextMin}>0</Text>
-                <Text style={localStyle.sliderTextMax}>6</Text>
+                <Text style={localStyle.sliderTextMin}>
+                  0 (sehr wenig ängstlich)
+                </Text>
+                <Text style={localStyle.sliderTextMax}>6 (sehr ängstlich)</Text>
               </View>
               <Text style={localStyle.p}>
                 Was bedeutet das?
@@ -134,8 +136,8 @@ class SummaryScreen extends React.Component {
                 von 3 oder mehr ist ein kritischer Wert. In einer
                 vorangegangenen Studie aus Deutschland während der
                 COVID-19-Pandemie im Jahr 2020 lag der mittlere Wert in der
-                Allgemeinbevölkerung bei 1,05 (Männer: 0,89; Frauen: 1,19)1. Im
-                Jahr 2018 lag er bei 0,77 (Männer: 0,68; Frauen: 0,85).
+                Allgemeinbevölkerung bei 1,05 (Männer: 0,89; Frauen: 1,19) [1].
+                Im Jahr 2018 lag er bei 0,77 (Männer: 0,68; Frauen: 0,85)[1].
               </Text>
               <Text style={localStyle.title}>Depressivität</Text>
               <Text style={localStyle.p}>
@@ -174,8 +176,12 @@ class SummaryScreen extends React.Component {
                 </View>
               </View>
               <View style={localStyle.sliderLabel}>
-                <Text style={localStyle.sliderTextMin}>0</Text>
-                <Text style={localStyle.sliderTextMax}>6</Text>
+                <Text style={localStyle.sliderTextMin}>
+                  0 (sehr wenig depressiv)
+                </Text>
+                <Text style={localStyle.sliderTextMax}>
+                  6 (stark depressiv)
+                </Text>
               </View>
               <Text style={localStyle.p}>
                 Was bedeutet das?
@@ -184,8 +190,8 @@ class SummaryScreen extends React.Component {
                 von 3 oder mehr ist ein kritischer Wert. In einer
                 vorangegangenen Studie aus Deutschland während der
                 COVID-19-Pandemie im Jahr 2020 lag der mittlere Wert in der
-                Allgemeinbevölkerung bei 1,05 (Männer: 0,89; Frauen: 1,19)1. Im
-                Jahr 2018 lag er bei 0,77 (Männer: 0,68; Frauen: 0,85).
+                Allgemeinbevölkerung bei 1,05 (Männer: 0,89; Frauen: 1,19) [2].
+                Im Jahr 2018 lag er bei 0,77 (Männer: 0,68; Frauen: 0,85) [2].
               </Text>
               <Text style={localStyle.title}>Stresserleben:</Text>
               <Text style={{ ...localStyle.p }}>
@@ -223,8 +229,12 @@ class SummaryScreen extends React.Component {
                 </View>
               </View>
               <View style={localStyle.sliderLabel}>
-                <Text style={localStyle.sliderTextMin}>0</Text>
-                <Text style={localStyle.sliderTextMax}>16</Text>
+                <Text style={localStyle.sliderTextMin}>
+                  0 (sehr wenig gestresst)
+                </Text>
+                <Text style={localStyle.sliderTextMax}>
+                  16 (stark gestresst)
+                </Text>
               </View>
               <Text style={localStyle.p}>
                 Was bedeutet das?
@@ -234,7 +244,7 @@ class SummaryScreen extends React.Component {
                 5-8 ist ein neutraler Wert. Eine Ausprägung von 9 oder mehr ist
                 ein kritischer Wert. In einer vorangegangenen Studie aus
                 Deutschland lag der mittlere Wert in der Allgemeinbevölkerung
-                bei 4,8).
+                bei 4,8)[3].
               </Text>
               <Text style={localStyle.title}>Burnout:</Text>
               <Text style={{ ...localStyle.p }}>
@@ -273,8 +283,12 @@ class SummaryScreen extends React.Component {
                 </View>
               </View>
               <View style={localStyle.sliderLabel}>
-                <Text style={localStyle.sliderTextMin}>6</Text>
-                <Text style={localStyle.sliderTextMax}>30</Text>
+                <Text style={localStyle.sliderTextMin}>
+                  6 (sehr geringe Burnout-Symptome)
+                </Text>
+                <Text style={localStyle.sliderTextMax}>
+                  30 (sehr starke Burnout-Symptome)
+                </Text>
               </View>
               <Text style={localStyle.p}>
                 Was bedeutet das?
@@ -287,7 +301,7 @@ class SummaryScreen extends React.Component {
                 eingeordnet werden. Eine Ausprägung ab 22 ist ein
                 überdurchschnittlich hoher Wert. In einer vorangegangenen
                 deutschen Studie unter einem breiten Spektrum von Berufsgruppen
-                lag der mittlere Wert der Mitarbeitenden bei 124. Aufgrund der
+                lag der mittlere Wert der Mitarbeitenden bei 12[4]. Aufgrund der
                 zufälligen Schwankungen der Messungen kann das Ergebnis auch im
                 durchschnittlichen oder auffälligen Bereich liegen.
               </Text>
@@ -369,6 +383,126 @@ class SummaryScreen extends React.Component {
                 zuständigen psychiatrischen Klinik vorstellen für ein ambulantes
                 Beratungsgespräch oder die Planung einer stationären Behandlung.
               </Text>
+              <Text style={localStyle.p}>
+                Auf weitere Unterstützungsangebote können Sie über die folgenden
+                Links zugreifen:
+              </Text>
+              <Text style={localStyle.p}>
+                EAP (Employee Assistance Program):
+              </Text>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://www.unimedizin-mainz.de/eap/index.html"
+                  )
+                }
+              >
+                <Text style={localStyle.link}>
+                  https://www.unimedizin-mainz.de/eap/index.html
+                </Text>
+              </TouchableOpacity>
+              <Text style={localStyle.p}>Übergreifende Beratungsangebote:</Text>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://www.unimedizin-mainz.de/eap/beratungsangebote.html"
+                  )
+                }
+              >
+                <Text style={localStyle.link}>
+                  https://www.unimedizin-mainz.de/eap/beratungsangebote.html
+                </Text>
+              </TouchableOpacity>
+              <Text style={localStyle.p}>Beratungsangebote der Kliniken:</Text>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://www.unimedizin-mainz.de/eap/beratungsangebote_kliniken.html"
+                  )
+                }
+              >
+                <Text style={localStyle.link}>
+                  https://www.unimedizin-mainz.de/eap/beratungsangebote_kliniken.html
+                </Text>
+              </TouchableOpacity>
+              <Text style={localStyle.p}>
+                Resilienz-Ambulanz des Leibniz-Institutes für Resilienzforschung
+                (LIR):
+              </Text>
+              <TouchableOpacity
+                onPress={() => Linking.openURL("https://lir-mainz.de/ambulanz")}
+              >
+                <Text style={localStyle.link}>
+                  https://lir-mainz.de/ambulanz
+                </Text>
+              </TouchableOpacity>
+              <Text style={localStyle.p}>
+                Angebote des LIR zu Workshops und Vorträgen zur betrieblichen
+                Gesundheitsförderung:
+              </Text>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL("https://lir-mainz.de/oe-hr-beratung")
+                }
+              >
+                <Text style={localStyle.link}>
+                  https://lir-mainz.de/oe-hr-beratung
+                </Text>
+              </TouchableOpacity>
+              <Text style={localStyle.p}>
+                Tipps und Empfehlungen zum Umgang mit den psychischen Folgen der
+                Corona-Pandemie:
+              </Text>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL("https://lir-mainz.de/corona-uebersicht")
+                }
+              >
+                <Text style={localStyle.link}>
+                  https://lir-mainz.de/corona-uebersicht
+                </Text>
+              </TouchableOpacity>
+              <View style={localStyle.divider} />
+              <Text style={[localStyle.p, localStyle.footnote]}>
+                [1] nach dem Kurzfragebogen Generalized Anxiety Disorder 2
+                (GAD-2), Kroenke K, Spitzer RL, Williams JB, Löwe B. An
+                ultra-brief screening scale for anxiety and depression: the
+                PHQ-4. Psychosomatics. 2009 Nov-Dec;50(6):613-21;
+                Vergleichswerte aus Beutel ME., Hettich N, Ernst M et al. Mental
+                health and loneliness in the German general population during
+                the COVID-19 pandemic compared to a representative pre-pandemic
+                assessment. Sci Rep. 2021 Jul; 11, 14946;
+              </Text>
+              <Text style={[localStyle.p, localStyle.footnote]}>
+                [2] nach dem Kurzfragebogen Patient Health Questionnaire 2
+                (PHQ-2), Kroenke K, Spitzer RL, Williams JB, Löwe B. An
+                ultra-brief screening scale for anxiety and depression: the
+                PHQ-4. Psychosomatics. 2009 Nov-Dec;50(6):613-21;
+                Vergleichswerte aus Beutel ME., Hettich N, Ernst M et al. Mental
+                health and loneliness in the German general population during
+                the COVID-19 pandemic compared to a representative pre-pandemic
+                assessment. Sci Rep. 2021 Jul; 11, 14946
+              </Text>
+              <Text style={[localStyle.p, localStyle.footnote]}>
+                [3] nach dem Kurzfragebogen Perceived Stress Scale 4 (PSS-4),
+                Cohen S, Kamarck T, & Mermelstein R (1983). A global measure of
+                perceived stress. Journal of Health and Social Behavior, 24,
+                385-396. Vergleichswerte aus dem Datensatz einer für die
+                Allgemeinbevölkerung in Deutschland repräsentative Studie: Klein
+                EM, Brähler E, Dreier M, Reinecke L, Müller KW, Schmutzer G,
+                Wölfling K, Beutel ME. The German version of the Perceived
+                Stress Scale - psychometric characteristics in a representative
+                German community sample. BMC Psychiatry. 2016 May 23;16:159.
+                doi: 10.1186/s12888-016-0875-9
+              </Text>
+              <Text style={[localStyle.p, localStyle.footnote]}>
+                [4] nach dem Kurzfragebogen Copenhagen Burnout Inventory 6
+                (CBI-6), Kristensen, T. S., Borritz, M., Villadsen, E., &
+                Christensen, K. B. (2005). The Copenhagen Burnout Inventory: A
+                new tool for the assessment of burnout. Work & Stress, 19(3),
+                192-207. Vergleichswerte aus einer repräsentative Studie in
+                Deutschland Rep (2009, in prep)
+              </Text>
             </View>
           }
         />
@@ -433,19 +567,20 @@ const localStyle = StyleSheet.create({
   sliderTextMax: {
     width: "33%",
     textAlign: "right",
-    fontSize: 16,
+    fontSize: 12,
   },
 
   sliderTextMin: {
     width: "33%",
     textAlign: "left",
-    fontSize: 16,
+    fontSize: 12,
   },
 
   sliderLabel: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
+    marginBottom: 10,
   },
 
   thumb: {
@@ -476,6 +611,17 @@ const localStyle = StyleSheet.create({
   link: {
     textDecorationLine: "underline",
     color: "blue",
+  },
+  divider: {
+    height: 1,
+    width: "80%",
+    alignSelf: "center",
+    backgroundColor: "black",
+    borderRadius: 0.5,
+    marginVertical: 10,
+  },
+  footnote: {
+    fontSize: 8,
   },
 });
 
