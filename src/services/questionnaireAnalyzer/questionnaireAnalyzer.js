@@ -789,7 +789,7 @@ const createResponseJSON = () => {
 
   return {
     triggerMap,
-    body: JSON.stringify(questionnaireResponse),
+    body: questionnaireResponse,
   };
 };
 
