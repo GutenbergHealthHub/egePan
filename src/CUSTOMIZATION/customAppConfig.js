@@ -38,8 +38,7 @@ constants
 const { width } = Dimensions.get("window");
 
 // production-base-backend-uri
-// TODO: add uri for production
-const baseUriProductive = "https://egepan-dev.izks-mainz.de/api/";
+const baseUriProductive = "https://egepan.izks-mainz.de/api/";
 
 // development-base-backend-uri
 // const baseUriDevelopment = "https://egepan-dev.izks-mainz.de/api/";
