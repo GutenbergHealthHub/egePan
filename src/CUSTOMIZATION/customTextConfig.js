@@ -165,7 +165,7 @@ export default {
     /** contains the strings for the optional LegalInformation Screen */
     legal: {
       title: "Rechtliche Informationen",
-      subTitle: "//TODO",
+      subTitle: "Nutzungsbedingungen und Lizenzen",
       iconType: "entypo",
       iconTitle: "archive",
     },

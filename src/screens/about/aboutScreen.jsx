@@ -73,10 +73,7 @@ class AboutScreen extends PureComponent {
                       <ListItem.Title style={localStyle.title}>
                         {config.text.about.userIdTitle}
                       </ListItem.Title>
-                      <ListItem.Subtitle
-                        style={localStyle.subtTitle}
-                        selectable
-                      >
+                      <ListItem.Subtitle style={localStyle.subTitle} selectable>
                         {store.getState().CheckIn.user.subjectId}
                       </ListItem.Subtitle>
                     </ListItem.Content>
@@ -88,35 +85,6 @@ class AboutScreen extends PureComponent {
                       size={12}
                     />
                   </ListItem>
-                  {/* links to the LegalInformationScreen */}
-                  {config.appConfig.allowAccessToLegalInformationScreen && (
-                    <ListItem
-                      containerStyle={localStyle.containerStyle}
-                      onPress={() => navigation.navigate("LegalInformation")}
-                    >
-                      {/* title & subtitle of the listItem - the strings a identified by the webView*/}
-                      <ListItem.Content>
-                        <ListItem.Title style={localStyle.title}>
-                          {config.text.about.legal.title}
-                        </ListItem.Title>
-
-                        <ListItem.Subtitle style={localStyle.subTitle}>
-                          {config.text.about.legal.subTitle}
-                        </ListItem.Subtitle>
-                      </ListItem.Content>
-
-                      {/* the icon on the right-hand-side */}
-                      <ListItem.Chevron
-                        {...{
-                          type: config.text.about.legal.iconType,
-                          name: config.text.about.legal.iconTitle,
-                          color: config.theme.values.legalListLinkIconColor,
-                          reverse: true,
-                          size: 12,
-                        }}
-                      />
-                    </ListItem>
-                  )}
                   {/* iterates over all items in config.text.wevViews */}
                   {config.text.webViews.map((webView) => (
                     // navigates to the webview screen
@@ -149,7 +117,7 @@ class AboutScreen extends PureComponent {
                       </ListItem.Title>
 
                       <ListItem.Subtitle style={localStyle.subTitle}>
-                        Hilfangebote & Kontaktstellen
+                        Hilfsangebote & Kontaktstellen
                       </ListItem.Subtitle>
                     </ListItem.Content>
 
@@ -166,6 +134,35 @@ class AboutScreen extends PureComponent {
 
                     {/* the icon on the right-hand-side */}
                   </ListItem>
+                  {/* links to the LegalInformationScreen */}
+                  {config.appConfig.allowAccessToLegalInformationScreen && (
+                    <ListItem
+                      containerStyle={localStyle.containerStyle}
+                      onPress={() => navigation.navigate("LegalInformation")}
+                    >
+                      {/* title & subtitle of the listItem - the strings a identified by the webView*/}
+                      <ListItem.Content>
+                        <ListItem.Title style={localStyle.title}>
+                          {config.text.about.legal.title}
+                        </ListItem.Title>
+
+                        <ListItem.Subtitle style={localStyle.subTitle}>
+                          {config.text.about.legal.subTitle}
+                        </ListItem.Subtitle>
+                      </ListItem.Content>
+
+                      {/* the icon on the right-hand-side */}
+                      <ListItem.Chevron
+                        {...{
+                          type: config.text.about.legal.iconType,
+                          name: config.text.about.legal.iconTitle,
+                          color: config.theme.values.legalListLinkIconColor,
+                          reverse: true,
+                          size: 12,
+                        }}
+                      />
+                    </ListItem>
+                  )}
                 </View>
 
                 {/* optional buttons on the bottom of the screen - JUST FOR DEVELOPMENT*/}
