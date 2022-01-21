@@ -25,7 +25,6 @@ use_react_native!(
   :hermes_enabled => false
 )
 
-  pod 'Permission-Camera', :path => "#{permissions_path}/Camera/Permission-Camera.podspec"
   pod 'Permission-Notifications', :path => "#{permissions_path}/Notifications/Permission-Notifications.podspec"
 
 post_install do |installer|

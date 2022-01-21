@@ -92,7 +92,7 @@ def enableSeparateBuildPerCPUArchitecture = false
 /**
  * Run Proguard to shrink the Java bytecode in release builds.
  */
-def enableProguardInReleaseBuilds = false
+def enableProguardInReleaseBuilds = true
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -103,8 +103,8 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         missingDimensionStrategy 'react-native-camera', 'general'
-        versionCode 7
-        versionName "1.0.1"
+        versionCode 15
+        versionName '1.0.0'
         manifestPlaceholders = [
                 appAuthRedirectScheme: "host.exp.exponent"
         ]
@@ -150,7 +150,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-}
+        provisional {
+        keyAlias 'provisional'
+            storeFile file('../../provisional.keystore')
+            storePassword 'provisionalpwd'
+        }
+    }
 }
 
 dependencies {
