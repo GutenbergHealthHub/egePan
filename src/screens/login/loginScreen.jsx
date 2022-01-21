@@ -768,6 +768,7 @@ class LoginScreen extends Component {
                   checked={tosAccepted}
                   uncheckedColor={config.theme.colors.white}
                   checkedColor={config.theme.colors.white}
+                  testID="tosCheckBox"
                 />
                 <Text style={[localStyle.b, localStyle.p]}>
                   Ich habe verstanden und bin ausdrücklich damit einverstanden,
@@ -792,6 +793,7 @@ class LoginScreen extends Component {
                   checked={pushEnabled}
                   uncheckedColor={config.theme.colors.white}
                   checkedColor={config.theme.colors.white}
+                  testID="pushCheckBox"
                 />
               </ScrollView>
             </ListItem.Accordion>
@@ -809,6 +811,7 @@ class LoginScreen extends Component {
               onPress={() => {
                 actions.requestCredentials();
               }}
+              testID="registerButton"
             >
               <Text style={localStyle.buttonLabel}>Jetzt registrieren</Text>
             </TouchableOpacity>

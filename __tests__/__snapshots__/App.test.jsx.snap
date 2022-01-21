@@ -403,48 +403,26 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                     }
                                   }
                                 >
-                                  <Themed.CheckBox
-                                    checked={false}
-                                    containerStyle={
-                                      Object {
-                                        "alignSelf": "center",
-                                        "backgroundColor": "white",
-                                        "borderColor": "#376991",
-                                        "borderRadius": 50,
-                                        "marginBottom": 10,
-                                        "width": "80%",
-                                      }
-                                    }
-                                    onPress={[Function]}
-                                    testID="tosButton"
-                                    title="Datenschutzbestimmungen akzeptieren"
-                                  />
                                   <ForwardRef
                                     accessibilityHint="Startet den Login-Prozess"
                                     accessibilityLabel="Registrieren"
                                     accessibilityRole="button"
-                                    activeOpacity={1}
                                     onPress={[Function]}
                                     style={
-                                      Array [
-                                        Object {
-                                          "alignSelf": "center",
-                                          "backgroundColor": "#376991",
-                                          "borderColor": "#376991",
-                                          "borderRadius": 50,
-                                          "borderWidth": 0,
-                                          "bottom": 0,
-                                          "padding": 15,
-                                          "paddingBottom": 26.162790697674417,
-                                          "paddingLeft": 26.162790697674417,
-                                          "paddingRight": 26.162790697674417,
-                                          "paddingTop": 26.162790697674417,
-                                          "width": "80%",
-                                        },
-                                        Object {
-                                          "backgroundColor": "#919191",
-                                        },
-                                      ]
+                                      Object {
+                                        "alignSelf": "center",
+                                        "backgroundColor": "#376991",
+                                        "borderColor": "#376991",
+                                        "borderRadius": 50,
+                                        "borderWidth": 0,
+                                        "bottom": 0,
+                                        "padding": 15,
+                                        "paddingBottom": 26.162790697674417,
+                                        "paddingLeft": 26.162790697674417,
+                                        "paddingRight": 26.162790697674417,
+                                        "paddingTop": 26.162790697674417,
+                                        "width": "80%",
+                                      }
                                     }
                                     testID="registerButton"
                                   >
@@ -597,85 +575,6 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                   }
                                 >
                                   <View
-                                    accessibilityRole="checkbox"
-                                    accessibilityState={
-                                      Object {
-                                        "checked": false,
-                                      }
-                                    }
-                                    accessible={true}
-                                    focusable={true}
-                                    onClick={[Function]}
-                                    onResponderGrant={[Function]}
-                                    onResponderMove={[Function]}
-                                    onResponderRelease={[Function]}
-                                    onResponderTerminate={[Function]}
-                                    onResponderTerminationRequest={[Function]}
-                                    onStartShouldSetResponder={[Function]}
-                                    style={
-                                      Object {
-                                        "alignSelf": "center",
-                                        "backgroundColor": "white",
-                                        "borderColor": "#376991",
-                                        "borderRadius": 50,
-                                        "borderWidth": 1,
-                                        "margin": 5,
-                                        "marginBottom": 10,
-                                        "marginLeft": 10,
-                                        "marginRight": 10,
-                                        "opacity": 1,
-                                        "padding": 10,
-                                        "width": "80%",
-                                      }
-                                    }
-                                    testID="tosButton"
-                                  >
-                                    <View
-                                      style={
-                                        Object {
-                                          "alignItems": "center",
-                                          "flexDirection": "row",
-                                        }
-                                      }
-                                    >
-                                      <Text
-                                        allowFontScaling={false}
-                                        style={
-                                          Array [
-                                            Object {
-                                              "color": "#bfbfbf",
-                                              "fontSize": 24,
-                                            },
-                                            Object {
-                                              "minWidth": 24,
-                                            },
-                                            Object {
-                                              "fontFamily": "FontAwesome",
-                                              "fontStyle": "normal",
-                                              "fontWeight": "normal",
-                                            },
-                                            Object {},
-                                          ]
-                                        }
-                                      >
-                                        
-                                      </Text>
-                                      <Text
-                                        style={
-                                          Object {
-                                            "color": "#43484d",
-                                            "fontWeight": "bold",
-                                            "marginLeft": 10,
-                                            "marginRight": 10,
-                                          }
-                                        }
-                                        testID="checkboxTitle"
-                                      >
-                                        Datenschutzbestimmungen akzeptieren
-                                      </Text>
-                                    </View>
-                                  </View>
-                                  <View
                                     accessibilityHint="Startet den Login-Prozess"
                                     accessibilityLabel="Registrieren"
                                     accessibilityRole="button"
@@ -691,7 +590,7 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                     style={
                                       Object {
                                         "alignSelf": "center",
-                                        "backgroundColor": "#919191",
+                                        "backgroundColor": "#376991",
                                         "borderColor": "#376991",
                                         "borderRadius": 50,
                                         "borderWidth": 0,
