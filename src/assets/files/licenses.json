@@ -35,7 +35,7 @@
         "licenseUrl": "https://github.com/react-native-picker/picker/raw/master/LICENSE",
         "parents": "egepan"
     },
-    "axios@0.21.4": {
+    "axios@0.25.0": {
         "licenses": "MIT",
         "repository": "https://github.com/axios/axios",
         "licenseUrl": "https://github.com/axios/axios/raw/master/LICENSE",
@@ -51,12 +51,6 @@
         "licenses": "(BSD-3-Clause OR GPL-2.0)",
         "repository": "https://github.com/digitalbazaar/forge",
         "licenseUrl": "https://github.com/digitalbazaar/forge/raw/master/LICENSE",
-        "parents": "egepan"
-    },
-    "react-native-camera@4.2.1": {
-        "licenses": "MIT AND Apache-2.0 AND BSD-3-Clause",
-        "repository": "https://github.com/react-native-community/react-native-camera",
-        "licenseUrl": "https://github.com/react-native-community/react-native-camera/raw/master/LICENSE",
         "parents": "egepan"
     },
     "react-native-elements@3.4.2": {
@@ -87,12 +81,6 @@
         "licenses": "MIT",
         "repository": "https://github.com/zoontek/react-native-permissions",
         "licenseUrl": "https://github.com/zoontek/react-native-permissions/raw/master/LICENSE",
-        "parents": "egepan"
-    },
-    "react-native-qrcode-scanner@1.5.4": {
-        "licenses": "MIT",
-        "repository": "https://github.com/moaazsidat/react-native-qrcode-scanner",
-        "licenseUrl": "https://github.com/moaazsidat/react-native-qrcode-scanner/raw/master/LICENSE.md",
         "parents": "egepan"
     },
     "react-native-safe-area-context@3.3.2": {
