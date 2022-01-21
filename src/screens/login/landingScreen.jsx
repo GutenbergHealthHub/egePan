@@ -4,15 +4,14 @@
 imports
 ***********************************************************************************************/
 
-import React, { Component } from "react";
-import { Text, Button, Input, CheckBox } from "react-native-elements";
+import React, { PureComponent } from "react";
+import { Text, Button, Input } from "react-native-elements";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 import config from "../../config/configProvider";
 import Banner from "../../components/banner/banner";
 import Spinner from "../../components/spinner/spinner";
 import ScrollIndicatorWrapper from "../../components/scrollIndicatorWrapper/scrollIndicatorWrapper";
-import theme from "../../theme/theme";
 
 let localStyle;
 
@@ -21,24 +20,12 @@ component:
 renders the landing-screen
 ***********************************************************************************************/
 
-class LandingScreen extends Component {
+class LandingScreen extends PureComponent {
   /**
    * @constructor
    * @param  {object}    props
    * @param  {object}    props.navigation the navigation object provided by 'react-navigation'
    */
-  constructor(props) {
-    super(props);
-    this.state = { checked: false };
-    this.handleCheck = this.handleCheck.bind(this);
-  }
-
-  handleCheck() {
-    this.setState((prevState) => ({
-      ...prevState,
-      checked: !prevState.checked,
-    }));
-  }
 
   render() {
     const {
@@ -49,7 +36,6 @@ class LandingScreen extends Component {
       loginError,
       autoLoginLastUser,
     } = this.props;
-    const { checked } = this.state;
     return (
       <View style={localStyle.wrapper}>
         {/* loading spinner */}
@@ -106,26 +92,11 @@ class LandingScreen extends Component {
 
                   {/* bottom login button */}
                   <View style={localStyle.bottom}>
-                    <CheckBox
-                      testID="tosButton"
-                      title="Datenschutzbestimmungen akzeptieren"
-                      checked={checked}
-                      onPress={this.handleCheck}
-                      containerStyle={localStyle.checkBoxContainer}
-                    />
                     <TouchableOpacity
                       testID="registerButton"
-                      activeOpacity={checked ? 0.2 : 1}
-                      style={
-                        checked
-                          ? localStyle.button
-                          : [
-                              localStyle.button,
-                              { backgroundColor: theme.colors.accent1 },
-                            ]
-                      }
+                      style={localStyle.button}
                       onPress={() => {
-                        if (checked) actions.requestCredentials();
+                        navigation.navigate("Login");
                       }}
                       accessibilityLabel={config.text.login.landing.buttonText}
                       accessibilityRole={config.text.accessibility.types.button}
