@@ -44,6 +44,21 @@
 				<true/>
 			</dict>
 		</dict>
+		<key>NSPinnedDomains</key>
+		<dict>
+			<key>secure.domain</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSPinnedLeafIdentities</key>
+				<array>
+					<dict>
+						<key>pin1</key>
+						<string>p6iGd8wdPq4Ux/IqE64B3A43g+WBYPWyua6duiCKQwI=</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string></string>

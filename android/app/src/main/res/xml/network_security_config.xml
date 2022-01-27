@@ -16,7 +16,8 @@
         <domain includeSubdomains="true">
             <!-- localhost -->
             localhost
-        </domain><domain includeSubdomains="true">
+        </domain>
+        <domain includeSubdomains="true">
             <!-- localhost -->
             127.0.0.1
         </domain>
