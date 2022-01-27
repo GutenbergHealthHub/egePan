@@ -41,7 +41,7 @@ class AboutScreen extends PureComponent {
     const { navigation, actions, clearAll, logout, showModal, modalLink } =
       this.props;
     return (
-      <View style={localStyle.wrapper}>
+      <View style={localStyle.screen}>
         {/* top banner */}
         <Banner
           nav={navigation}
@@ -58,7 +58,7 @@ class AboutScreen extends PureComponent {
         />
 
         {/* ScrollView with content */}
-        <View style={localStyle.wrapper}>
+        <View style={localStyle.content}>
           <ScrollIndicatorWrapper
             contentData={
               <View style={localStyle.wrapper}>
@@ -211,6 +211,14 @@ local styling
 ***********************************************************************************************/
 
 localStyle = StyleSheet.create({
+  screen: {
+    height: "100%",
+  },
+
+  content: {
+    flex: 3,
+  },
+
   wrapper: {
     flex: 1,
     flexDirection: "column",

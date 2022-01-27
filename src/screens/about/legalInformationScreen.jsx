@@ -717,7 +717,7 @@ localStyle = StyleSheet.create({
   },
 
   flexi: {
-    flex: 1,
+    flex: 3,
   },
 
   title: {

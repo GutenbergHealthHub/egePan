@@ -6,14 +6,7 @@ import
 
 import React, { PureComponent } from "react";
 import { Icon, Button } from "react-native-elements";
-import {
-  Text,
-  View,
-  Image,
-  StyleSheet,
-  Platform,
-  Dimensions,
-} from "react-native";
+import { Text, View, Image, StyleSheet, Platform } from "react-native";
 
 import config from "../../config/configProvider";
 
@@ -48,8 +41,16 @@ class Banner extends PureComponent {
   /*-----------------------------------------------------------------------------------*/
 
   render() {
-    const { title, subTitle, isCheckIn, noMenu, updateUser, noWayBack, nav, noRefresh } =
-      this.props;
+    const {
+      title,
+      subTitle,
+      isCheckIn,
+      noMenu,
+      updateUser,
+      noWayBack,
+      nav,
+      noRefresh,
+    } = this.props;
 
     /** holds the correct logo file */
     const logo = config.theme.ui.useCustomLogo ? customLogo : defaultLogo;
@@ -58,9 +59,6 @@ class Banner extends PureComponent {
     const logoBackground = config.theme.ui.useCustomLogoBackground
       ? customBackground
       : defaultBackground;
-
-    const hasSubTitle = subTitle && subTitle.length;
-    const hasTitle = title && title.length;
 
     return (
       <View style={localStyle.banner}>
@@ -108,9 +106,10 @@ class Banner extends PureComponent {
             )}
 
             {/* Renders an empty icon if none of the other options came back positiv. */}
-            {!(isCheckIn || (!noWayBack && nav)) || (isCheckIn && noRefresh) && (
-              <View style={localStyle.bannerIcon} />
-            )}
+            {!(isCheckIn || (!noWayBack && nav)) ||
+              (isCheckIn && noRefresh && (
+                <View style={localStyle.bannerIcon} />
+              ))}
 
             {/* The title string. */}
             {title !== "" && (
@@ -171,25 +170,12 @@ class Banner extends PureComponent {
         )}
 
         {/* Renders the logo. */}
-        <View style={localStyle.bannerHalf}>
-          <Image
-            resizeMode="contain"
-            style={(() => {
-              // depending on whether title and/or subtitle is/are set, the logo is scaled
-              if (hasTitle && hasSubTitle) {
-                // small logo with title and subtitle
-                return localStyle.bannerImageLogoUnderSubtitleAndTitle;
-              }
-              if (hasTitle) {
-                // medium logo with title only
-                return localStyle.bannerImageLogoUnderTitle;
-              }
-              // large logo with neither title nor subtitle
-              return localStyle.bannerImageLogoFullSize;
-            })()}
-            source={logo}
-          />
-        </View>
+
+        <Image
+          resizeMode="contain"
+          style={localStyle.bannerImage}
+          source={logo}
+        />
       </View>
     );
   }
@@ -198,9 +184,6 @@ class Banner extends PureComponent {
 /***********************************************************************************************
 local styling
 ***********************************************************************************************/
-const bannerHeight = Platform.OS === "ios" ? config.appConfig.scaleUiFkt(290, 1) : config.appConfig.scaleUiFkt(290, 0.9)
-
-const bannerWidth = Dimensions.get("window").width;
 
 localStyle = StyleSheet.create({
   // Some values need to be calculated in the context of the plattform the app is running on
@@ -210,14 +193,13 @@ localStyle = StyleSheet.create({
 
   banner: {
     width: "100%",
+    flex: 1,
     flexDirection: "column",
     justifyContent: "flex-start",
     alignContent: "stretch",
     alignItems: "stretch",
     paddingTop: Platform.OS === "ios" ? 30 : 0,
-    overflow: "hidden",
     backgroundColor: config.theme.values.defaultBannerBackgroundColor,
-    height: bannerHeight,
   },
 
   bannerUpperHalf: {
@@ -267,44 +249,16 @@ localStyle = StyleSheet.create({
   },
 
   bannerHalf: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "flex-end",
+    // flex: 1,
+    // flexDirection: "column",
+    // justifyContent: "flex-end",
   },
 
-  bannerImageLogoUnderSubtitleAndTitle: {
-    position: 'relative',
-    alignSelf: 'center',
-    maxHeight: config.appConfig.scaleUiFkt(bannerHeight, (Platform.OS === 'ios' ? 0.8 : 0.8)),
-    bottom: -15
-},
-
-bannerImageLogoUnderTitle: {
-    position: 'relative',
-    alignSelf: 'center',
-    maxHeight: config.appConfig.scaleUiFkt(bannerHeight, (Platform.OS === 'ios' ? 1 : 1.1)),
-    bottom: -40
-},
-
-bannerImageLogoFullSize: {
-    position: 'relative',
-    alignSelf: 'center',
-    maxHeight: config.appConfig.scaleUiFkt(bannerHeight, 1.2),
-    bottom: -50
-},
-
-  bannerFull: {
-    position: "absolute",
-    top: 0,
-    left: 0,
+  bannerImage: {
+    position: "relative",
+    alignSelf: "center",
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "flex-end",
-  },
-
-  bannerBackgroundImage: {
-    height: bannerHeight,
-    width: bannerWidth,
+    marginVertical: 5,
   },
 });
 

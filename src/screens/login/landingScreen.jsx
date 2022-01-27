@@ -161,7 +161,7 @@ localStyle = StyleSheet.create({
   },
 
   flexi: {
-    flex: 1,
+    flex: 2,
   },
 
   top: {
