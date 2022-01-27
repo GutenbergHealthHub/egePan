@@ -60,10 +60,9 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
         "alignContent": "stretch",
         "alignItems": "stretch",
         "backgroundColor": "#FFFFFF",
+        "flex": 1,
         "flexDirection": "column",
-        "height": 505.8139534883721,
         "justifyContent": "flex-start",
-        "overflow": "hidden",
         "paddingTop": 30,
         "width": "100%",
       }
@@ -320,38 +319,28 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
         </View>
       </View>
     </View>
-    <View
-      style={
+    <Image
+      resizeMode="contain"
+      source={
         Object {
-          "flex": 1,
-          "flexDirection": "column",
-          "justifyContent": "flex-end",
+          "testUri": "../../../src/CUSTOMIZATION/images/logo.png",
         }
       }
-    >
-      <Image
-        resizeMode="contain"
-        source={
-          Object {
-            "testUri": "../../../src/CUSTOMIZATION/images/logo.png",
-          }
+      style={
+        Object {
+          "alignSelf": "center",
+          "flex": 1,
+          "marginVertical": 5,
+          "position": "relative",
         }
-        style={
-          Object {
-            "alignSelf": "center",
-            "bottom": -40,
-            "maxHeight": 882.2336398053002,
-            "position": "relative",
-          }
-        }
-      />
-    </View>
+      }
+    />
   </View>
   <View
     style={
       Object {
         "backgroundColor": "#FFFFFF",
-        "flex": 1,
+        "flex": 2,
         "flexDirection": "column",
         "height": "100%",
       }
@@ -464,10 +453,9 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
         "alignContent": "stretch",
         "alignItems": "stretch",
         "backgroundColor": "#FFFFFF",
+        "flex": 1,
         "flexDirection": "column",
-        "height": 505.8139534883721,
         "justifyContent": "flex-start",
-        "overflow": "hidden",
         "paddingTop": 30,
         "width": "100%",
       }
@@ -724,38 +712,28 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
         </View>
       </View>
     </View>
-    <View
-      style={
+    <Image
+      resizeMode="contain"
+      source={
         Object {
-          "flex": 1,
-          "flexDirection": "column",
-          "justifyContent": "flex-end",
+          "testUri": "../../../src/CUSTOMIZATION/images/logo.png",
         }
       }
-    >
-      <Image
-        resizeMode="contain"
-        source={
-          Object {
-            "testUri": "../../../src/CUSTOMIZATION/images/logo.png",
-          }
+      style={
+        Object {
+          "alignSelf": "center",
+          "flex": 1,
+          "marginVertical": 5,
+          "position": "relative",
         }
-        style={
-          Object {
-            "alignSelf": "center",
-            "bottom": -40,
-            "maxHeight": 882.2336398053002,
-            "position": "relative",
-          }
-        }
-      />
-    </View>
+      }
+    />
   </View>
   <View
     style={
       Object {
         "backgroundColor": "#FFFFFF",
-        "flex": 1,
+        "flex": 2,
         "flexDirection": "column",
         "height": "100%",
       }
@@ -848,10 +826,9 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
         "alignContent": "stretch",
         "alignItems": "stretch",
         "backgroundColor": "#FFFFFF",
+        "flex": 1,
         "flexDirection": "column",
-        "height": 505.8139534883721,
         "justifyContent": "flex-start",
-        "overflow": "hidden",
         "paddingTop": 30,
         "width": "100%",
       }
@@ -1024,32 +1001,22 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
         />
       </View>
     </View>
-    <View
-      style={
+    <Image
+      resizeMode="contain"
+      source={
         Object {
-          "flex": 1,
-          "flexDirection": "column",
-          "justifyContent": "flex-end",
+          "testUri": "../../../src/CUSTOMIZATION/images/logo.png",
         }
       }
-    >
-      <Image
-        resizeMode="contain"
-        source={
-          Object {
-            "testUri": "../../../src/CUSTOMIZATION/images/logo.png",
-          }
+      style={
+        Object {
+          "alignSelf": "center",
+          "flex": 1,
+          "marginVertical": 5,
+          "position": "relative",
         }
-        style={
-          Object {
-            "alignSelf": "center",
-            "bottom": -40,
-            "maxHeight": 882.2336398053002,
-            "position": "relative",
-          }
-        }
-      />
-    </View>
+      }
+    />
   </View>
   <View />
   <View

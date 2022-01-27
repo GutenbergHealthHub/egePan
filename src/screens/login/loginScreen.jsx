@@ -99,24 +99,19 @@ class LoginScreen extends Component {
         <Banner
           nav={navigation}
           logout={actions.logout}
-          title="Registrieren"
+          title=""
           subTitle={config.text.login.subTitle}
           noMenu
         />
 
         {/* scrollIndicator with qrcode scanner */}
-        <View
-          style={{
-            ...localStyle.flexi,
-            ...localStyle.wrapper,
-          }}
-        >
+        <View style={[localStyle.container, localStyle.wrapper]}>
           <View style={localStyle.top}>
             <Text style={[localStyle.u, localStyle.h2, localStyle.center]}>
               Probandeninformation und Einwilligungserklärung zur Studie
             </Text>
           </View>
-          <View style={{ flex: 1, marginBottom: 100 }}>
+          <View style={localStyle.flexi}>
             <ListItem.Accordion
               content={
                 <ListItem.Content>
@@ -125,9 +120,11 @@ class LoginScreen extends Component {
               }
               isExpanded={showInfo}
               onPress={() => this.toggleInfo()}
-              style={{ backgroundColor: "green" }}
             >
-              <ScrollView style={[localStyle.infoText, localStyle.wrapper]}>
+              <ScrollView
+                style={localStyle.infoText}
+                contentContainerStyle={localStyle.accordion}
+              >
                 <Text style={[localStyle.p, localStyle.center]}>
                   Selbstmonitoring für Mitarbeitergesundheit (S.A.M.) im Rahmen
                   von egePan
@@ -677,9 +674,11 @@ class LoginScreen extends Component {
               }
               isExpanded={showCheck}
               onPress={() => this.toggleShowAgreement()}
-              style={{ maxHeight: "30%" }}
             >
-              <ScrollView style={[localStyle.infoText, localStyle.wrapper]}>
+              <ScrollView
+                style={localStyle.infoText}
+                contentContainerStyle={localStyle.accordion}
+              >
                 <Text style={localStyle.p}>
                   Hiermit erkläre ich mich bereit, an der o. g. Studie
                   freiwillig teilzunehmen. Ich habe den Text der
@@ -839,6 +838,14 @@ localStyle = StyleSheet.create({
     flex: 1,
   },
 
+  accordion: {
+    paddingBottom: 125,
+  },
+
+  container: {
+    flex: 3,
+  },
+
   top: {
     justifyContent: "center",
     alignItems: "center",
@@ -848,9 +855,9 @@ localStyle = StyleSheet.create({
 
   bottom: {
     justifyContent: "flex-end",
-    marginBottom: 36,
+    paddingVertical: 10,
     width: "100%",
-    marginTop: 20,
+    backgroundColor: config.theme.values.defaultBackgroundColor,
   },
 
   title: {

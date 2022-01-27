@@ -76,9 +76,7 @@ class CheckInScreen extends PureComponent {
               <View>
                 {/* if there is a questionnaire and no 401-error */}
                 {!error401 && questionnaireError === null && (
-                  <View
-                    style={{ ...localStyle.wrapper, ...localStyle.firstItem }}
-                  >
+                  <View style={localStyle.wrapper}>
                     {/* renders the listview item representing the questionnaire */}
                     <CheckInListView
                       user={user}
@@ -159,7 +157,7 @@ localStyle = StyleSheet.create({
   },
 
   flexi: {
-    flex: 1,
+    flex: 2,
   },
 });
 
