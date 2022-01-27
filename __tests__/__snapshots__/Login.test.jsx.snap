@@ -86,7 +86,6 @@ exports[`LOGIN RENDERING: <LandingScreen /> can be rendered 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "flexWrap": "wrap",
             "justifyContent": "flex-end",
             "marginLeft": 15,
             "marginRight": 15,
@@ -620,7 +619,6 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "flexWrap": "wrap",
             "justifyContent": "flex-end",
             "marginLeft": 15,
             "marginRight": 15,
@@ -3179,7 +3177,6 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "flexWrap": "wrap",
             "justifyContent": "flex-end",
             "marginLeft": 15,
             "marginRight": 15,

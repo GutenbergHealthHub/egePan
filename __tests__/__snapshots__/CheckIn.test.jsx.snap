@@ -86,7 +86,6 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "flexWrap": "wrap",
             "justifyContent": "flex-end",
             "marginLeft": 15,
             "marginRight": 15,
@@ -479,7 +478,6 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "flexWrap": "wrap",
             "justifyContent": "flex-end",
             "marginLeft": 15,
             "marginRight": 15,
@@ -852,7 +850,6 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "flexWrap": "wrap",
             "justifyContent": "flex-end",
             "marginLeft": 15,
             "marginRight": 15,

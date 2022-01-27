@@ -241,7 +241,6 @@ localStyle = StyleSheet.create({
   bannerTitleWrapper: {
     textAlign: "center",
     alignItems: "center",
-    flexWrap: "wrap",
     flexDirection: "row",
     justifyContent: "flex-end",
     marginLeft: 15,
@@ -249,9 +248,9 @@ localStyle = StyleSheet.create({
   },
 
   bannerHalf: {
-    // flex: 1,
-    // flexDirection: "column",
-    // justifyContent: "flex-end",
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "flex-end",
   },
 
   bannerImage: {
