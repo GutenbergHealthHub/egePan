@@ -86,6 +86,7 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
+            "flexWrap": "wrap",
             "justifyContent": "flex-end",
             "marginLeft": 15,
             "marginRight": 15,
@@ -478,6 +479,7 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
+            "flexWrap": "wrap",
             "justifyContent": "flex-end",
             "marginLeft": 15,
             "marginRight": 15,
@@ -850,6 +852,7 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
+            "flexWrap": "wrap",
             "justifyContent": "flex-end",
             "marginLeft": 15,
             "marginRight": 15,
@@ -1017,48 +1020,14 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
   </View>
   <View />
   <View
-    onLayout={[Function]}
     style={
       Object {
-        "flex": 1,
-        "flexDirection": "column",
-        "width": "100%",
+        "flex": 2,
       }
     }
   >
-    <RCTScrollView
-      contentContainerStyle={
-        Object {
-          "flexGrow": 1,
-        }
-      }
-      contentData={
-        <View
-          style={
-            Object {
-              "backgroundColor": "#FFFFFF",
-              "flex": 1,
-              "flexDirection": "column",
-            }
-          }
-        >
-          <View />
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "height": "100%",
-                "justifyContent": "flex-end",
-                "marginBottom": 36,
-                "marginTop": 20,
-              }
-            }
-          />
-        </View>
-      }
-      enableOnAndroid={true}
-      innerRef={[Function]}
-      onScroll={[Function]}
+    <View
+      onLayout={[Function]}
       style={
         Object {
           "flex": 1,
@@ -1067,31 +1036,73 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
         }
       }
     >
-      <View>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#FFFFFF",
-              "flex": 1,
-              "flexDirection": "column",
-            }
+      <RCTScrollView
+        contentContainerStyle={
+          Object {
+            "flexGrow": 1,
           }
-        >
-          <View />
+        }
+        contentData={
           <View
             style={
               Object {
+                "backgroundColor": "#FFFFFF",
                 "flex": 1,
-                "height": "100%",
-                "justifyContent": "flex-end",
-                "marginBottom": 36,
-                "marginTop": 20,
+                "flexDirection": "column",
               }
             }
-          />
+          >
+            <View />
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "height": "100%",
+                  "justifyContent": "flex-end",
+                  "marginBottom": 36,
+                  "marginTop": 20,
+                }
+              }
+            />
+          </View>
+        }
+        enableOnAndroid={true}
+        innerRef={[Function]}
+        onScroll={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "column",
+            "width": "100%",
+          }
+        }
+      >
+        <View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#FFFFFF",
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <View />
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "height": "100%",
+                  "justifyContent": "flex-end",
+                  "marginBottom": 36,
+                  "marginTop": 20,
+                }
+              }
+            />
+          </View>
         </View>
-      </View>
-    </RCTScrollView>
+      </RCTScrollView>
+    </View>
   </View>
 </View>
 `;
