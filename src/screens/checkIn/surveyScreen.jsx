@@ -165,37 +165,38 @@ class SurveyScreen extends Component {
           showQuestionnaireModal={showQuestionnaireModal}
           questionnaireItemMap={questionnaireItemMap}
         />
+        <View style={localStyle.content}>
+          <ScrollIndicatorWrapper
+            contentData={
+              <View style={{ ...localStyle.flexi, ...localStyle.wrapper }}>
+                {/* creates the list items for the categories */}
+                {this.createListView()}
 
-        <ScrollIndicatorWrapper
-          contentData={
-            <View style={{ ...localStyle.flexi, ...localStyle.wrapper }}>
-              {/* creates the list items for the categories */}
-              {this.createListView()}
-
-              {/* renders a send-button at the bottom if the questionnaire is completed */}
-              <View style={localStyle.bottom}>
-                {questionnaireItemMap && questionnaireItemMap.done && (
-                  <TouchableOpacity
-                    accessibilityLabel={config.text.survey.send}
-                    accessibilityRole={config.text.accessibility.types.button}
-                    accessibilityHint={
-                      config.text.accessibility.questionnaire.sendHint
-                    }
-                    onPress={this.handleSubmit}
-                    style={{
-                      ...localStyle.button,
-                      ...localStyle.buttonComplete,
-                    }}
-                  >
-                    <Text style={localStyle.buttonLabel}>
-                      {config.text.survey.send}
-                    </Text>
-                  </TouchableOpacity>
-                )}
+                {/* renders a send-button at the bottom if the questionnaire is completed */}
+                <View style={localStyle.bottom}>
+                  {questionnaireItemMap && questionnaireItemMap.done && (
+                    <TouchableOpacity
+                      accessibilityLabel={config.text.survey.send}
+                      accessibilityRole={config.text.accessibility.types.button}
+                      accessibilityHint={
+                        config.text.accessibility.questionnaire.sendHint
+                      }
+                      onPress={this.handleSubmit}
+                      style={{
+                        ...localStyle.button,
+                        ...localStyle.buttonComplete,
+                      }}
+                    >
+                      <Text style={localStyle.buttonLabel}>
+                        {config.text.survey.send}
+                      </Text>
+                    </TouchableOpacity>
+                  )}
+                </View>
               </View>
-            </View>
-          }
-        />
+            }
+          />
+        </View>
       </View>
     );
   }
@@ -213,6 +214,10 @@ localStyle = StyleSheet.create({
 
   flexi: {
     flex: 1,
+  },
+
+  content: {
+    flex: 2,
   },
 
   bottom: {

@@ -245,6 +245,7 @@ localStyle = StyleSheet.create({
     justifyContent: "flex-end",
     marginLeft: 15,
     marginRight: 15,
+    flexWrap: "wrap",
   },
 
   bannerHalf: {
