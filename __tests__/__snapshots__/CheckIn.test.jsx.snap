@@ -41,9 +41,7 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
         }
       >
         <ActivityIndicator
-          animating={true}
           color="#a5353e"
-          hidesWhenStopped={true}
           size="large"
           style={
             Object {
@@ -120,7 +118,9 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            nativeID="animatedComponent"
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -241,7 +241,9 @@ exports[`CHECKIN RENDERING: <CheckInContainer /> can be rendered 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            nativeID="animatedComponent"
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -434,9 +436,7 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
         }
       >
         <ActivityIndicator
-          animating={true}
           color="#a5353e"
-          hidesWhenStopped={true}
           size="large"
           style={
             Object {
@@ -513,7 +513,9 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            nativeID="animatedComponent"
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -634,7 +636,9 @@ exports[`CHECKIN RENDERING: <CheckInScreen /> can be rendered 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            nativeID="animatedComponent"
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -905,7 +909,9 @@ exports[`CHECKIN RENDERING: <SurveyScreen /> can be rendered 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            nativeID="animatedComponent"
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}

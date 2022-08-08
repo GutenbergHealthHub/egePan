@@ -19,7 +19,7 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
       ]
     }
   >
-    <View
+    <RNSScreenContainer
       onLayout={[Function]}
       style={
         Object {
@@ -27,7 +27,9 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
         }
       }
     >
-      <View
+      <RNSScreen
+        activityState={2}
+        forwardedRef={[Function]}
         pointerEvents="box-none"
         style={
           Object {
@@ -101,6 +103,8 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
           }
         >
           <View
+            collapsable={false}
+            nativeID="animatedComponent"
             needsOffscreenAlphaCompositing={false}
             pointerEvents="box-none"
             style={
@@ -220,9 +224,7 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                             }
                           >
                             <ActivityIndicator
-                              animating={true}
                               color="#a5353e"
-                              hidesWhenStopped={true}
                               size="large"
                               style={
                                 Object {
@@ -392,7 +394,7 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                     }
                                   }
                                 >
-                                  <ForwardRef
+                                  <TouchableOpacity
                                     accessibilityHint="Startet den Login-Prozess"
                                     accessibilityLabel="Registrieren"
                                     accessibilityRole="button"
@@ -426,7 +428,7 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                     >
                                       Registrieren
                                     </Themed.Text>
-                                  </ForwardRef>
+                                  </TouchableOpacity>
                                   <View
                                     style={
                                       Object {
@@ -568,7 +570,9 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                     accessibilityLabel="Registrieren"
                                     accessibilityRole="button"
                                     accessible={true}
+                                    collapsable={false}
                                     focusable={true}
+                                    nativeID="animatedComponent"
                                     onClick={[Function]}
                                     onResponderGrant={[Function]}
                                     onResponderMove={[Function]}
@@ -631,6 +635,8 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                       }
                                     >
                                       <View
+                                        collapsable={false}
+                                        nativeID="animatedComponent"
                                         style={
                                           Object {
                                             "alignItems": "center",
@@ -648,14 +654,12 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                         <TextInput
                                           accessibilityHint="Bitte geben Sie Ihre Probanden-ID ein, sofern sie bereits registriert sind"
                                           accessibilityLabel="Probanden-ID eingeben"
-                                          allowFontScaling={true}
                                           autoCapitalize="none"
                                           autoCorrect={false}
                                           editable={true}
                                           onChangeText={[Function]}
                                           placeholder="Probanden-ID eingeben"
                                           placeholderTextColor="#86939e"
-                                          rejectResponderTermination={true}
                                           style={
                                             Object {
                                               "color": "#242424",
@@ -707,7 +711,9 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                           }
                                         }
                                         accessible={true}
+                                        collapsable={false}
                                         focusable={true}
+                                        nativeID="animatedComponent"
                                         onClick={[Function]}
                                         onResponderGrant={[Function]}
                                         onResponderMove={[Function]}
@@ -764,8 +770,8 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
             </View>
           </View>
         </View>
-      </View>
-    </View>
+      </RNSScreen>
+    </RNSScreenContainer>
     <View
       pointerEvents="box-none"
       style={

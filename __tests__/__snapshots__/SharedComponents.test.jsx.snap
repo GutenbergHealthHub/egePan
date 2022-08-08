@@ -84,7 +84,9 @@ exports[`SHARED COMPONENTS: <Banner /> can be rendered 1`] = `
             }
           }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          nativeID="animatedComponent"
           onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -258,8 +260,10 @@ exports[`SHARED COMPONENTS: <RedirectModal /> can be rendered 1`] = `
 >
   <View
     accessible={true}
+    collapsable={false}
     focusable={true}
     forwardedRef={[Function]}
+    nativeID="animatedComponent"
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -319,10 +323,12 @@ exports[`SHARED COMPONENTS: <RedirectModal /> can be rendered 1`] = `
     }
   >
     <View
+      collapsable={false}
       deviceHeight={null}
       deviceWidth={null}
       forwardedRef={[Function]}
       hideModalContentWhileAnimating={false}
+      nativeID="animatedComponent"
       onBackdropPress={[Function]}
       onModalHide={[Function]}
       onModalWillHide={[Function]}
@@ -479,7 +485,9 @@ exports[`SHARED COMPONENTS: <RedirectModal /> can be rendered 1`] = `
               }
             }
             accessible={true}
+            collapsable={false}
             focusable={true}
+            nativeID="animatedComponent"
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -640,9 +648,7 @@ exports[`SHARED COMPONENTS: <Spinner /> can be rendered 1`] = `
       }
     >
       <ActivityIndicator
-        animating={true}
         color="#a5353e"
-        hidesWhenStopped={true}
         size="large"
         style={
           Object {
