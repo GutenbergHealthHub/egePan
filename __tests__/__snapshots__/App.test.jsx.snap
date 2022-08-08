@@ -30,6 +30,14 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
       <RNSScreen
         activityState={2}
         forwardedRef={[Function]}
+        gestureResponseDistance={
+          Object {
+            "bottom": -1,
+            "end": -1,
+            "start": -1,
+            "top": -1,
+          }
+        }
         pointerEvents="box-none"
         style={
           Object {

@@ -3,7 +3,6 @@ package de.num.egepan.android;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
-import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 import android.os.Bundle;
 import android.view.Window;
 
@@ -21,15 +20,6 @@ public class MainActivity extends ReactActivity {
         return "S.A.M.";
     }
 
-    @Override
-    protected ReactActivityDelegate createReactActivityDelegate() {
-        return new ReactActivityDelegate(this, getMainComponentName()) {
-            @Override
-            protected ReactRootView createRootView() {
-                return new RNGestureHandlerEnabledRootView(MainActivity.this);
-            }
-        };
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
