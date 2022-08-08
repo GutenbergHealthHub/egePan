@@ -32,35 +32,6 @@ service methods
 /*-----------------------------------------------------------------------------------*/
 
 /**
- * should a questionnaire item contain the "extension" property, its content
- * is tested as an regular expression. it is used to determine if an item
- * was correctly answered.
- * @param {string} linkId linkId of a questionnaire-item
- */
-const checkRegExExtension = (linkId) => {
-  const props = store.getState().CheckIn;
-
-  /**
-   * the item that owns the extension
-   * @type {QuestionnaireItem}
-   */
-  const item = props.questionnaireItemMap[linkId];
-
-  const itemControlExtension = item?.extension?.find(
-    (e) => e.url === "http://hl7.org/fhir/StructureDefinition/regex"
-  );
-
-  if (itemControlExtension?.valueString) {
-    return RegExp(itemControlExtension.valueString).test(
-      props.questionnaireItemMap[item.linkId].answer
-    );
-  }
-
-  // just returns true if there is no extension
-  return true;
-};
-
-/**
  * gets an entry of an enableWhen-array (a condition) and returns
  * the correct attribute-name for the conditional answer
  * @param {Condition} condition enableWhen condition
@@ -148,86 +119,31 @@ const calculatePageProgress = (props) => {
  */
 const checkItem = (item, questionnaireItemMap) => {
   /** return value of the function, speaks about the validity of an item */
-  let returnValue = false;
+  let completed = false;
 
   // if this item needs to be ignored
   if (
     item.type === "ignore" ||
-    !item.required ||
     item.type === "display" ||
-    !checkDependenciesOfSingleItem(item)
+    !item.required ||
+    !checkDependenciesOfSingleItem(item, questionnaireItemMap)
   ) {
-    returnValue = true;
-  }
-  // if the item does not met its own regEx
-  else if (!checkRegExExtension(item.linkId)) {
-    returnValue = false;
+    completed = true;
   } else {
-    // if its a boolean
-    if (item.type === "boolean") {
-      // boolean are by default always valid (as FALSE is a valid answer).
-      // but if it has subItems they must be traversed, and the result of that
-      // is the result of the boolean
-      returnValue = item.item
-        ? traverseItems(item.item, questionnaireItemMap)
-        : true;
-    }
-    // dates, numbers, strings...
-    else if (
-      item.type === "date" ||
-      item.type === "string" ||
-      item.type === "integer" ||
-      item.type === "decimal" ||
-      item.type === "number"
-    ) {
-      // ...should not be empty -> but 0 is valid value
-      returnValue =
-        (questionnaireItemMap[item.linkId].answer &&
-          questionnaireItemMap[item.linkId].answer !== "") ||
-        questionnaireItemMap[item.linkId].answer === 0;
-    }
-    // if there is no subItem..
-    else if (!item.item) {
-      // ...we just look up if the answer is still in its initial state (meaning null)
-      returnValue = questionnaireItemMap[item.linkId].answer != null;
-    }
-    // and should there be at least the item-property...
-    else {
-      // ... traverse it and see if they all check out
-      returnValue = traverseItems(item.item, questionnaireItemMap);
-    }
-
-    // should the item be of type "choice"...
-    if (
-      returnValue &&
-      (item.type === "choice" || item.type === "open-choice")
-    ) {
-      // ... and only accept a single answer
-      if (!item.repeats) {
-        // ... make sure its not NULL
-        returnValue = questionnaireItemMap[item.linkId].answer != null;
-      }
-      // if multiple answers are allowed
-      else {
-        // make sure there is something
-        const isArray =
-          Array.isArray(questionnaireItemMap[item.linkId].answer) &&
-          questionnaireItemMap[item.linkId].answer.length;
-        const hasAdditionalAnswer =
-          item.type === "open-choice" &&
-          questionnaireItemMap[item.linkId].answerOption.filter(
-            (e) => e.isOpenQuestionAnswer
-          )[0].answer;
-        returnValue = isArray || hasAdditionalAnswer;
-      }
-    }
+    completed =
+      // when it is a 'group' then it can't have (an) answer(s)
+      (item.type === "group" ||
+        // otherwise it must have an answer
+        questionnaireItemMap[item.linkId].answer != null) &&
+      // if child items exist, check those
+      traverseItems(item.item ?? [], questionnaireItemMap);
   }
 
   // sets the done property of the item
   // eslint-disable-next-line no-param-reassign
-  questionnaireItemMap[item.linkId].done = returnValue;
+  questionnaireItemMap[item.linkId].done = completed;
 
-  return returnValue;
+  return completed;
 };
 
 /**
@@ -253,15 +169,23 @@ const traverseItems = (elements, questionnaireItemMap) => {
       ) {
         // iterates over all conditions
         item.enableWhen.forEach((condition) => {
+          const requiredAnswer = getEnableWhenAnswerType(condition);
+          const answers = Array.isArray(
+            questionnaireItemMap[condition.question].answer
+          )
+            ? questionnaireItemMap[condition.question].answer
+            : [questionnaireItemMap[condition.question].answer];
           if (
             // if the condition provides an array of answers and the needed answer is among then OR there is only one answer and it matches
-            ((Array.isArray(questionnaireItemMap[condition.question].answer) &&
-              questionnaireItemMap[condition.question].answer.includes(
-                condition[getEnableWhenAnswerType(condition)]
-              )) ||
-              getCorrectlyFormattedAnswer(
-                questionnaireItemMap[condition.question]
-              ) === condition[getEnableWhenAnswerType(condition)]) &&
+            answers.find((entry) => {
+              if (requiredAnswer === "answerCoding") {
+                return codingEquals(entry, condition[requiredAnswer]);
+              }
+              return (
+                entry?.[requiredAnswer.replace("answer", "value")] ===
+                condition[requiredAnswer]
+              );
+            }) &&
             // and the item is not valid
             !checkItem(item, questionnaireItemMap)
           ) {
@@ -278,30 +202,35 @@ const traverseItems = (elements, questionnaireItemMap) => {
         /**
          * will be set to TRUE if a single condition is met
          */
-        let aChangeOccurred = false;
+        let conditionMet = false;
 
         // iterates over all conditions
         item.enableWhen.forEach((condition) => {
+          const requiredAnswer = getEnableWhenAnswerType(condition);
           if (
             // if the condition provides an array of answers and the current answer is among then
-            (Array.isArray(questionnaireItemMap[condition.question].answer) &&
-              questionnaireItemMap[condition.question].answer.includes(
-                condition[getEnableWhenAnswerType(condition)]
-              )) ||
-            // OR: there is only one answer and it matches
-            getCorrectlyFormattedAnswer(
-              questionnaireItemMap[condition.question]
-            ) === condition[getEnableWhenAnswerType(condition)]
+            questionnaireItemMap[condition.question].answer?.find((entry) => {
+              if (requiredAnswer === "answerCoding") {
+                return codingEquals(
+                  entry?.[requiredAnswer.replace("answer", "value")],
+                  condition[requiredAnswer]
+                );
+              }
+              return (
+                entry[requiredAnswer.replace("answer", "value")] ===
+                condition[requiredAnswer]
+              );
+            })
           ) {
             // if the condition is met
-            aChangeOccurred = true;
+            conditionMet = true;
             // if the content checks out, set itemValidityAny to true
             if (checkItem(item, questionnaireItemMap)) itemValidityAny = true;
           }
         });
 
         // if no item met the conditions... then the question will never be rendered and is therefor not invalid, meaning TRUE
-        if (!aChangeOccurred) itemValidityAny = true;
+        if (!conditionMet) itemValidityAny = true;
 
         // if nothing checks out
         if (!itemValidityAny) validityOfTraversedItems = false;
@@ -572,11 +501,6 @@ const createResponseJSON = () => {
 
           // creates the item property of the new item based on its type
           switch (item.type) {
-            case "group":
-              // easy, nothing to check here
-              newItem.item = createItems(item.item);
-              break;
-
             case "boolean":
               answerObject = {
                 // either the set answer, or just false
@@ -623,23 +547,6 @@ const createResponseJSON = () => {
                 newItem.answer = [answerObject];
               }
               break;
-
-            // case 'open-choice':
-            // 	newItem.answer = []
-            // 	// if there are any answers, they will be located in an array - so we have to traverse it
-            // 	if (Array.isArray(itemDetails.answer)) {
-            // 		// see?
-            // 		itemDetails.answer.forEach(function (answer) {
-            // 			// so now we create an object for each set answer
-            // 			answerObject = createAnswerObject(answer)
-            // 			// and check if there are any child-items.
-            // 			// if yes: traverse the child-items and add them to the answer
-            // 			childItems = item.item ? createItems(item.item, answer): []
-            // 			if (childItems.length !== 0) answerObject.item = childItems
-            // 			newItem.answer.push(answerObject)
-            // 		})
-            // 	}
-            // 	break
 
             case "string":
               newItem.answer = [
@@ -698,6 +605,13 @@ const createResponseJSON = () => {
             });
           }
 
+          if (item.item) {
+            if (item.type === "group") {
+              newItem.item = createItems(item.item);
+            } else {
+              newItem.answer[0].item = createItems(item.item);
+            }
+          }
           newItems.push(newItem);
         }
       });
