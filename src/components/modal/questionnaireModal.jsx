@@ -959,7 +959,6 @@ class QuestionnaireModal extends Component {
 
       // creates a radio-item
       case "choice":
-      case "open-choice":
         return this.createChoices(item);
 
       // creates a checkbox
@@ -971,8 +970,6 @@ class QuestionnaireModal extends Component {
         return this.createDatePicker(item);
 
       // creates a group of checkboxes, at least one must be checked
-      // case 'open-choice':
-      // 	return this.createOpenChoices(item)
 
       // creates the inputs for decimals and integers (and numerical sliders)
       // this also utilizes the decimal-pad or the num-pad
