@@ -20,12 +20,6 @@ renders the login-screen
 
 class LoginScreen extends Component {
   /**
-   * reference to access the camera
-   * @type {object}
-   */
-  camera;
-
-  /**
    * @constructor
    * @param  {object}    props
    * @param  {object}    props.actions holds the actions for this state
@@ -36,7 +30,6 @@ class LoginScreen extends Component {
    */
   constructor(props) {
     super(props);
-    this.camera = React.createRef();
     this.state = {
       pushEnabled: false,
       tosAccepted: false,

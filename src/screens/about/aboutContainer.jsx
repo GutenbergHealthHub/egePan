@@ -113,7 +113,7 @@ class AboutContainer extends Component {
       case "Help":
         return <HelpScreen navigation={navigation} />;
       default:
-        return <></>;
+        return null;
     }
   }
 }

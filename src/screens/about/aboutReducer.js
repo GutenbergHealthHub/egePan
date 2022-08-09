@@ -57,6 +57,7 @@ const actionHandlers = {
 export
 ***********************************************************************************************/
 
+// eslint-disable-next-line default-param-last
 export default (state = initialState, action) => {
   if (actionHandlers[action.type]) {
     return actionHandlers[action.type](state, action);

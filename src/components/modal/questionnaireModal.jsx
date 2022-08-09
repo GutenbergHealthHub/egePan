@@ -134,23 +134,6 @@ class QuestionnaireModal extends Component {
     setAccessibilityResponder(this.modalTitleRef);
   }
 
-  // rendering
-  /*-----------------------------------------------------------------------------------*/
-
-  /**
-   * renders the content based on the currently chose category
-   */
-  render = () => {
-    // if there is something to render
-    // eslint-disable-next-line react/destructuring-assignment
-    if (typeof this.props.currentCategoryIndex === "number") {
-      return this.createFormContent();
-    }
-    // if not
-
-    return <View />;
-  };
-
   // class events
   /*-----------------------------------------------------------------------------------*/
 
@@ -158,16 +141,16 @@ class QuestionnaireModal extends Component {
    * is invoked before rendering when new props or state are being received.
    * basically it resets currentPageNeedsRendering
    */
-  shouldComponentUpdate = () => {
+  shouldComponentUpdate() {
     this.currentPageNeedsRendering = false;
     return true;
-  };
+  }
 
   /**
    * is invoked immediately after updating occurs. this method is not called for the initial render.
    * basically it resets currentPageNeedsRendering and scrolls back to the top.
    */
-  componentDidUpdate = () => {
+  componentDidUpdate() {
     const {
       actions,
       categories,
@@ -182,7 +165,7 @@ class QuestionnaireModal extends Component {
         currentPageIndex
       );
     }
-  };
+  }
 
   // modal events
   /*-----------------------------------------------------------------------------------*/
@@ -586,102 +569,6 @@ class QuestionnaireModal extends Component {
     return this.props.questionnaireItemMap[item.linkId].answerOption.filter(
       (e) => e.isOpenQuestionAnswer
     )[0].answer;
-  };
-
-  checkIfOpenAnswerWasChosen = (item) => {
-    const { questionnaireItemMap } = this.props;
-    const { answer } = questionnaireItemMap[item.linkId];
-
-    questionnaireItemMap[item.linkId].answerOption.some(
-      (e) =>
-        e.valueString === answer ||
-        e.valueInteger === answer ||
-        e.valueDecimal === answer ||
-        e.valueDate === answer
-    );
-  };
-
-  /**
-   * renders an open-choice-type ui-element (if its dependencies check out)
-   * @param  {QuestionnaireItem} item questionnaire item
-   */
-  createOpenChoices = (item) => {
-    const { actions, questionnaireItemMap } = this.props;
-    // checks the dependencies of the item and renders it (if the dependencies check out)
-    return this.getRenderStatusOfItem(item) ? (
-      <View>
-        {/* title */}
-        <Text
-          accessibilityLabel={item.text}
-          accessibilityHint={
-            config.text.accessibility.questionnaire.multipleChoice
-          }
-          style={{
-            ...localStyle.contentTitle,
-            fontSize: this.calculateFontSize(item.linkId),
-            marginLeft: this.calculateIndent(item.linkId),
-            lineHeight: this.calculateLineHeight(item.linkId),
-          }}
-        >
-          {item.text}
-        </Text>
-
-        {/* renders all answerOptions */}
-        <View>
-          {item.answerOption.map((answerOption, index) => (
-            <CheckBox
-              title={this.getItemTitle(answerOption)}
-              checkedColor={config.theme.colors.primary}
-              uncheckedColor={config.theme.colors.accent1}
-              onPress={() =>
-                actions.setAnswer({
-                  linkId: item.linkId,
-                  answer:
-                    answerOption.valueCoding ||
-                    answerOption.valueString ||
-                    answerOption.valueInteger,
-                  openAnswer: true,
-                })
-              }
-              onIconPress={() =>
-                actions.setAnswer({
-                  linkId: item.linkId,
-                  answer:
-                    answerOption.valueCoding ||
-                    answerOption.valueString ||
-                    answerOption.valueInteger,
-                  openAnswer: true,
-                })
-              }
-              checked={
-                (questionnaireItemMap[item.linkId].answer &&
-                  answerOption.valueCoding &&
-                  questionnaireItemMap[item.linkId].answer.some(
-                    (c) =>
-                      c.code === answerOption.valueCoding.code &&
-                      c.system === answerOption.valueCoding.system
-                  )) ||
-                (questionnaireItemMap[item.linkId].answer &&
-                  questionnaireItemMap[item.linkId].answer.includes(
-                    answerOption.valueString
-                  )) ||
-                (questionnaireItemMap[item.linkId].answer &&
-                  questionnaireItemMap[item.linkId].answer.includes(
-                    answerOption.valueInteger
-                  ))
-              }
-              // eslint-disable-next-line react/no-array-index-key
-              key={`${item.linkId}.a_${index}`}
-              containerStyle={{
-                ...localStyle.choice,
-                marginLeft: this.calculateIndent(item.linkId),
-              }}
-              textStyle={localStyle.choiceText}
-            />
-          ))}
-        </View>
-      </View>
-    ) : null;
   };
 
   /**
@@ -1246,6 +1133,23 @@ class QuestionnaireModal extends Component {
       </View>
     );
   };
+
+  // rendering
+  /*-----------------------------------------------------------------------------------*/
+
+  /**
+   * renders the content based on the currently chose category
+   */
+  render() {
+    // if there is something to render
+    // eslint-disable-next-line react/destructuring-assignment
+    if (typeof this.props.currentCategoryIndex === "number") {
+      return this.createFormContent();
+    }
+    // if not
+
+    return <View />;
+  }
 }
 
 /***********************************************************************************************

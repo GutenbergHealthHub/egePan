@@ -29,7 +29,16 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
     >
       <RNSScreen
         activityState={2}
+        collapsable={false}
         forwardedRef={[Function]}
+        gestureResponseDistance={
+          Object {
+            "bottom": -1,
+            "end": -1,
+            "start": -1,
+            "top": -1,
+          }
+        }
         pointerEvents="box-none"
         style={
           Object {
@@ -104,7 +113,6 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
         >
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             needsOffscreenAlphaCompositing={false}
             pointerEvents="box-none"
             style={
@@ -117,6 +125,8 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
             <View
               collapsable={false}
               forwardedRef={[Function]}
+              handlerTag={1}
+              handlerType="PanGestureHandler"
               onGestureHandlerEvent={[Function]}
               onGestureHandlerStateChange={[Function]}
               style={
@@ -134,6 +144,7 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="none"
                 style={
                   Object {
@@ -196,45 +207,7 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                       <Modal
                         hardwareAccelerated={false}
                         visible={false}
-                      >
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#376991",
-                              "bottom": 0,
-                              "flex": 1,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            }
-                          }
-                        >
-                          <View
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "bottom": 0,
-                                "justifyContent": "center",
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          >
-                            <ActivityIndicator
-                              color="#a5353e"
-                              size="large"
-                              style={
-                                Object {
-                                  "flex": 1,
-                                }
-                              }
-                            />
-                          </View>
-                        </View>
-                      </Modal>
+                      />
                       <View
                         style={
                           Object {
@@ -572,7 +545,6 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                     accessible={true}
                                     collapsable={false}
                                     focusable={true}
-                                    nativeID="animatedComponent"
                                     onClick={[Function]}
                                     onResponderGrant={[Function]}
                                     onResponderMove={[Function]}
@@ -636,7 +608,6 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                     >
                                       <View
                                         collapsable={false}
-                                        nativeID="animatedComponent"
                                         style={
                                           Object {
                                             "alignItems": "center",
@@ -713,7 +684,6 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
                                         accessible={true}
                                         collapsable={false}
                                         focusable={true}
-                                        nativeID="animatedComponent"
                                         onClick={[Function]}
                                         onResponderGrant={[Function]}
                                         onResponderMove={[Function]}
@@ -773,6 +743,7 @@ exports[`APP START AND RENDERING: <App /> can be created and rendered 1`] = `
       </RNSScreen>
     </RNSScreenContainer>
     <View
+      collapsable={false}
       pointerEvents="box-none"
       style={
         Object {

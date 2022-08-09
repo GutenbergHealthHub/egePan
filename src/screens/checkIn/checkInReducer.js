@@ -56,7 +56,11 @@ const traverseItem = (item, questionnaireItemMap) => {
  * @param  {any} questionnaire a FHIR questionnaire
  * @param  {any} subjectId subjectId of the user
  */
-const generateQuestionnaireItemMap = (questionnaire, questionnaireId, subjectId) => {
+const generateQuestionnaireItemMap = (
+  questionnaire,
+  questionnaireId,
+  subjectId
+) => {
   const questionnaireItemMap = {};
 
   // triggers the item-generation
@@ -298,7 +302,7 @@ const valuesHandlers = {
     const questionnaireItemMap = generateQuestionnaireItemMap(
       values.questionnaire,
       state.user.current_questionnaire_id,
-      state.user.subjectId,
+      state.user.subjectId
     );
 
     // generates the categories
@@ -475,6 +479,7 @@ const valuesHandlers = {
 export
 ***********************************************************************************************/
 
+// eslint-disable-next-line default-param-last
 export default (state = initialState, values) =>
   valuesHandlers[values.type]
     ? valuesHandlers[values.type](state, values)

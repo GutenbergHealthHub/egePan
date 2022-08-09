@@ -36,24 +36,24 @@ class CheckInContainer extends Component {
   /**
    * triggers the update of the user after mounting the checkIn-template
    */
-  componentDidMount = () => {
+  componentDidMount() {
     const { navigation } = this.props;
     if (navigation.state.routeName === "CheckIn") {
       setTimeout(() => {
         this.updateUser();
       }, 0);
     }
-  };
+  }
 
   /**
    * reroutes to the checkIn-screen should no questionnaire be available after the
    * component updated. When there is no questionnaire the survey-screen does not has
    * any content to render
    */
-  componentDidUpdate = () => {
+  componentDidUpdate() {
     const { questionnaireItemMap, navigation } = this.props;
     if (!questionnaireItemMap) navigation.navigate("CheckIn");
-  };
+  }
 
   // methods: push
   /*-----------------------------------------------------------------------------------*/

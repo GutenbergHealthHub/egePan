@@ -24,9 +24,9 @@ class SummaryScreen extends React.Component {
     };
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.calculateScores();
-  };
+  }
 
   calculateScores = () => {
     const { questionnaireItemMap } = this.props;

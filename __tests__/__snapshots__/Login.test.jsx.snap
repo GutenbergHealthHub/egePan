@@ -388,7 +388,6 @@ exports[`LOGIN RENDERING: <LandingScreen /> can be rendered 1`] = `
                 accessible={true}
                 collapsable={false}
                 focusable={true}
-                nativeID="animatedComponent"
                 onClick={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
@@ -452,7 +451,6 @@ exports[`LOGIN RENDERING: <LandingScreen /> can be rendered 1`] = `
                 >
                   <View
                     collapsable={false}
-                    nativeID="animatedComponent"
                     style={
                       Object {
                         "alignItems": "center",
@@ -528,7 +526,6 @@ exports[`LOGIN RENDERING: <LandingScreen /> can be rendered 1`] = `
                     accessible={true}
                     collapsable={false}
                     focusable={true}
-                    nativeID="animatedComponent"
                     onClick={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
@@ -658,7 +655,6 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
             accessible={true}
             collapsable={false}
             focusable={true}
-            nativeID="animatedComponent"
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -707,6 +703,7 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
                   >
                     <Text
                       allowFontScaling={false}
+                      selectable={false}
                       style={
                         Array [
                           Object {
@@ -924,7 +921,6 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
           />
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             style={
               Object {
                 "transform": Array [
@@ -954,6 +950,7 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
                 >
                   <Text
                     allowFontScaling={false}
+                    selectable={false}
                     style={
                       Array [
                         Object {
@@ -983,7 +980,6 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
       </View>
       <View
         collapsable={false}
-        nativeID="animatedComponent"
         style={
           Object {
             "maxHeight": "0%",
@@ -2530,7 +2526,6 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
           />
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             style={
               Object {
                 "transform": Array [
@@ -2560,6 +2555,7 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
                 >
                   <Text
                     allowFontScaling={false}
+                    selectable={false}
                     style={
                       Array [
                         Object {
@@ -2589,7 +2585,6 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
       </View>
       <View
         collapsable={false}
-        nativeID="animatedComponent"
         style={
           Object {
             "maxHeight": "0%",
@@ -2911,7 +2906,6 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
               accessible={true}
               collapsable={false}
               focusable={true}
-              nativeID="animatedComponent"
               onClick={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -2952,6 +2946,7 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
               >
                 <Text
                   allowFontScaling={false}
+                  selectable={false}
                   style={
                     Array [
                       Object {
@@ -3016,7 +3011,6 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
               accessible={true}
               collapsable={false}
               focusable={true}
-              nativeID="animatedComponent"
               onClick={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -3057,6 +3051,7 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
               >
                 <Text
                   allowFontScaling={false}
+                  selectable={false}
                   style={
                     Array [
                       Object {
@@ -3117,7 +3112,6 @@ exports[`LOGIN RENDERING: <LoginContainer /> can be rendered 1`] = `
         accessible={true}
         collapsable={false}
         focusable={true}
-        nativeID="animatedComponent"
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
@@ -3238,7 +3232,6 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
             accessible={true}
             collapsable={false}
             focusable={true}
-            nativeID="animatedComponent"
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -3287,6 +3280,7 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
                   >
                     <Text
                       allowFontScaling={false}
+                      selectable={false}
                       style={
                         Array [
                           Object {
@@ -3504,7 +3498,6 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
           />
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             style={
               Object {
                 "transform": Array [
@@ -3534,6 +3527,7 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
                 >
                   <Text
                     allowFontScaling={false}
+                    selectable={false}
                     style={
                       Array [
                         Object {
@@ -3563,7 +3557,6 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
       </View>
       <View
         collapsable={false}
-        nativeID="animatedComponent"
         style={
           Object {
             "maxHeight": "0%",
@@ -5110,7 +5103,6 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
           />
           <View
             collapsable={false}
-            nativeID="animatedComponent"
             style={
               Object {
                 "transform": Array [
@@ -5140,6 +5132,7 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
                 >
                   <Text
                     allowFontScaling={false}
+                    selectable={false}
                     style={
                       Array [
                         Object {
@@ -5169,7 +5162,6 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
       </View>
       <View
         collapsable={false}
-        nativeID="animatedComponent"
         style={
           Object {
             "maxHeight": "0%",
@@ -5491,7 +5483,6 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
               accessible={true}
               collapsable={false}
               focusable={true}
-              nativeID="animatedComponent"
               onClick={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -5532,6 +5523,7 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
               >
                 <Text
                   allowFontScaling={false}
+                  selectable={false}
                   style={
                     Array [
                       Object {
@@ -5596,7 +5588,6 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
               accessible={true}
               collapsable={false}
               focusable={true}
-              nativeID="animatedComponent"
               onClick={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
@@ -5637,6 +5628,7 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
               >
                 <Text
                   allowFontScaling={false}
+                  selectable={false}
                   style={
                     Array [
                       Object {
@@ -5697,7 +5689,6 @@ exports[`LOGIN RENDERING: <LoginScreen /> can be rendered 1`] = `
         accessible={true}
         collapsable={false}
         focusable={true}
-        nativeID="animatedComponent"
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}

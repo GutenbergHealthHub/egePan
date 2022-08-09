@@ -76,7 +76,9 @@ export default class ScrollIndicatorWrapper extends Component {
    * just executes the scroll-event after the component mounted (so that the indicator
    * will be rendered)
    */
-  componentDidMount = () => this.scrollElement();
+  componentDidMount() {
+    this.scrollElement();
+  }
 
   // modal events
   /*-----------------------------------------------------------------------------------*/
@@ -107,6 +109,7 @@ export default class ScrollIndicatorWrapper extends Component {
           enableOnAndroid
           ref={this.scrollViewRef}
           style={localStyle.wrapper}
+          // eslint-disable-next-line react/no-unused-class-component-methods
           innerRef={(ref) => (this.scroll = ref)}
           contentContainerStyle={localStyle.contentContainerStyle}
           onScroll={(event) => {
