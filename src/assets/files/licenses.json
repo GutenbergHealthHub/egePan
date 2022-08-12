@@ -83,7 +83,7 @@
         "licenseUrl": "https://github.com/zoontek/react-native-permissions/raw/master/LICENSE",
         "parents": "egepan"
     },
-    "react-native-safe-area-context@4.3.1": {
+    "react-native-safe-area-context@3.4.1": {
         "licenses": "MIT",
         "repository": "https://github.com/th3rdwave/react-native-safe-area-context",
         "licenseUrl": "https://github.com/th3rdwave/react-native-safe-area-context/raw/master/LICENSE",
