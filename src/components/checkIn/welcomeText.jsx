@@ -64,9 +64,6 @@ class WelcomeText extends PureComponent {
               {user.firstTime && user && (
                 <Text style={localStyle.infoText}>
                   {config.text.survey.welcomeTextFirstTimeUser1}
-                  <Text style={{ ...localStyle.timeTextSmall }}>
-                    {formatDateString(user.due_date, true)}.
-                  </Text>
                   {config.text.survey.welcomeTextFirstTimeUser2}
                 </Text>
               )}

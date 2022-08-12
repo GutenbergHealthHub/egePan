@@ -131,14 +131,13 @@ class CheckInListView extends PureComponent {
                 ...this.getListItemStyle(),
               }}
               onPress={() => navigation.navigate("Survey")}
-              accessibilityLabel={`${
+              accessibilityLabel={
                 user.firstTime
-                  ? config.text.survey.surveyTitleFirstTime
-                  : config.text.survey.surveyTitle
-              }. ${
-                config.text.survey.surveySubTitle +
-                formatDateString(new Date(user.due_date))
-              }`}
+                  ? "Ihr erster Fragebogen. Bitte füllen Sie diesen zeitnah aus."
+                  : `Bitte Füllen sie den aktuellen Fragebogen aus bis: ${formatDateString(
+                      new Date(user.due_date)
+                    )}`
+              }
               accessibilityRole={config.text.accessibility.types.button}
               accessibilityHint={this.getAccessibilityHint()}
             >
@@ -152,8 +151,10 @@ class CheckInListView extends PureComponent {
 
                 {/* subtitle with formatted due date of the questionnaire */}
                 <ListItem.Subtitle style={localStyle.subTitle}>
-                  {config.text.survey.surveySubTitle +
-                    formatDateString(new Date(user.due_date))}
+                  {user.firstTime
+                    ? "Bitte füllen Sie diesen zeitnah aus."
+                    : config.text.survey.surveySubTitle +
+                      formatDateString(new Date(user.due_date))}
                 </ListItem.Subtitle>
               </ListItem.Content>
               {/* renders icon */}
