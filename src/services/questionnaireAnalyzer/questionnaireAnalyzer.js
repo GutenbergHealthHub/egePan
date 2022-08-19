@@ -682,7 +682,7 @@ const createResponseJSON = () => {
     authored: new Date().toISOString(),
     item: createItems(props.categories),
     resourceType: "QuestionnaireResponse",
-    questionnaire: props.questionnaireItemMap.url,
+    questionnaire: `${props.questionnaireItemMap.url}|${props.questionnaireItemMap.version}`,
     identifier: props.questionnaireItemMap.identifier,
     status: props.questionnaireItemMap.done ? "completed" : "in-progress",
   };
