@@ -151,6 +151,7 @@ const sendQuestionnaire = async (
         id: subjectId,
         subjectId,
         surveyId,
+        version: surveyId.split("|")[1],
         instanceId,
         updateValues: {
           ...triggerMap,
