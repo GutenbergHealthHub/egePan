@@ -17,13 +17,13 @@
         "licenseUrl": "https://github.com/callstack/react-native-slider",
         "parents": "egepan"
     },
-    "@react-native-firebase/app@15.3.0": {
+    "@react-native-firebase/app@17.3.2": {
         "licenses": "Apache-2.0",
         "repository": "https://github.com/invertase/react-native-firebase/tree/main/packages/app",
         "licenseUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/app/raw/master/LICENSE",
         "parents": "egepan"
     },
-    "@react-native-firebase/messaging@15.3.0": {
+    "@react-native-firebase/messaging@17.3.2": {
         "licenses": "Apache-2.0",
         "repository": "https://github.com/invertase/react-native-firebase/tree/main/packages/messaging",
         "licenseUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/messaging/raw/master/LICENSE",
