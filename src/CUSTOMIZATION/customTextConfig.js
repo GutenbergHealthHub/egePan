@@ -278,45 +278,10 @@ export default {
    */
   modalLinks: [
     {
-      title: "EAP Unimed",
-      subTitle: "Homepage des EAP Unimed-Projekts",
+      title: "PREPARED (NUM)",
+      subTitle: "Homepage des PREPARED (NUM)-Projekts",
       text: "Sie werden nun weitergeleitet",
-      uri: "https://www.unimedizin-mainz.de/eap/",
-      iconTitle: "link",
-      iconType: "entypo",
-    },
-    {
-      title: "Übergreifende Beratungsangebote",
-      subTitle: "weiterführende übergreifende Beratung",
-      text: "Sie werden nun weitergeleitet",
-      uri: "https://www.unimedizin-mainz.de/eap/beratungsangebote.html",
-      iconTitle: "link",
-      iconType: "entypo",
-    },
-    {
-      title: "Resilienzambulanz",
-      subTitle:
-        "Resilienz-Ambulanz des Leibniz-Institutes für Resilienzforschung (LIR)",
-      text: "Sie werden nun weitergeleitet",
-      uri: "https://www.unimedizin-mainz.de/eap/beratungsangebote_kliniken.html",
-      iconTitle: "link",
-      iconType: "entypo",
-    },
-    {
-      title: "LIR - Beratungsangebote",
-      subTitle:
-        "Angebote des LIR  zu Workshops und Vorträgen zur betrieblichen Gesundheitsförderung",
-      text: "Sie werden nun weitergeleitet",
-      uri: "https://lir-mainz.de/oe-hr-beratung",
-      iconTitle: "link",
-      iconType: "entypo",
-    },
-    {
-      title: "Tipps zum Umgang mit der Pandemie",
-      subTitle:
-        "Tipps und Empfehlungen zum Umgang mit den psychischen Folgen der Corona-Pandemie",
-      text: "Sie werden nun weitergeleitet",
-      uri: "https://lir-mainz.de/corona-uebersicht",
+      uri: "https://www.num-prepared.de",
       iconTitle: "link",
       iconType: "entypo",
     },

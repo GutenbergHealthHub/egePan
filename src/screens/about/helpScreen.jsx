@@ -18,69 +18,7 @@ class HelpScreen extends PureComponent {
           <ScrollIndicatorWrapper
             contentData={
               <View style={localStyle.content}>
-                <Text style={localStyle.infoText}>
-                  Wenn Sie sich in einer Situation befinden, die Sie nicht mehr
-                  ertragen können, holen Sie sich auf jeden Fall Hilfe. Sollten
-                  Sie das Bedürfnis nach professioneller Unterstützung haben,
-                  können Sie sich an die folgenden Anlaufstellen wenden:
-                  {"\n\n"}Patiententelefon der kassenärztlichen Vereinigung
-                  (KV):
-                </Text>
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("tel://116117")}
-                >
-                  <Text style={localStyle.link}>116117</Text>
-                </TouchableOpacity>
-                <Text style={localStyle.infoText}>
-                  Webseite der kassenärztlichen Vereinigung – Service für
-                  Patienten:
-                </Text>
-                <TouchableOpacity
-                  onPress={() =>
-                    Linking.openURL(
-                      "https://www.kbv.de/html/service_fuer_patienten.php"
-                    )
-                  }
-                >
-                  <Text style={localStyle.link}>
-                    https://www.kbv.de/html/service_fuer_patienten.php
-                  </Text>
-                </TouchableOpacity>
-                <Text style={localStyle.infoText}>
-                  Psychotherapeutensuche der Landespsychotherapeutenkammer: -
-                </Text>
-                <TouchableOpacity
-                  onPress={() =>
-                    Linking.openURL(
-                      "https://www.lpk-rlp.de/psychotherapeutensuche.html"
-                    )
-                  }
-                >
-                  <Text style={localStyle.link}>
-                    https://www.lpk-rlp.de/psychotherapeutensuche.html
-                  </Text>
-                </TouchableOpacity>
-                <Text style={localStyle.infoText}>Telefon Seelsorge:</Text>
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("tel://0800/111 0 111")}
-                >
-                  <Text style={localStyle.link}>0800/111 0 111</Text>
-                </TouchableOpacity>
-                <Text>oder</Text>
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("tel://0800/111 0 222")}
-                >
-                  <Text style={localStyle.link}>0800/111 0 222</Text>
-                </TouchableOpacity>
-                <Text style={localStyle.infoText}>
-                  Telefon-Seelsorge Nightline:
-                </Text>
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("tel://06221 18 47 08")}
-                >
-                  <Text style={localStyle.link}>06221 18 47 08</Text>
-                </TouchableOpacity>
-                <Text style={localStyle.infoText}>
+                <Text style={localStyle.p}>
                   In als ausweglos empfundenen Situationen und bei konkreten
                   lebensmüden Gedanken können Sie sich auch 24 Stunden und an
                   allen Tagen der Woche und des Wochenendes in Ihrer regional
@@ -88,6 +26,116 @@ class HelpScreen extends PureComponent {
                   ambulantes Beratungsgespräch oder die Planung einer
                   stationären Behandlung.
                 </Text>
+                <Text style={localStyle.p}>
+                  In Notfällen steht Ihnen täglich von 0 bis 24 Uhr die
+                  Notfallambulanz der Klinik für Psychiatrie und Psychotherapie
+                  des LMU Klinikums zur Verfügung. Unsere Dienstärzt*innen
+                  leisten Unterstützung in psychischen Krisensituationen und
+                  vermitteln weitere Unterstützungsangebote.
+                </Text>
+                <Text style={localStyle.p}>
+                  Klinik und Poliklinik für Psychiatrie und Psychotherapie,
+                  {"\n"}
+                  LMU Klinikum Nußbaumstraße 7, 80336 München{"\n"}
+                  <TouchableOpacity
+                    onPress={() => Linking.openURL("tel://089 4400 55511")}
+                  >
+                    <Text style={localStyle.link}>089 4400 55511</Text>
+                  </TouchableOpacity>
+                </Text>
+                <Text style={localStyle.p}>
+                  Weitere psychiatrische Notfallambulanzen für Erwachsene in
+                  München (geöffnet täglich 0-24 Uhr):
+                </Text>
+                <Text style={localStyle.p}>
+                  kbo-Isar-Amper-Klinikum, München-Ost{"\n"}
+                  Vockestr. 72, 85540 Haar{"\n"}
+                  <TouchableOpacity
+                    onPress={() => Linking.openURL("tel://089 45620")}
+                  >
+                    <Text style={localStyle.link}>089 45620</Text>
+                  </TouchableOpacity>
+                  <Text>{"\n"}</Text>
+                  <TouchableOpacity
+                    onPress={() => Linking.openURL("www.kbo-iak.de")}
+                  >
+                    <Text style={localStyle.link}>www.kbo-iak.de</Text>
+                  </TouchableOpacity>
+                </Text>
+
+                <Text style={localStyle.p}>
+                  kbo-Isar-Amper-Klinikum, Atriumhaus{"\n"}
+                  Bavariastr. 11, 80336 München{"\n"}
+                  <TouchableOpacity
+                    onPress={() => Linking.openURL("tel:// 089 76780")}
+                  >
+                    <Text style={localStyle.link}>089 76780</Text>
+                  </TouchableOpacity>
+                  <Text>{"\n"}</Text>
+                  <TouchableOpacity
+                    onPress={() => Linking.openURL("www.kbo-iak.de")}
+                  >
+                    <Text style={localStyle.link}>www.kbo-iak.de</Text>
+                  </TouchableOpacity>
+                </Text>
+                <Text style={localStyle.p}>
+                  Klinik und Poliklinik für Psychiatrie und Psychotherapie{"\n"}
+                  Klinikum rechts der Isar{"\n"}
+                  Ismaninger Str. 22, 81675 München{"\n"}
+                  von 08.30 - 16.30 Uhr){"\n"}
+                  <TouchableOpacity
+                    onPress={() => Linking.openURL("tel://089 41404241")}
+                  >
+                    <Text style={localStyle.link}>089 41404241</Text>
+                  </TouchableOpacity>
+                  <Text>
+                    {"\n"}Außerhalb dieser Zeit:{"\n"}
+                  </Text>
+                  <TouchableOpacity
+                    onPress={() => Linking.openURL("tel://089 41404210")}
+                  >
+                    <Text style={localStyle.link}>089 4140421</Text>
+                  </TouchableOpacity>
+                  <Text>{"\n"}</Text>
+                  <TouchableOpacity
+                    onPress={() => Linking.openURL("www.psykl.mri.tum.de")}
+                  >
+                    <Text style={localStyle.link}>www.psykl.mri.tum.de</Text>
+                  </TouchableOpacity>
+                </Text>
+                <Text style={localStyle.p}>
+                  Auf weitere Unterstützungsangebote können Sie über die
+                  folgenden Links zugreifen
+                </Text>
+                <Text>
+                  LMU Klinikum: Anlaufstellen und Empfehlungen - Psychische
+                  Belastungen während der COVID-19-Pandemie
+                </Text>
+                <TouchableOpacity
+                  onPress={() =>
+                    Linking.openURL(
+                      "https://www.lmu-klinikum.de/psychiatrie-und-psychotherapie/aktuelles/covid-19-psychische-belastungen/b0426e274195ac39"
+                    )
+                  }
+                >
+                  <Text style={localStyle.link}>
+                    https://www.lmu-klinikum.de/psychiatrie-und-psychotherapie/aktuelles/covid-19-psychische-belastungen/b0426e274195ac39
+                  </Text>
+                </TouchableOpacity>
+
+                <Text style={localStyle.p}>
+                  Tipps und Empfehlungen zum Umgang mit den psychischen Folgen
+                  der Corona-Pandemie:
+                </Text>
+                <TouchableOpacity
+                  onPress={() =>
+                    Linking.openURL("https://lir-mainz.de/corona-uebersicht")
+                  }
+                >
+                  <Text style={localStyle.link}>
+                    https://lir-mainz.de/corona-uebersicht
+                  </Text>
+                </TouchableOpacity>
               </View>
             }
           />
@@ -143,9 +191,11 @@ localStyle = StyleSheet.create({
   },
   link: {
     color: config.theme.colors.primary,
-    justifyContent: "center",
-    textAlign: "center",
-    paddingVertical: 10,
+    textDecorationLine: "underline",
+    paddingRight: "25%",
+  },
+  p: {
+    marginVertical: 10,
   },
 });
 export default HelpScreen;

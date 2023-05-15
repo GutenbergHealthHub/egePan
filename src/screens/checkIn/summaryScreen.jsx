@@ -384,71 +384,102 @@ class SummaryScreen extends React.Component {
                 Beratungsgespräch oder die Planung einer stationären Behandlung.
               </Text>
               <Text style={localStyle.p}>
+                In Notfällen steht Ihnen täglich von 0 bis 24 Uhr die
+                Notfallambulanz der Klinik für Psychiatrie und Psychotherapie
+                des LMU Klinikums zur Verfügung. Unsere Dienstärzt*innen leisten
+                Unterstützung in psychischen Krisensituationen und vermitteln
+                weitere Unterstützungsangebote.
+              </Text>
+              <Text style={localStyle.p}>
+                Klinik und Poliklinik für Psychiatrie und Psychotherapie,
+                {"\n"}
+                LMU Klinikum Nußbaumstraße 7, 80336 München{"\n"}
+                <TouchableOpacity
+                  onPress={() => Linking.openURL("tel://089 4400 55511")}
+                >
+                  <Text style={localStyle.link}>089 4400 55511</Text>
+                </TouchableOpacity>
+              </Text>
+              <Text style={localStyle.p}>
+                Weitere psychiatrische Notfallambulanzen für Erwachsene in
+                München (geöffnet täglich 0-24 Uhr):
+              </Text>
+              <Text style={localStyle.p}>
+                kbo-Isar-Amper-Klinikum, München-Ost{"\n"}
+                Vockestr. 72, 85540 Haar{"\n"}
+                <TouchableOpacity
+                  onPress={() => Linking.openURL("tel://089 45620")}
+                >
+                  <Text style={localStyle.link}>089 45620</Text>
+                </TouchableOpacity>
+                <Text>{"\n"}</Text>
+                <TouchableOpacity
+                  onPress={() => Linking.openURL("www.kbo-iak.de")}
+                >
+                  <Text style={localStyle.link}>www.kbo-iak.de</Text>
+                </TouchableOpacity>
+              </Text>
+
+              <Text style={localStyle.p}>
+                kbo-Isar-Amper-Klinikum, Atriumhaus{"\n"}
+                Bavariastr. 11, 80336 München{"\n"}
+                <TouchableOpacity
+                  onPress={() => Linking.openURL("tel:// 089 76780")}
+                >
+                  <Text style={localStyle.link}>089 76780</Text>
+                </TouchableOpacity>
+                <Text>{"\n"}</Text>
+                <TouchableOpacity
+                  onPress={() => Linking.openURL("www.kbo-iak.de")}
+                >
+                  <Text style={localStyle.link}>www.kbo-iak.de</Text>
+                </TouchableOpacity>
+              </Text>
+              <Text style={localStyle.p}>
+                Klinik und Poliklinik für Psychiatrie und Psychotherapie{"\n"}
+                Klinikum rechts der Isar{"\n"}
+                Ismaninger Str. 22, 81675 München{"\n"}
+                von 08.30 - 16.30 Uhr){"\n"}
+                <TouchableOpacity
+                  onPress={() => Linking.openURL("tel://089 41404241")}
+                >
+                  <Text style={localStyle.link}>089 41404241</Text>
+                </TouchableOpacity>
+                <Text>
+                  {"\n"}Außerhalb dieser Zeit:{"\n"}
+                </Text>
+                <TouchableOpacity
+                  onPress={() => Linking.openURL("tel://089 41404210")}
+                >
+                  <Text style={localStyle.link}>089 4140421</Text>
+                </TouchableOpacity>
+                <Text>{"\n"}</Text>
+                <TouchableOpacity
+                  onPress={() => Linking.openURL("www.psykl.mri.tum.de")}
+                >
+                  <Text style={localStyle.link}>www.psykl.mri.tum.de</Text>
+                </TouchableOpacity>
+              </Text>
+              <Text style={localStyle.p}>
                 Auf weitere Unterstützungsangebote können Sie über die folgenden
-                Links zugreifen:
+                Links zugreifen
               </Text>
-              <Text style={localStyle.p}>
-                EAP (Employee Assistance Program):
+              <Text>
+                LMU Klinikum: Anlaufstellen und Empfehlungen - Psychische
+                Belastungen während der COVID-19-Pandemie
               </Text>
               <TouchableOpacity
                 onPress={() =>
                   Linking.openURL(
-                    "https://www.unimedizin-mainz.de/eap/index.html"
+                    "https://www.lmu-klinikum.de/psychiatrie-und-psychotherapie/aktuelles/covid-19-psychische-belastungen/b0426e274195ac39"
                   )
                 }
               >
                 <Text style={localStyle.link}>
-                  https://www.unimedizin-mainz.de/eap/index.html
+                  https://www.lmu-klinikum.de/psychiatrie-und-psychotherapie/aktuelles/covid-19-psychische-belastungen/b0426e274195ac39
                 </Text>
               </TouchableOpacity>
-              <Text style={localStyle.p}>Übergreifende Beratungsangebote:</Text>
-              <TouchableOpacity
-                onPress={() =>
-                  Linking.openURL(
-                    "https://www.unimedizin-mainz.de/eap/beratungsangebote.html"
-                  )
-                }
-              >
-                <Text style={localStyle.link}>
-                  https://www.unimedizin-mainz.de/eap/beratungsangebote.html
-                </Text>
-              </TouchableOpacity>
-              <Text style={localStyle.p}>Beratungsangebote der Kliniken:</Text>
-              <TouchableOpacity
-                onPress={() =>
-                  Linking.openURL(
-                    "https://www.unimedizin-mainz.de/eap/beratungsangebote_kliniken.html"
-                  )
-                }
-              >
-                <Text style={localStyle.link}>
-                  https://www.unimedizin-mainz.de/eap/beratungsangebote_kliniken.html
-                </Text>
-              </TouchableOpacity>
-              <Text style={localStyle.p}>
-                Resilienz-Ambulanz des Leibniz-Institutes für Resilienzforschung
-                (LIR):
-              </Text>
-              <TouchableOpacity
-                onPress={() => Linking.openURL("https://lir-mainz.de/ambulanz")}
-              >
-                <Text style={localStyle.link}>
-                  https://lir-mainz.de/ambulanz
-                </Text>
-              </TouchableOpacity>
-              <Text style={localStyle.p}>
-                Angebote des LIR zu Workshops und Vorträgen zur betrieblichen
-                Gesundheitsförderung:
-              </Text>
-              <TouchableOpacity
-                onPress={() =>
-                  Linking.openURL("https://lir-mainz.de/oe-hr-beratung")
-                }
-              >
-                <Text style={localStyle.link}>
-                  https://lir-mainz.de/oe-hr-beratung
-                </Text>
-              </TouchableOpacity>
+
               <Text style={localStyle.p}>
                 Tipps und Empfehlungen zum Umgang mit den psychischen Folgen der
                 Corona-Pandemie:

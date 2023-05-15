@@ -70,11 +70,13 @@ class LegalInformationScreen extends PureComponent {
                       style={[localStyle.infoText, localStyle.wrapper]}
                     >
                       <Text style={[localStyle.p, localStyle.center]}>
-                        Selbstmonitoring für Mitarbeitergesundheit (S.A.M.) im
-                        Rahmen von egePan
+                        „Selbstmonitoring-App für Mitarbeitergesundheit im
+                        Gesundheitswesen“ (S.A.M.) im Rahmen von PREPARED (NUM
+                        2.0) Selbstmonitoring für Mitarbeitergesundheit (S.A.M.)
+                        im Rahmen von egePan
                       </Text>
                       <Text style={[localStyle.h3]}>
-                        Sehr geehrte Patientin, sehr geehrter Patient,{" "}
+                        Sehr geehrte lesende Person,
                       </Text>
                       <Text style={localStyle.p}>
                         mit diesem Schreiben möchten wir Sie über die oben
@@ -84,10 +86,12 @@ class LegalInformationScreen extends PureComponent {
                         Informationsschreiben sorgfältig durch. Sollten Sie
                         weiterführende Fragen hierzu haben, stehen wir Ihnen
                         hierfür gerne zur Verfügung. Sie können uns per E-Mail
-                        (eap-unimed@unimedizin-mainz.de) erreichen. Die
-                        vorliegende Studie wurde durch die Ethikkommission des
-                        Landes Rheinland-Pfalz ethisch geprüft und am 29.09.2021
-                        zustimmend bewertet.
+                        (PSY.NUM@med.uni-muenchen.de) erreichen. Die vorliegende
+                        Studie wurde durch die Ethikkommission des Landes
+                        Rheinland-Pfalz ethisch geprüft und zustimmend bewertet,
+                        zusätzlich erfolgte ein zustimmendes Ethikvotum der
+                        Ethikkommission am LMU Klinikum (Projektnummer:
+                        23-0230).
                       </Text>
                       <Text
                         style={[localStyle.center, localStyle.b, localStyle.u]}
@@ -95,44 +99,39 @@ class LegalInformationScreen extends PureComponent {
                         Ziel und Zweck der Studie
                       </Text>
                       <Text style={localStyle.p}>
-                        Die Selbstmonitoring App für Mitarbeitergesundheit{" "}
-                        <Text style={localStyle.b}>(S.A.M.)</Text> ist ein
-                        Projektteil des <Text style={localStyle.b}>egePan</Text>{" "}
-                        Unimed Verbundforschungsprojekts (http://egepan.de) der
+                        Die Selbstmonitoring App für Mitarbeitergesundheit (
+                        <Text style={localStyle.b}>S.A.M.</Text>) ist ein
+                        Projektteil des{" "}
+                        <Text style={localStyle.b}>PREPARED</Text>{" "}
+                        Verbundforschungsprojekts des LMU Klinikums (Klinik für
+                        Psychiatrie und Psychotherapie) und der
                         Universitätsmedizin Mainz (Klinik und Poliklinik für
                         Psychosomatische Medizin und Psychotherapie & Klinik für
-                        Psychiatrie und Psychotherapie). egePan Unimed wird im
-                        Rahmen des Netzwerks Universitätsmedizin (NUM) vom
-                        Bundesministerium für Bildung und Forschung (BMBF)
-                        (Förderkennzeichen: 01KX2021) gefördert und steht unter
-                        der Gesamtprojektleitung von Prof. Dr. Jochen Schmitt
-                        und Dr. Michael von Wagner. Die Wissenschaftler:innen
-                        der Studie haben sich zum Ziel gesetzt, Mitarbeitenden
-                        von Kliniken in Deutschland
-                      </Text>
-                      <View style={localStyle.list}>
-                        <View style={localStyle.item}>
-                          <Text style={localStyle.enum}>1.</Text>
-                          <Text>
-                            die Möglichkeit zu geben, ihre mentale Gesundheit in
-                            der COVID-19 Pandemie zu monitoren und
-                          </Text>
-                        </View>
-                        <View style={localStyle.item}>
-                          <Text style={localStyle.enum}>2.</Text>
-                          <Text style={localStyle.shrink}>
-                            einen Überblick über Hilfs- und
-                            Unterstützungsangebote Ihres Arbeitgebers zu bieten.
-                          </Text>
-                        </View>
-                      </View>
-                      <Text style={localStyle.p}>
-                        Darüber hinaus verfolgt S.A.M. weitere wissenschaftliche
-                        Fragestellungen. Zu diesen zählen beispielsweise die
-                        Fragen, wie Personen belastende Lebensumstände und
-                        Stress über einen längeren Zeitraum bewältigen, um
-                        Rückschlüsse auf mögliche Risikofaktoren und
-                        Interventionen zu erhalten. Besonders die Faktoren
+                        Psychiatrie und Psychotherapie). PREPARED wird im Rahmen
+                        des{" "}
+                        <Text style={localStyle.b}>
+                          Netzwerks Universitätsmedizin{" "}
+                        </Text>
+                        (NUM) vom{" "}
+                        <Text style={localStyle.b}>
+                          Bundesministerium für Bildung und Forschung{" "}
+                        </Text>
+                        (BMBF) (Förderkennzeichen: 01KX2121) gefördert und steht
+                        unter der Gesamtprojektleitung von Prof. Dr. Jochen
+                        Schmitt und Prof. Dr. Simone Scheithauer. Die
+                        Wissenschaftler:innen der Studie haben sich zum Ziel
+                        gesetzt, Mitarbeitenden von Kliniken in Deutschland die
+                        Möglichkeit zu geben, ihre mentale Gesundheit am Ende
+                        bzw. nach der COVID-19-Pandemie zu monitoren. Dies soll
+                        dazu beitragen, bei einer zukünftigen Gesundheitskrise
+                        oder -katastrophe zeitnah die mentale Gesundheit von
+                        Mitarbeitenden in Kliniken erfassen und evaluieren zu
+                        können. Darüber hinaus verfolgt die Studie weitere
+                        wissenschaftliche Fragestellungen. Zu diesen zählen
+                        beispielsweise die Fragen, wie Personen belastende
+                        Lebensumstände und Stress über einen längeren Zeitraum
+                        bewältigen, um Rückschlüsse auf mögliche Risikofaktoren
+                        und Interventionen zu erhalten. Besonders die Faktoren
                         Burnout als arbeitsbezogenes Beanspruchungsmerkmal soll
                         untersucht und präventive Faktoren (z. B.
                         Selbstwirksamkeit oder soziale Unterstützung) zur
@@ -158,18 +157,17 @@ class LegalInformationScreen extends PureComponent {
                           Zeitraum der Studie:{"\n"}
                         </Text>
                         Im Rahmen der Studie möchten wir Ihnen über einen
-                        Zeitraum von 3 Monaten in einem wöchentlichen Rhythmus
-                        Fragen zu Ihrer psychischen Gesundheit stellen.
-                        Insgesamt werden Sie 14 Fragebögen (1 Start-Fragebogen,
-                        12 wöchentliche Fragebögen, 1 Abschlussfragebogen)
-                        ausfüllen können. Die Studie startet am im Herbst 2021.
-                        Der Zeitraum der Befragung erstreckt sich über drei
-                        Monate.
+                        Zeitraum von drei Monaten in einem zwei-wöchentlichen
+                        Rhythmus Fragen zu Ihrer psychischen Gesundheit stellen.
+                        Insgesamt werden Sie 7 Fragebögen (1 Start-Fragebogen, 6
+                        wöchentliche Fragebögen) ausfüllen können. Die Studie
+                        startet im Frühjahr 2023. Der Zeitraum der Befragung
+                        erstreckt sich über drei Monate.
                       </Text>
                       <Text style={localStyle.p}>
                         <Text style={localStyle.b}>Voraussetzungen:{"\n"}</Text>
                         Um an der Studie teilnehmen zu können, müssen Sie sich
-                        die für die Studie entwickelte egePan App auf Ihr
+                        die für die Studie entwickelte S.A.M.-App auf Ihr
                         Smartphone herunterladen. Die App ist in dem Apple App
                         Store und Google Play Store verfügbar. Die Anwendung
                         wurde auf Grundlage des COMPASS Open-Source Projekts
@@ -194,16 +192,7 @@ class LegalInformationScreen extends PureComponent {
                         Ihrem Smartphone, darüber informiert, dass ein neuer
                         Fragebogen zum Ausfüllen vorliegt. Zum Ende der Studie
                         erhalten Sie ebenfalls eine Push-Notification mit
-                        weiterführenden Informationen zur Studie. Zur
-                        Sicherstellung der Funktionalität der App und des
-                        Schutzes Ihrer Daten empfehlen wir Ihnen, Ihr Endgerät
-                        stets mit den aktuellen Betriebssystem-Updates
-                        auszustatten und ein Anti-Virus-Programm auf Ihrem
-                        Endgerät zu installieren, falls noch nicht vorhanden.
-                        Wir raten von der Nutzung der App auf gejailbreakten
-                        oder gerooteten Smartphones ab, da solche Endgeräte
-                        keinen ausreichenden Schutz Ihrer personenbezogenen
-                        Daten bieten.
+                        weiterführenden Informationen zur Studie.
                       </Text>
                       <Text
                         style={[localStyle.b, localStyle.center, localStyle.u]}
@@ -257,7 +246,7 @@ class LegalInformationScreen extends PureComponent {
                         gilt gem. Artikel 9 DSGVO als Verarbeitung besonderer
                         Kategorien personenbezogener Daten. Der
                         Studiendurchführer versichert, entsprechende technische
-                        und organisatorischen Maßnahmen zu ergreifen, um eine
+                        und organisatorische Maßnahmen zu ergreifen, um eine
                         rechtskonforme Verarbeitung Ihrer Daten zu
                         gewährleisten.
                       </Text>
@@ -268,6 +257,8 @@ class LegalInformationScreen extends PureComponent {
                         Widerrufsmöglichkeit
                       </Text>
                       <Text style={localStyle.p}>
+                        Die Teilnahme an dieser Studie ist freiwillig. Ihnen
+                        entstehen keine Nachteile durch Versagen der
                         Einwilligung. Sie können zudem jederzeit und ohne Angabe
                         von Gründen Ihre Einwilligung zur Teilnahme an der
                         Studie widerrufen (schriftlich oder per E-Mail) und der
@@ -294,22 +285,17 @@ class LegalInformationScreen extends PureComponent {
                       </Text>
                       <Text style={localStyle.p}>
                         Im Rahmen der Studie werden explizit keine
-                        Identitätsdaten von Ihnen wie z.B. Ihr Name, Adresse,
-                        Email-Adresse oder Geburtsdatum erhoben. Stattdessen
-                        wird in der App ein wertneutraler Code generiert, der
-                        Ihre Benutzer-ID bildet. Die Speicherung der Fragebögen
-                        unter dieser wertneutralen Benutzer-ID ist notwendig,
-                        damit das Studienpersonal nach Beendigung der Studie
-                        alle übersandten Fragebögen als zu einer Person
-                        zugehörig erkennen und auswerten kann. Gleichzeitig
-                        können Sie anhand Ihrer Benutzer-ID, die Sie jederzeit
-                        in der App abrufen können, Ihre Betroffenenrechte
-                        geltend machen. Mit der App werden zur Aufrechterhaltung
-                        der Funktionsfähigkeit der App ihre IP-Adresse sowie
-                        Zeitpunkt des Empfangs und Versands der Fragebögen
-                        erhoben. Es findet weder eine dauerhafte Speicherung
-                        Ihrer IP-Adresse noch eine Kopplung zwischen den
-                        Fragebögen und der IP-Adresse statt.
+                        personenbezogenen Daten von Ihnen wie z.B. Ihr Name,
+                        Adresse, Email-Adresse oder Geburtsdatum erhoben.
+                        Sämtliche sonstige, zur Auswertung notwendige Metadaten
+                        werden in pseudonymisierter Form erhoben.
+                        Pseudonymisiert bedeutet, dass Ihre personenbezogenen
+                        Daten durch einen wertneutralen Code (z.B. XYZ01)
+                        ersetzt werden. Über den wertneutralen Code kann das
+                        Studienpersonal nach Beendigung der Studie die von Ihnen
+                        übersandten Fragebögen zuordnen und auswerten. Eine
+                        Beratung durch den Datenschutzbeauftragten der
+                        Universitätsmedizin Mainz hat stattgefunden.
                       </Text>
                       <Text style={localStyle.p}>
                         Um Sie über neue verfügbare Fragebögen mittels sog.
@@ -382,26 +368,27 @@ class LegalInformationScreen extends PureComponent {
                         <View style={localStyle.item}>
                           <Text style={localStyle.enum}>•</Text>
                           <Text style={localStyle.shrink}>
-                            demografische Daten zu Geschlecht, Altersgruppe,
-                            Familienstand, Wohnregion, u.Ä.
+                            Demografische Daten zu Geschlecht und Alter,
                           </Text>
                         </View>
                         <View style={localStyle.item}>
                           <Text style={localStyle.enum}>•</Text>
                           <Text style={localStyle.shrink}>
-                            berufsbezogene Daten zu Funktion und Einkommen
+                            Berufsbezogene Daten zu Funktion, Fachbereich,
+                            Einsatzort
                           </Text>
                         </View>
                         <View style={localStyle.item}>
                           <Text style={localStyle.enum}>•</Text>
                           <Text style={localStyle.shrink}>
-                            Daten zur mentalen Gesundheit
+                            Daten zur allgemeinen Erholungsfähigkeiten
                           </Text>
                         </View>
                         <View style={localStyle.item}>
                           <Text style={localStyle.enum}>•</Text>
                           <Text style={localStyle.shrink}>
-                            Daten zu berufsbezogenen Ressourcen und Stressoren
+                            Daten zur mentalen Gesundheit und chronische
+                            Grunderkrrankungen
                           </Text>
                         </View>
                       </View>
@@ -429,45 +416,77 @@ class LegalInformationScreen extends PureComponent {
                         <Text style={localStyle.u}>
                           IV. Empfänger/Kategorien von Empfängern:
                         </Text>
-                        Ihre im Rahmen der Studie verarbeiteten
-                        personenbezogenen Daten werden an folgende
-                        Empfänger/Kategorien von Empfängern weitergegeben:
                       </Text>
                       <View style={localStyle.list}>
                         <View style={localStyle.item}>
-                          <Text style={localStyle.enum}>-</Text>
+                          <Text style={localStyle.enum}>a)</Text>
                           <Text style={localStyle.shrink}>
-                            Interdisziplinäres Zentrum für Klinische Studien
-                            (IZKS) der Universitätsmedizin Mainz
+                            Die pseudonymisierten Daten werden auf die
+                            NUM-Plattform der Universitätsmedizin Mainz
+                            übermittelt und dort gespeichert.
                           </Text>
                         </View>
                         <View style={localStyle.item}>
-                          <Text style={localStyle.enum}>-</Text>
+                          <Text style={localStyle.enum}>b)</Text>
                           <Text style={localStyle.shrink}>
-                            Klinik für Psychosomatische Medizin und
-                            Psychotherapie der Universitätsmedizin Mainz
+                            Ihre im Rahmen der Studie verarbeiteten
+                            personenbezogenen Daten werden anonymisiert an
+                            folgende Empfänger/Kategorien von Empfängern[1]
+                            weitergegeben:
                           </Text>
                         </View>
+                        <Text style={localStyle.p}>
+                          Die mit der Durchführung der Studie betrauten Personen
+                          in den folgenden Einrichtungen:
+                        </Text>
+                        <View style={localStyle.list}>
+                          <View style={localStyle.item}>
+                            <Text style={localStyle.enum}>-</Text>
+                            <Text style={localStyle.shrink}>
+                              Klinik für Psychiatrie und Psychotherapie des LMU
+                              Klinikums
+                            </Text>
+                          </View>
+                          <View style={localStyle.item}>
+                            <Text style={localStyle.enum}>-</Text>
+                            <Text style={localStyle.shrink}>
+                              Klinik für Psychiatrie und Psychotherapie der
+                              Universitätsmedizin Mainz
+                            </Text>
+                          </View>
+                          <View style={localStyle.item}>
+                            <Text style={localStyle.enum}>-</Text>
+                            <Text style={localStyle.shrink}>
+                              Interdisziplinäres Zentrum für Klinische Studien
+                              (IZKS) der Universitätsmedizin Mainz
+                            </Text>
+                          </View>
+                          <View style={localStyle.item}>
+                            <Text style={localStyle.enum}>-</Text>
+                            <Text style={localStyle.shrink}>
+                              Klinik für Psychosomatische Medizin und
+                              Psychotherapie der Universitätsmedizin Mainz
+                            </Text>
+                          </View>
+                          <View style={localStyle.item}>
+                            <Text style={localStyle.enum}>-</Text>
+                            <Text style={localStyle.shrink}>
+                              Institut für Medizinische Biometrie, Epidemiologie
+                              und Informatik (IMBEI)
+                            </Text>
+                          </View>
+                        </View>
                         <View style={localStyle.item}>
-                          <Text style={localStyle.enum}>-</Text>
+                          <Text style={localStyle.enum}>c)</Text>
                           <Text style={localStyle.shrink}>
-                            Institut für Medizinische Biometrie, Epidemiologie
-                            und Informatik (IMBEI)
+                            Eine Weitergabe der Daten an Dritte (Personen, die
+                            nicht zur Durchführung der oben benannten Studie
+                            eingesetzt werden) oder eine Veröffentlichung
+                            findet, wenn überhaupt, nur in anonymisierter Form
+                            statt.
                           </Text>
                         </View>
                       </View>
-                      <Text style={localStyle.p}>
-                        Eine Weitergabe der Daten an Dritte (Personen, die nicht
-                        zur Durchführung der oben benannten Studie eingesetzt
-                        werden) oder eine Veröffentlichung findet, wenn
-                        überhaupt, nur in anonymisierter Form statt.
-                      </Text>
-                      <Text style={localStyle.p}>
-                        Wie zuvor beschrieben, senden wir mit Ihrer Zustimmung
-                        zusätzlich Push-Benachrichtigungen mit dem von FCM
-                        erzeugten Sicherheitsschlüssel an die Firma Google sowie
-                        bei iOS-Geräten an die Firma Apple.
-                      </Text>
                       <Text style={localStyle.u}>
                         V. Speicherdauer und Löschung:
                       </Text>
@@ -479,7 +498,7 @@ class LegalInformationScreen extends PureComponent {
                             Studienziels, spätestens jedoch nach 10 Jahren oder
                             im Falle eines Widerrufs der Einwilligung gelöscht,
                             soweit gesetzliche Vorgaben nicht längere
-                            Aufbewahrungsfristen vorsehen.{" "}
+                            Aufbewahrungsfristen vorsehen.
                           </Text>
                         </View>
                         <View style={localStyle.item}>
@@ -529,8 +548,7 @@ class LegalInformationScreen extends PureComponent {
                         </Text>
                         <Text style={localStyle.p}>
                           <Text style={localStyle.u}>
-                            Recht auf Löschung nach Artikel 17, 19 DS-GVO:
-                            {"\n"}
+                            Recht auf Löschung nach Artikel 17, 19 DS-GVO:{"\n"}
                           </Text>
                           Sie haben das Recht, die Löschung der Sie betreffenden
                           personenbezogenen Daten zu verlangen. Wenn Sie die
@@ -605,6 +623,20 @@ class LegalInformationScreen extends PureComponent {
                         http://www.unimedizin-mainz.de/
                       </Text>
                       <Text style={localStyle.p}>
+                        <Text style={localStyle.u}>
+                          IX. Verantwortlicher:{"\n"}
+                        </Text>
+                        Für die Verarbeitung der anonymisierten Daten ist
+                        rechtlich verantwortlich:
+                      </Text>
+                      <Text style={localStyle.list}>
+                        LMU Klinikum, Klinik für Psychiatrie und Psychotherapie
+                        vertreten durch den Vorstand{"\n"}
+                        Nußbaumstraße 7, 80336 München{"\n"}
+                        Telefon: 089 4400 55511{"\n"}
+                        Webseite: https://www.lmu-klinikum.de/
+                      </Text>
+                      <Text style={localStyle.p}>
                         Ihnen steht ein Beschwerderecht bei einer
                         Aufsichtsbehörde Ihrer Wahl zu. Die zuständige
                         Aufsichtsbehörde für die Universitätsmedizin Mainz ist
@@ -628,6 +660,32 @@ class LegalInformationScreen extends PureComponent {
                         Tel.: 06131/17-0{"\n"}
                         Email: datenschutz@unimedizin-mainz.de
                       </Text>
+                      <Text style={localStyle.p}>
+                        Zusätzlich besteht ein Beschwerderecht bei der
+                        Datenschutz-Aufsichtsbehörde des LMU Klinikums:
+                      </Text>
+                      <Text style={localStyle.list}>
+                        Bayerischer Landesbeauftragter für den Datenschutz
+                        (BayLfD)
+                        {"\n"}
+                        Postanschrift: Postfach 22 12 19, 80502 München{"\n"}
+                        Hausanschrift: Wagmüllerstr. 18, 80538 München{"\n"}
+                        Tel.: 089 212672-0{"\n"}
+                        Fax: 089 212672-50{"\n"}
+                      </Text>
+                      <Text style={localStyle.p}>
+                        Kontaktdaten des Datenschutzbeauftragten des LMU
+                        Klinikums:
+                      </Text>
+                      <Text style={localStyle.list}>
+                        Gerhard Meyer{"\n"}
+                        Behördlicher Datenschutzbeauftragter{"\n"}
+                        LMU Klinikum{"\n"}
+                        Pettenkoferstr. 8, 80336 München{"\n"}
+                        Tel.: 089 4400 58454{"\n"}
+                        Fax: 089 4400 55192{"\n"}
+                        E-Mail: datenschutz@med.uni-muenchen.de{"\n"}
+                      </Text>
                       <Text style={[localStyle.u, localStyle.center]}>
                         Kontaktinformationen:
                       </Text>
@@ -637,15 +695,12 @@ class LegalInformationScreen extends PureComponent {
                         gerne zur Verfügung:
                       </Text>
                       <Text style={[localStyle.p, localStyle.b]}>
-                        Inhaltliche Fragen und Geltendmachung Ihrer
-                        Betroffenenrechte:{" "}
+                        Inhaltliche Fragen:{" "}
                       </Text>
                       <Text style={localStyle.p}>
-                        Klinik und Poliklinik für Psychosomatische Medizin und
-                        Psychotherapie (Untere Zahlbacher Str. 8 55131 Mainz) &
-                        Institut für Arbeits-, Sozial- und Umweltmedizin (Obere
-                        Zahlbacher Str. 67, 55131 Mainz)
-                        eap-unimed@unimedizin-mainz.de{" "}
+                        LMU Klinikum, Klinik für Psychiatrie und Psychotherapie
+                        (Nußbaumstraße 7, 80336 München):
+                        PSY.NUM@med.uni-muenchen.de{" "}
                       </Text>
                       <Text style={localStyle.b}>Technische Fragen:</Text>
                       <Text style={localStyle.p}>
