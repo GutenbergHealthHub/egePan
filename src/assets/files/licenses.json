@@ -53,7 +53,7 @@
         "licenseUrl": "https://github.com/digitalbazaar/forge/raw/master/LICENSE",
         "parents": "egepan"
     },
-    "react-native-elements@3.4.2": {
+    "react-native-elements@3.4.3": {
         "licenses": "MIT",
         "repository": "https://github.com/react-native-elements/react-native-elements",
         "licenseUrl": "https://github.com/react-native-elements/react-native-elements/raw/master/LICENSE",
