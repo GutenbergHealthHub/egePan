@@ -38,7 +38,7 @@ constants
 const { width } = Dimensions.get("window");
 
 // production-base-backend-uri
-const baseUriProductive = "https://egepan.izks-mainz.de/api/";
+const baseUriProductive = "https://sam-lmu.izks-mainz.de/api/";
 
 // development-base-backend-uri
 // const baseUriDevelopment = "https://egepan-dev.izks-mainz.de/api/";
@@ -69,11 +69,11 @@ const conf = {
 
   /** dev-option:
    * shows a button to erase all data (in the about-menu) - dev-only */
-  showEraseAll: __DEV__ && true,
+  showEraseAll: true,
 
   /** dev-option:
    * shows a button to log out the user (in the about-menu) - dev-only */
-  showLogout: __DEV__ && true,
+  showLogout: true,
 
   /** dev-option:
    * logs out the response-json parsed as an object in the developer console

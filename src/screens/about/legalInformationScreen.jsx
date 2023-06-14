@@ -47,6 +47,7 @@ class LegalInformationScreen extends PureComponent {
             nav={navigation}
             title={config.text.legalInformation.title}
             subTitle={config.text.legalInformation.subTitle}
+            noMenu
           />
 
           {/* content */}

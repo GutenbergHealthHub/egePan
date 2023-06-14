@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "817017461017",
-    "project_id": "egepan-7d047",
-    "storage_bucket": "egepan-7d047.appspot.com"
+    "project_number": "830075516171",
+    "project_id": "sam-lmu",
+    "storage_bucket": "sam-lmu.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:817017461017:android:2090c635fe8ddc0bf44d88",
+        "mobilesdk_app_id": "1:830075516171:android:d764a5f5d76104b9d01e0e",
         "android_client_info": {
-          "package_name": "de.num.egepan.android"
+          "package_name": "de.num.sam.lmu"
         }
       },
       "oauth_client": [
         {
-          "client_id": "817017461017-7rr6e2mj2ivab45cetvu3j8a9aotmhpp.apps.googleusercontent.com",
+          "client_id": "830075516171-mrqu7hcjp67iooatrnejuajnvi36tuif.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAjBWA4e2S8sk0Bw9Uidl5PEfTGeNoiXJ4"
+          "current_key": "AIzaSyBraR06PIfufDFtrYn57L3GF9DD1t56hcQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "817017461017-7rr6e2mj2ivab45cetvu3j8a9aotmhpp.apps.googleusercontent.com",
+              "client_id": "830075516171-mrqu7hcjp67iooatrnejuajnvi36tuif.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

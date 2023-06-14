@@ -99,11 +99,11 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "de.num.egepan.android"
+        applicationId "de.num.sam.lmu"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 19
-        versionName '1.0.3'
+        versionCode 2
+        versionName '1.0.0'
         manifestPlaceholders = [
                 appAuthRedirectScheme: "host.exp.exponent"
         ]

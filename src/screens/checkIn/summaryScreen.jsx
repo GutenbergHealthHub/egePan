@@ -53,490 +53,321 @@ class SummaryScreen extends React.Component {
       parseInt(questionnaireItemMap["1.3.5"].answer.code, 10) +
       parseInt(questionnaireItemMap["1.3.6"].answer.code, 10);
 
-    this.setState({ scores: { ...scores } });
+    this.setState(() => ({ scores: { ...scores } }));
   };
 
   render() {
     const { navigation, exportAndUploadQuestionnaireResponse } = this.props;
+
     const { scores } = this.state;
     return (
       <View style={{ ...localStyle.flexi, ...localStyle.wrapper }}>
         {/* render the top banner */}
-        <Banner nav={navigation} title="Zusammenfassung" noWayBack />
-        <ScrollIndicatorWrapper
-          contentData={
-            <View style={{ ...localStyle.body }}>
-              <Text
-                style={{
-                  fontSize: 18,
-                  ...localStyle.title,
-                }}
-              >
-                Liebe Teilnehmende,{"\n\n"}erfahren Sie nun Ihren individuellen
-                Gesundheitszustand in vier Indikatoren für Ihre psychische
-                Gesundheit.
-              </Text>
-              <Text style={localStyle.p}>
-                Dies ist eine automatisch generierte Auswertung Ihrer
-                Antwortdaten. Bitte beachten Sie, dass Sie diese nicht erneut
-                aufrufen können, sobald Sie sie geschlossen haben. Da man von
-                den Daten nicht auf Ihre Person zurückschließen kann, können wir
-                Ihre Auswertung nach Beendigung der Befragung nicht erneut
-                erstellen. Falls Sie Ihre Auswertung zu einem späteren Zeitpunkt
-                noch einmal ansehen möchten, speichern Sie sich diese bitte, z.
-                B. mithilfe von Bildschirmfotos.
-              </Text>
-              <Text style={localStyle.title}>Generalisierte Angst:</Text>
-              <Text style={{ ...localStyle.p }}>
-                Als generalisierte Angst wird eine anhaltende Angst verstanden,
-                die ohne einen speziellen Auslöser auftritt. Sie ist
-                gekennzeichnet durch Gefühle von Nervosität und Anspannung,
-                unbegründete Sorgen sowie körperliche Reaktionen wie
-                Herzklopfen, Übelkeit oder Schwitzen.
-                {"\n\n"}
-                Meine persönliche Ausprägung von generalisierter Angst:
-              </Text>
-              <View>
-                <Slider
-                  disabled
-                  allowTouchTrack={
-                    false /* currently not working, see https://github.com/react-native-elements/react-native-elements/issues/3130*/
-                  }
-                  step={1}
-                  minimumValue={0}
-                  maximumValue={6}
-                  minimumTrackTintColor={config.theme.colors.accent1}
-                  maximumTrackTintColor={config.theme.colors.accent1}
-                  accessibilityHint={`0${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr wenig ängstlich${config.text.accessibility.questionnaire.sliderFieldAnd}6${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr ängstlich`}
-                  value={scores.anxiety}
-                  thumbProps={{
-                    children: (
-                      <View style={localStyle.thumbContainer}>
-                        <Text style={localStyle.thumbLabel}>
-                          {scores.anxiety}
-                        </Text>
-                      </View>
-                    ),
+        <Banner nav={navigation} title="Zusammenfassung" />
+        <View style={{ flex: 3 }}>
+          <ScrollIndicatorWrapper
+            contentData={
+              <View style={{ ...localStyle.body }}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    ...localStyle.title,
                   }}
-                />
-                <View style={localStyle.thumb}>
-                  {/* workaround, because "allowTouchTrack" from slider ist not working, see above */}
-                </View>
-              </View>
-              <View style={localStyle.sliderLabel}>
-                <Text style={localStyle.sliderTextMin}>
-                  0 (sehr wenig ängstlich)
+                >
+                  Liebe Teilnehmende,{"\n\n"}erfahren Sie nun Ihren
+                  individuellen Gesundheitszustand in vier Indikatoren für Ihre
+                  psychische Gesundheit.
                 </Text>
-                <Text style={localStyle.sliderTextMax}>6 (sehr ängstlich)</Text>
-              </View>
-              <Text style={localStyle.p}>
-                Was bedeutet das?
-                {"\n\n"}
-                Eine Ausprägung von unter 3 ist neutraler Wert, eine Ausprägung
-                von 3 oder mehr ist ein kritischer Wert. In einer
-                vorangegangenen Studie aus Deutschland während der
-                COVID-19-Pandemie im Jahr 2020 lag der mittlere Wert in der
-                Allgemeinbevölkerung bei 1,05 (Männer: 0,89; Frauen: 1,19) [1].
-                Im Jahr 2018 lag er bei 0,77 (Männer: 0,68; Frauen: 0,85)[1].
-              </Text>
-              <Text style={localStyle.title}>Depressivität</Text>
-              <Text style={localStyle.p}>
-                Depressivität beschreibt einen Gefühlszustand, der vor allem
-                durch niedergeschlagene Stimmung, Antriebslosigkeit und den
-                Verlust von Freude an alltäglichen Dingen und Interessen
-                gekennzeichnet ist.
-                {"\n\n"}
-                Meine persönliche Ausprägung von Depressivität:
-              </Text>
-              <View>
-                <Slider
-                  disabled
-                  allowTouchTrack={
-                    false /* currently not working, see https://github.com/react-native-elements/react-native-elements/issues/3130*/
+                <Text style={localStyle.p}>
+                  Dies ist eine automatisch generierte Auswertung Ihrer
+                  Antwortdaten. Bitte beachten Sie, dass Sie diese nicht erneut
+                  aufrufen können, sobald Sie sie geschlossen haben. Da man von
+                  den Daten nicht auf Ihre Person zurückschließen kann, können
+                  wir Ihre Auswertung nach Beendigung der Befragung nicht erneut
+                  erstellen. Falls Sie Ihre Auswertung zu einem späteren
+                  Zeitpunkt noch einmal ansehen möchten, speichern Sie sich
+                  diese bitte, z. B. mithilfe von Bildschirmfotos.
+                </Text>
+                <Text style={localStyle.title}>Generalisierte Angst:</Text>
+                <Text style={{ ...localStyle.p }}>
+                  Als generalisierte Angst wird eine anhaltende Angst
+                  verstanden, die ohne einen speziellen Auslöser auftritt. Sie
+                  ist gekennzeichnet durch Gefühle von Nervosität und
+                  Anspannung, unbegründete Sorgen sowie körperliche Reaktionen
+                  wie Herzklopfen, Übelkeit oder Schwitzen.
+                  {"\n\n"}
+                  Meine persönliche Ausprägung von generalisierter Angst:
+                </Text>
+                <View pointerEvents="box-only">
+                  <Slider
+                    step={1}
+                    minimumValue={0}
+                    maximumValue={6}
+                    minimumTrackTintColor={config.theme.colors.accent1}
+                    maximumTrackTintColor={config.theme.colors.accent1}
+                    accessibilityHint={`0${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr wenig ängstlich${config.text.accessibility.questionnaire.sliderFieldAnd}6${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr ängstlich`}
+                    value={scores.anxiety}
+                    thumbProps={{
+                      children: (
+                        <View style={localStyle.thumbContainer}>
+                          <Text style={localStyle.thumbLabel}>
+                            {scores.anxiety}
+                          </Text>
+                        </View>
+                      ),
+                    }}
+                  />
+                </View>
+                <View style={localStyle.sliderLabel}>
+                  <Text style={localStyle.sliderTextMin}>
+                    0 (sehr wenig ängstlich)
+                  </Text>
+                  <Text style={localStyle.sliderTextMax}>
+                    6 (sehr ängstlich)
+                  </Text>
+                </View>
+                <Text style={localStyle.p}>
+                  Was bedeutet das?
+                  {"\n\n"}
+                  Eine Ausprägung von unter 3 ist neutraler Wert, eine
+                  Ausprägung von 3 oder mehr ist ein kritischer Wert. In einer
+                  vorangegangenen Studie aus Deutschland während der
+                  COVID-19-Pandemie im Jahr 2020 lag der mittlere Wert in der
+                  Allgemeinbevölkerung bei 1,05 (Männer: 0,89; Frauen: 1,19)
+                  [1]. Im Jahr 2018 lag er bei 0,77 (Männer: 0,68; Frauen:
+                  0,85)[1].
+                </Text>
+                <Text style={localStyle.title}>Depressivität</Text>
+                <Text style={localStyle.p}>
+                  Depressivität beschreibt einen Gefühlszustand, der vor allem
+                  durch niedergeschlagene Stimmung, Antriebslosigkeit und den
+                  Verlust von Freude an alltäglichen Dingen und Interessen
+                  gekennzeichnet ist.
+                  {"\n\n"}
+                  Meine persönliche Ausprägung von Depressivität:
+                </Text>
+                <View pointerEvents="box-only">
+                  <Slider
+                    step={1}
+                    minimumValue={0}
+                    maximumValue={6}
+                    minimumTrackTintColor={config.theme.colors.accent1}
+                    maximumTrackTintColor={config.theme.colors.accent1}
+                    accessibilityHint={`0${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr wenig depressiv${config.text.accessibility.questionnaire.sliderFieldAnd}6${config.text.accessibility.questionnaire.sliderFieldEquals}Stark depressiv`}
+                    value={scores.depressiveness}
+                    thumbProps={{
+                      children: (
+                        <View style={localStyle.thumbContainer}>
+                          <Text style={localStyle.thumbLabel}>
+                            {scores.depressiveness}
+                          </Text>
+                        </View>
+                      ),
+                    }}
+                  />
+                </View>
+                <View style={localStyle.sliderLabel}>
+                  <Text style={localStyle.sliderTextMin}>
+                    0 (sehr wenig depressiv)
+                  </Text>
+                  <Text style={localStyle.sliderTextMax}>
+                    6 (stark depressiv)
+                  </Text>
+                </View>
+                <Text style={localStyle.p}>
+                  Was bedeutet das?
+                  {"\n\n"}
+                  Eine Ausprägung von unter 3 ist neutraler Wert, eine
+                  Ausprägung von 3 oder mehr ist ein kritischer Wert. In einer
+                  vorangegangenen Studie aus Deutschland während der
+                  COVID-19-Pandemie im Jahr 2020 lag der mittlere Wert in der
+                  Allgemeinbevölkerung bei 1,05 (Männer: 0,89; Frauen: 1,19)
+                  [2]. Im Jahr 2018 lag er bei 0,77 (Männer: 0,68; Frauen: 0,85)
+                  [2].
+                </Text>
+                <Text style={localStyle.title}>Stresserleben:</Text>
+                <Text style={{ ...localStyle.p }}>
+                  Als negatives Stresserleben bezeichnen wir die körperlichen
+                  und seelischen Belastungen, die erlebt werden, wenn man
+                  Anforderungen ausgesetzt ist.
+                  {"\n\n"}
+                  Meine persönliche Ausprägung von Stresserleben
+                </Text>
+                <View pointerEvents="box-only">
+                  <Slider
+                    step={1}
+                    minimumValue={0}
+                    maximumValue={16}
+                    minimumTrackTintColor={config.theme.colors.accent1}
+                    maximumTrackTintColor={config.theme.colors.accent1}
+                    accessibilityHint={`0${config.text.accessibility.questionnaire.sliderFieldEquals}Kein Stresserlebnis${config.text.accessibility.questionnaire.sliderFieldAnd}16${config.text.accessibility.questionnaire.sliderFieldEquals}Ausgeprägtes Stresserleben`}
+                    value={scores.stress}
+                    thumbProps={{
+                      children: (
+                        <View style={localStyle.thumbContainer}>
+                          <Text style={localStyle.thumbLabel}>
+                            {scores.stress}
+                          </Text>
+                        </View>
+                      ),
+                    }}
+                  />
+                </View>
+                <View style={localStyle.sliderLabel}>
+                  <Text style={localStyle.sliderTextMin}>
+                    0 (sehr wenig gestresst)
+                  </Text>
+                  <Text style={localStyle.sliderTextMax}>
+                    16 (stark gestresst)
+                  </Text>
+                </View>
+                <Text style={localStyle.p}>
+                  Was bedeutet das?
+                  {"\n\n"}
+                  Eine Ausprägung von 0-4 ist ein positiver Wert und spricht für
+                  ein sehr geringes Ausmaß an erlebtem Stress. Eine Ausprägung
+                  von 5-8 ist ein neutraler Wert. Eine Ausprägung von 9 oder
+                  mehr ist ein kritischer Wert. In einer vorangegangenen Studie
+                  aus Deutschland lag der mittlere Wert in der
+                  Allgemeinbevölkerung bei 4,8[3].
+                </Text>
+                <Text style={localStyle.title}>Burnout:</Text>
+                <Text style={{ ...localStyle.p }}>
+                  Das Burnout-Syndrom ist ein durch chronischen Stress und
+                  Überforderung an der Arbeit hervorgerufener Zustand, bei dem
+                  es zu Gefühlen von Müdigkeit, Erschöpfung und reduzierter
+                  Leistungsfähigkeit kommt.
+                  {"\n\n"}
+                  Meine persönliche Ausprägung der Anzeichen von Burnout:
+                </Text>
+                <View pointerEvents="box-only">
+                  <Slider
+                    step={1}
+                    minimumValue={6}
+                    maximumValue={30}
+                    minimumTrackTintColor={config.theme.colors.accent1}
+                    maximumTrackTintColor={config.theme.colors.accent1}
+                    accessibilityHint={`6${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr wenig ängstlich${config.text.accessibility.questionnaire.sliderFieldAnd}30${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr ängstlich`}
+                    value={scores.burnout}
+                    thumbProps={{
+                      children: (
+                        <View style={localStyle.thumbContainer}>
+                          <Text style={localStyle.thumbLabel}>
+                            {scores.burnout}
+                          </Text>
+                        </View>
+                      ),
+                    }}
+                  />
+                </View>
+                <View style={localStyle.sliderLabel}>
+                  <Text style={localStyle.sliderTextMin}>
+                    6 (sehr geringe Burnout-Symptome)
+                  </Text>
+                  <Text style={localStyle.sliderTextMax}>
+                    30 (sehr starke Burnout-Symptome)
+                  </Text>
+                </View>
+                <Text style={localStyle.p}>
+                  Was bedeutet das?
+                  {"\n\n"}
+                  Ein Wert zwischen 6 und 11 kann als unterdurchschnittlich bis
+                  durchschnittlich bewertet werden und damit als unauffällig im
+                  Vergleich zur Allgemeinbevölkerung. Eine Ausprägung zwischen
+                  12 und 13 ist ein durchschnittlicher Wert. Ein Wert zwischen
+                  14 und 21 kann als durchschnittlich bis überdurchschnittlich
+                  eingeordnet werden. Eine Ausprägung ab 22 ist ein
+                  überdurchschnittlich hoher Wert. In einer vorangegangenen
+                  deutschen Studie unter einem breiten Spektrum von
+                  Berufsgruppen lag der mittlere Wert der Mitarbeitenden bei
+                  12[4]. Aufgrund der zufälligen Schwankungen der Messungen kann
+                  das Ergebnis auch im durchschnittlichen oder auffälligen
+                  Bereich liegen.
+                </Text>
+                <Text style={localStyle.p}>
+                  Sollten Sie hierzu weitere Fragen haben, wenden Sie sich gerne
+                  an das Studien-Team:
+                </Text>
+                <TouchableOpacity
+                  onPress={() =>
+                    Linking.openURL("mailto://PSY.NUM@med.uni-muenchen.de")
                   }
-                  step={1}
-                  minimumValue={0}
-                  maximumValue={6}
-                  minimumTrackTintColor={config.theme.colors.accent1}
-                  maximumTrackTintColor={config.theme.colors.accent1}
-                  accessibilityHint={`0${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr wenig depressiv${config.text.accessibility.questionnaire.sliderFieldAnd}6${config.text.accessibility.questionnaire.sliderFieldEquals}Stark depressiv`}
-                  value={scores.depressiveness}
-                  thumbProps={{
-                    children: (
-                      <View style={localStyle.thumbContainer}>
-                        <Text style={localStyle.thumbLabel}>
-                          {scores.depressiveness}
-                        </Text>
-                      </View>
-                    ),
-                  }}
-                />
-                <View style={localStyle.thumb}>
-                  {/* workaround, because "allowTouchTrack" from slider ist not working, see above */}
-                </View>
-              </View>
-              <View style={localStyle.sliderLabel}>
-                <Text style={localStyle.sliderTextMin}>
-                  0 (sehr wenig depressiv)
+                >
+                  <Text style={[localStyle.link, { textAlign: "center" }]}>
+                    PSY.NUM@med.uni-muenchen.de
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  accessibilityLabel="Anlaufstellen für akute Krisen"
+                  accessibilityRole={config.text.accessibility.types.button}
+                  accessibilityHint="Anlaufstellen für akute Krisen"
+                  onPress={() => navigation.navigate("Help")}
+                  style={[localStyle.button, localStyle.buttonSupport]}
+                >
+                  <Text
+                    style={[localStyle.buttonLabel, localStyle.labelSupport]}
+                  >
+                    Anlaufstellen für akute Krisen
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  accessibilityLabel="Anlaufstellen für seelische Unterstützung"
+                  accessibilityRole={config.text.accessibility.types.button}
+                  accessibilityHint="Anlaufstellen für seelische Unterstützung"
+                  onPress={() => navigation.navigate("Support")}
+                  style={[localStyle.button, localStyle.buttonSupport]}
+                >
+                  <Text
+                    style={[localStyle.buttonLabel, localStyle.labelSupport]}
+                  >
+                    Anlaufstellen für seelische Unterstützung
+                  </Text>
+                </TouchableOpacity>
+                <View style={localStyle.divider} />
+                <Text style={[localStyle.p, localStyle.footnote]}>
+                  [1] nach dem Kurzfragebogen Generalized Anxiety Disorder 2
+                  (GAD-2), Kroenke K, Spitzer RL, Williams JB, Löwe B. An
+                  ultra-brief screening scale for anxiety and depression: the
+                  PHQ-4. Psychosomatics. 2009 Nov-Dec;50(6):613-21;
+                  Vergleichswerte aus Beutel ME., Hettich N, Ernst M et al.
+                  Mental health and loneliness in the German general population
+                  during the COVID-19 pandemic compared to a representative
+                  pre-pandemic assessment. Sci Rep. 2021 Jul; 11, 14946;
                 </Text>
-                <Text style={localStyle.sliderTextMax}>
-                  6 (stark depressiv)
+                <Text style={[localStyle.p, localStyle.footnote]}>
+                  [2] nach dem Kurzfragebogen Patient Health Questionnaire 2
+                  (PHQ-2), Kroenke K, Spitzer RL, Williams JB, Löwe B. An
+                  ultra-brief screening scale for anxiety and depression: the
+                  PHQ-4. Psychosomatics. 2009 Nov-Dec;50(6):613-21;
+                  Vergleichswerte aus Beutel ME., Hettich N, Ernst M et al.
+                  Mental health and loneliness in the German general population
+                  during the COVID-19 pandemic compared to a representative
+                  pre-pandemic assessment. Sci Rep. 2021 Jul; 11, 14946
                 </Text>
-              </View>
-              <Text style={localStyle.p}>
-                Was bedeutet das?
-                {"\n\n"}
-                Eine Ausprägung von unter 3 ist neutraler Wert, eine Ausprägung
-                von 3 oder mehr ist ein kritischer Wert. In einer
-                vorangegangenen Studie aus Deutschland während der
-                COVID-19-Pandemie im Jahr 2020 lag der mittlere Wert in der
-                Allgemeinbevölkerung bei 1,05 (Männer: 0,89; Frauen: 1,19) [2].
-                Im Jahr 2018 lag er bei 0,77 (Männer: 0,68; Frauen: 0,85) [2].
-              </Text>
-              <Text style={localStyle.title}>Stresserleben:</Text>
-              <Text style={{ ...localStyle.p }}>
-                Als negatives Stresserleben bezeichnen wir die körperlichen und
-                seelischen Belastungen, die erlebt werden, wenn man
-                Anforderungen ausgesetzt ist.
-                {"\n\n"}
-                Meine persönliche Ausprägung von Stresserleben
-              </Text>
-              <View>
-                <Slider
-                  disabled
-                  allowTouchTrack={
-                    false /* currently not working, see https://github.com/react-native-elements/react-native-elements/issues/3130*/
-                  }
-                  step={1}
-                  minimumValue={0}
-                  maximumValue={16}
-                  minimumTrackTintColor={config.theme.colors.accent1}
-                  maximumTrackTintColor={config.theme.colors.accent1}
-                  accessibilityHint={`0${config.text.accessibility.questionnaire.sliderFieldEquals}Kein Stresserlebnis${config.text.accessibility.questionnaire.sliderFieldAnd}16${config.text.accessibility.questionnaire.sliderFieldEquals}Ausgeprägtes Stresserleben`}
-                  value={scores.stress}
-                  thumbProps={{
-                    children: (
-                      <View style={localStyle.thumbContainer}>
-                        <Text style={localStyle.thumbLabel}>
-                          {scores.stress}
-                        </Text>
-                      </View>
-                    ),
-                  }}
-                />
-                <View style={localStyle.thumb}>
-                  {/* workaround, because "allowTouchTrack" from slider ist not working, see above */}
-                </View>
-              </View>
-              <View style={localStyle.sliderLabel}>
-                <Text style={localStyle.sliderTextMin}>
-                  0 (sehr wenig gestresst)
+                <Text style={[localStyle.p, localStyle.footnote]}>
+                  [3] nach dem Kurzfragebogen Perceived Stress Scale 4 (PSS-4),
+                  Cohen S, Kamarck T, & Mermelstein R (1983). A global measure
+                  of perceived stress. Journal of Health and Social Behavior,
+                  24, 385-396. Vergleichswerte aus dem Datensatz einer für die
+                  Allgemeinbevölkerung in Deutschland repräsentative Studie:
+                  Klein EM, Brähler E, Dreier M, Reinecke L, Müller KW,
+                  Schmutzer G, Wölfling K, Beutel ME. The German version of the
+                  Perceived Stress Scale - psychometric characteristics in a
+                  representative German community sample. BMC Psychiatry. 2016
+                  May 23;16:159. doi: 10.1186/s12888-016-0875-9
                 </Text>
-                <Text style={localStyle.sliderTextMax}>
-                  16 (stark gestresst)
+                <Text style={[localStyle.p, localStyle.footnote]}>
+                  [4] nach dem Kurzfragebogen Copenhagen Burnout Inventory 6
+                  (CBI-6), Kristensen, T. S., Borritz, M., Villadsen, E., &
+                  Christensen, K. B. (2005). The Copenhagen Burnout Inventory: A
+                  new tool for the assessment of burnout. Work & Stress, 19(3),
+                  192-207. Vergleichswerte aus einer repräsentative Studie in
+                  Deutschland Rep (2009, in prep)
                 </Text>
               </View>
-              <Text style={localStyle.p}>
-                Was bedeutet das?
-                {"\n\n"}
-                Eine Ausprägung von 0-4 ist ein positiver Wert und spricht für
-                ein sehr geringes Ausmaß an erlebtem Stress. Eine Ausprägung von
-                5-8 ist ein neutraler Wert. Eine Ausprägung von 9 oder mehr ist
-                ein kritischer Wert. In einer vorangegangenen Studie aus
-                Deutschland lag der mittlere Wert in der Allgemeinbevölkerung
-                bei 4,8)[3].
-              </Text>
-              <Text style={localStyle.title}>Burnout:</Text>
-              <Text style={{ ...localStyle.p }}>
-                Das Burnout-Syndrom ist ein durch chronischen Stress und
-                Überforderung an der Arbeit hervorgerufener Zustand, bei dem es
-                zu Gefühlen von Müdigkeit, Erschöpfung und reduzierter
-                Leistungsfähigkeit kommt.
-                {"\n\n"}
-                Meine persönliche Ausprägung der Anzeichen von Burnout:
-              </Text>
-              <View>
-                <Slider
-                  disabled
-                  allowTouchTrack={
-                    false /* currently not working, see https://github.com/react-native-elements/react-native-elements/issues/3130*/
-                  }
-                  step={1}
-                  minimumValue={6}
-                  maximumValue={30}
-                  minimumTrackTintColor={config.theme.colors.accent1}
-                  maximumTrackTintColor={config.theme.colors.accent1}
-                  accessibilityHint={`6${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr wenig ängstlich${config.text.accessibility.questionnaire.sliderFieldAnd}30${config.text.accessibility.questionnaire.sliderFieldEquals}Sehr ängstlich`}
-                  value={scores.burnout}
-                  thumbProps={{
-                    children: (
-                      <View style={localStyle.thumbContainer}>
-                        <Text style={localStyle.thumbLabel}>
-                          {scores.burnout}
-                        </Text>
-                      </View>
-                    ),
-                  }}
-                />
-                <View style={localStyle.thumb}>
-                  {/* workaround, because "allowTouchTrack" from slider ist not working, see above */}
-                </View>
-              </View>
-              <View style={localStyle.sliderLabel}>
-                <Text style={localStyle.sliderTextMin}>
-                  6 (sehr geringe Burnout-Symptome)
-                </Text>
-                <Text style={localStyle.sliderTextMax}>
-                  30 (sehr starke Burnout-Symptome)
-                </Text>
-              </View>
-              <Text style={localStyle.p}>
-                Was bedeutet das?
-                {"\n\n"}
-                Ein Wert zwischen 6 und 11 kann als unterdurchschnittlich bis
-                durchschnittlich bewertet werden und damit als unauffällig im
-                Vergleich zur Allgemeinbevölkerung. Eine Ausprägung zwischen 12
-                und 13 ist ein durchschnittlicher Wert. Ein Wert zwischen 14 und
-                21 kann als durchschnittlich bis überdurchschnittlich
-                eingeordnet werden. Eine Ausprägung ab 22 ist ein
-                überdurchschnittlich hoher Wert. In einer vorangegangenen
-                deutschen Studie unter einem breiten Spektrum von Berufsgruppen
-                lag der mittlere Wert der Mitarbeitenden bei 12[4]. Aufgrund der
-                zufälligen Schwankungen der Messungen kann das Ergebnis auch im
-                durchschnittlichen oder auffälligen Bereich liegen.
-              </Text>
-              <Text style={localStyle.p}>
-                Sollten Sie hierzu weitere Fragen haben, wenden Sie sich gerne
-                an das S.A.M.-Team:
-              </Text>
-              <TouchableOpacity
-                onPress={() =>
-                  Linking.openURL("mailto://eap-unimed@unimedizin-mainz.de")
-                }
-              >
-                <Text style={localStyle.link}>
-                  eap-unimed@unimedizin-mainz.de
-                </Text>
-              </TouchableOpacity>
-              <Text style={localStyle.p}>
-                Wenn Sie sich in einer Situation befinden, die Sie nicht mehr
-                ertragen können, holen Sie sich auf jeden Fall Hilfe. Sollten
-                Sie das Bedürfnis nach professioneller Unterstützung haben,
-                können Sie sich an die folgenden Anlaufstellen wenden:
-                {"\n\n"}
-                Patiententelefon der kassenärztlichen Vereinigung (KV):
-              </Text>
-              <TouchableOpacity onPress={() => Linking.openURL("tel://116117")}>
-                <Text style={localStyle.link}>116117</Text>
-              </TouchableOpacity>
-              <Text style={localStyle.p}>
-                Webseite der kassenärztlichen Vereinigung – Service für
-                Patienten:
-              </Text>
-              <TouchableOpacity
-                onPress={() =>
-                  Linking.openURL(
-                    "https://www.kbv.de/html/service_fuer_patienten.php"
-                  )
-                }
-              >
-                <Text style={localStyle.link}>
-                  https://www.kbv.de/html/service_fuer_patienten.php
-                </Text>
-              </TouchableOpacity>
-              <Text style={localStyle.p}>
-                Psychotherapeutensuche der Landespsychotherapeutenkammer:
-              </Text>
-              <TouchableOpacity
-                onPress={() =>
-                  Linking.openURL(
-                    "https://www.lpk-rlp.de/psychotherapeutensuche.html"
-                  )
-                }
-              >
-                <Text style={localStyle.link}>
-                  https://www.lpk-rlp.de/psychotherapeutensuche.html
-                </Text>
-              </TouchableOpacity>
-              <Text style={localStyle.p}>Telefon Seelsorge:</Text>
-              <TouchableOpacity
-                onPress={() => Linking.openURL("tel://08001110111")}
-              >
-                <Text style={localStyle.link}>0800/111 0 111</Text>
-              </TouchableOpacity>
-              <Text> oder </Text>
-              <TouchableOpacity
-                onPress={() => Linking.openURL("tel://08001110222")}
-              >
-                <Text style={localStyle.link}>0800/111 0 222</Text>
-              </TouchableOpacity>
-              <Text style={localStyle.p}>Telefon-Seelsorge Nightline:</Text>
-              <TouchableOpacity
-                onPress={() => Linking.openURL("tel://06221184708")}
-              >
-                <Text style={localStyle.link}>06221 18 47 08</Text>
-              </TouchableOpacity>
-              <Text style={localStyle.p}>
-                In als ausweglos empfundenen Situationen und bei konkreten
-                lebensmüden Gedanken können Sie sich auch 24 Stunden und an
-                allen Tagen der Woche und des Wochenendes in Ihrer regional
-                zuständigen psychiatrischen Klinik vorstellen für ein ambulantes
-                Beratungsgespräch oder die Planung einer stationären Behandlung.
-              </Text>
-              <Text style={localStyle.p}>
-                In Notfällen steht Ihnen täglich von 0 bis 24 Uhr die
-                Notfallambulanz der Klinik für Psychiatrie und Psychotherapie
-                des LMU Klinikums zur Verfügung. Unsere Dienstärzt*innen leisten
-                Unterstützung in psychischen Krisensituationen und vermitteln
-                weitere Unterstützungsangebote.
-              </Text>
-              <Text style={localStyle.p}>
-                Klinik und Poliklinik für Psychiatrie und Psychotherapie,
-                {"\n"}
-                LMU Klinikum Nußbaumstraße 7, 80336 München{"\n"}
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("tel://089 4400 55511")}
-                >
-                  <Text style={localStyle.link}>089 4400 55511</Text>
-                </TouchableOpacity>
-              </Text>
-              <Text style={localStyle.p}>
-                Weitere psychiatrische Notfallambulanzen für Erwachsene in
-                München (geöffnet täglich 0-24 Uhr):
-              </Text>
-              <Text style={localStyle.p}>
-                kbo-Isar-Amper-Klinikum, München-Ost{"\n"}
-                Vockestr. 72, 85540 Haar{"\n"}
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("tel://089 45620")}
-                >
-                  <Text style={localStyle.link}>089 45620</Text>
-                </TouchableOpacity>
-                <Text>{"\n"}</Text>
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("www.kbo-iak.de")}
-                >
-                  <Text style={localStyle.link}>www.kbo-iak.de</Text>
-                </TouchableOpacity>
-              </Text>
-
-              <Text style={localStyle.p}>
-                kbo-Isar-Amper-Klinikum, Atriumhaus{"\n"}
-                Bavariastr. 11, 80336 München{"\n"}
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("tel:// 089 76780")}
-                >
-                  <Text style={localStyle.link}>089 76780</Text>
-                </TouchableOpacity>
-                <Text>{"\n"}</Text>
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("www.kbo-iak.de")}
-                >
-                  <Text style={localStyle.link}>www.kbo-iak.de</Text>
-                </TouchableOpacity>
-              </Text>
-              <Text style={localStyle.p}>
-                Klinik und Poliklinik für Psychiatrie und Psychotherapie{"\n"}
-                Klinikum rechts der Isar{"\n"}
-                Ismaninger Str. 22, 81675 München{"\n"}
-                von 08.30 - 16.30 Uhr){"\n"}
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("tel://089 41404241")}
-                >
-                  <Text style={localStyle.link}>089 41404241</Text>
-                </TouchableOpacity>
-                <Text>
-                  {"\n"}Außerhalb dieser Zeit:{"\n"}
-                </Text>
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("tel://089 41404210")}
-                >
-                  <Text style={localStyle.link}>089 4140421</Text>
-                </TouchableOpacity>
-                <Text>{"\n"}</Text>
-                <TouchableOpacity
-                  onPress={() => Linking.openURL("www.psykl.mri.tum.de")}
-                >
-                  <Text style={localStyle.link}>www.psykl.mri.tum.de</Text>
-                </TouchableOpacity>
-              </Text>
-              <Text style={localStyle.p}>
-                Auf weitere Unterstützungsangebote können Sie über die folgenden
-                Links zugreifen
-              </Text>
-              <Text>
-                LMU Klinikum: Anlaufstellen und Empfehlungen - Psychische
-                Belastungen während der COVID-19-Pandemie
-              </Text>
-              <TouchableOpacity
-                onPress={() =>
-                  Linking.openURL(
-                    "https://www.lmu-klinikum.de/psychiatrie-und-psychotherapie/aktuelles/covid-19-psychische-belastungen/b0426e274195ac39"
-                  )
-                }
-              >
-                <Text style={localStyle.link}>
-                  https://www.lmu-klinikum.de/psychiatrie-und-psychotherapie/aktuelles/covid-19-psychische-belastungen/b0426e274195ac39
-                </Text>
-              </TouchableOpacity>
-
-              <Text style={localStyle.p}>
-                Tipps und Empfehlungen zum Umgang mit den psychischen Folgen der
-                Corona-Pandemie:
-              </Text>
-              <TouchableOpacity
-                onPress={() =>
-                  Linking.openURL("https://lir-mainz.de/corona-uebersicht")
-                }
-              >
-                <Text style={localStyle.link}>
-                  https://lir-mainz.de/corona-uebersicht
-                </Text>
-              </TouchableOpacity>
-              <View style={localStyle.divider} />
-              <Text style={[localStyle.p, localStyle.footnote]}>
-                [1] nach dem Kurzfragebogen Generalized Anxiety Disorder 2
-                (GAD-2), Kroenke K, Spitzer RL, Williams JB, Löwe B. An
-                ultra-brief screening scale for anxiety and depression: the
-                PHQ-4. Psychosomatics. 2009 Nov-Dec;50(6):613-21;
-                Vergleichswerte aus Beutel ME., Hettich N, Ernst M et al. Mental
-                health and loneliness in the German general population during
-                the COVID-19 pandemic compared to a representative pre-pandemic
-                assessment. Sci Rep. 2021 Jul; 11, 14946;
-              </Text>
-              <Text style={[localStyle.p, localStyle.footnote]}>
-                [2] nach dem Kurzfragebogen Patient Health Questionnaire 2
-                (PHQ-2), Kroenke K, Spitzer RL, Williams JB, Löwe B. An
-                ultra-brief screening scale for anxiety and depression: the
-                PHQ-4. Psychosomatics. 2009 Nov-Dec;50(6):613-21;
-                Vergleichswerte aus Beutel ME., Hettich N, Ernst M et al. Mental
-                health and loneliness in the German general population during
-                the COVID-19 pandemic compared to a representative pre-pandemic
-                assessment. Sci Rep. 2021 Jul; 11, 14946
-              </Text>
-              <Text style={[localStyle.p, localStyle.footnote]}>
-                [3] nach dem Kurzfragebogen Perceived Stress Scale 4 (PSS-4),
-                Cohen S, Kamarck T, & Mermelstein R (1983). A global measure of
-                perceived stress. Journal of Health and Social Behavior, 24,
-                385-396. Vergleichswerte aus dem Datensatz einer für die
-                Allgemeinbevölkerung in Deutschland repräsentative Studie: Klein
-                EM, Brähler E, Dreier M, Reinecke L, Müller KW, Schmutzer G,
-                Wölfling K, Beutel ME. The German version of the Perceived
-                Stress Scale - psychometric characteristics in a representative
-                German community sample. BMC Psychiatry. 2016 May 23;16:159.
-                doi: 10.1186/s12888-016-0875-9
-              </Text>
-              <Text style={[localStyle.p, localStyle.footnote]}>
-                [4] nach dem Kurzfragebogen Copenhagen Burnout Inventory 6
-                (CBI-6), Kristensen, T. S., Borritz, M., Villadsen, E., &
-                Christensen, K. B. (2005). The Copenhagen Burnout Inventory: A
-                new tool for the assessment of burnout. Work & Stress, 19(3),
-                192-207. Vergleichswerte aus einer repräsentative Studie in
-                Deutschland Rep (2009, in prep)
-              </Text>
-            </View>
-          }
-        />
+            }
+          />
+        </View>
         <TouchableOpacity
           accessibilityLabel="Fragebogen abschicken"
           accessibilityRole={config.text.accessibility.types.button}
@@ -576,6 +407,16 @@ const localStyle = StyleSheet.create({
     backgroundColor:
       config.theme.values.defaultSendQuestionnaireButtonBackgroundColor,
     marginBottom: 30,
+  },
+
+  buttonSupport: {
+    backgroundColor: config.theme.colors.startedButNotFinished,
+    marginTop: 20,
+    marginBottom: 20,
+  },
+
+  labelSupport: {
+    color: config.theme.colors.accent4,
   },
 
   buttonLabel: {
@@ -621,6 +462,7 @@ const localStyle = StyleSheet.create({
     top: "0%",
     left: "0%",
     zIndex: 10,
+    backgroundColor: "#B3FFCD91",
   },
 
   thumbContainer: {

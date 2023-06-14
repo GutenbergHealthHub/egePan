@@ -79,6 +79,10 @@ const SignedInView = createStackNavigator(
       screen: About,
       navigationOptions: defaultNavigationStyle,
     },
+    Support: {
+      screen: About,
+      navigationOptions: defaultNavigationStyle,
+    },
   },
   {
     defaultNavigationOptions: {

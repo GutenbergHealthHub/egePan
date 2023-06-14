@@ -5,7 +5,7 @@ imports
 ***********************************************************************************************/
 
 import React, { PureComponent } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 
 import config from "../../config/configProvider";
 import Banner from "../../components/banner/banner";
@@ -14,6 +14,8 @@ import CheckInTiles from "../../components/checkIn/checkInTiles";
 import CheckInWelcomeText from "../../components/checkIn/welcomeText";
 import CheckInListView from "../../components/checkIn/checkInListView";
 import ScrollIndicatorWrapper from "../../components/scrollIndicatorWrapper/scrollIndicatorWrapper";
+
+const logoBottom = require("../../assets/images/lmu_logo.png");
 
 let localStyle;
 
@@ -135,6 +137,11 @@ class CheckInScreen extends PureComponent {
               </View>
             }
           />
+          <Image
+            style={localStyle.logoBottom}
+            source={logoBottom}
+            resizeMode="contain"
+          />
         </View>
       </View>
     );
@@ -158,6 +165,14 @@ localStyle = StyleSheet.create({
 
   flexi: {
     flex: 2,
+  },
+
+  logoBottom: {
+    position: "relative",
+    alignSelf: "center",
+    width: 300,
+    height: 65,
+    marginBottom: 30,
   },
 });
 

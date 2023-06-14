@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>CLIENT_ID</key>
-	<string>817017461017-ar5qkq21rh0nkdenampk8k3qcrpg38ds.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.817017461017-ar5qkq21rh0nkdenampk8k3qcrpg38ds</string>
-	<key>API_KEY</key>
-	<string>AIzaSyCzvaRt5QL4j4jW_UKnECvcyfp2t75RgEs</string>
-	<key>GCM_SENDER_ID</key>
-	<string>817017461017</string>
-	<key>PLIST_VERSION</key>
-	<string>1</string>
-	<key>BUNDLE_ID</key>
-	<string>de.num.egepan.ios</string>
-	<key>PROJECT_ID</key>
-	<string>egepan-7d047</string>
-	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
-	<key>STORAGE_BUCKET</key>
-	<string>egepan-7d047.appspot.com</string>
-	<key>IS_ADS_ENABLED</key>
-	<false/>
-	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
-	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
-	<key>IS_GCM_ENABLED</key>
-	<true/>
-	<key>GOOGLE_APP_ID</key>
-	<string>1:817017461017:ios:8613471d63faadbdf44d88</string>
-</dict>
+	<dict>
+		<key>CLIENT_ID</key>
+		<string>830075516171-ub1drfqlfesj3f1e28j6n4ajni71vmt8.apps.googleusercontent.com</string>
+		<key>REVERSED_CLIENT_ID</key>
+		<string>com.googleusercontent.apps.830075516171-ub1drfqlfesj3f1e28j6n4ajni71vmt8</string>
+		<key>API_KEY</key>
+		<string>AIzaSyBHWijudAvYbcpleHwdcuMY6GvSTaRO8vM</string>
+		<key>GCM_SENDER_ID</key>
+		<string>830075516171</string>
+		<key>PLIST_VERSION</key>
+		<string>1</string>
+		<key>BUNDLE_ID</key>
+		<string>de.num.sam.lmu</string>
+		<key>PROJECT_ID</key>
+		<string>sam-lmu</string>
+		<key>STORAGE_BUCKET</key>
+		<string>sam-lmu.appspot.com</string>
+		<key>IS_ADS_ENABLED</key>
+		<false></false>
+		<key>IS_ANALYTICS_ENABLED</key>
+		<false></false>
+		<key>IS_APPINVITE_ENABLED</key>
+		<true></true>
+		<key>IS_GCM_ENABLED</key>
+		<true></true>
+		<key>IS_SIGNIN_ENABLED</key>
+		<true></true>
+		<key>GOOGLE_APP_ID</key>
+		<string>1:830075516171:ios:265935c875fcdfe7d01e0e</string>
+	</dict>
 </plist>

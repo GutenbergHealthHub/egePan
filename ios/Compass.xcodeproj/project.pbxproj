@@ -74,7 +74,7 @@
 		CBE30BC3B28348468C14E92F /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		D53E9692EDF7EA387C8AB99F /* Pods-Compass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Compass.debug.xcconfig"; path = "Target Support Files/Pods-Compass/Pods-Compass.debug.xcconfig"; sourceTree = "<group>"; };
 		D6CFA33690C740EDB1C64FBA /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		DF5E7F97270DA4F800050767 /* SAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF5E7F97270DA4F800050767 /* SAM-LMU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAM-LMU.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EEBE136C24274EE29764CFF4 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				AD93C9639B729FF470D82DBE /* Pods */,
 				0E2BBD38F3154FB89BB8F110 /* Resources */,
-				DF5E7F97270DA4F800050767 /* SAM.app */,
+				DF5E7F97270DA4F800050767 /* SAM-LMU.app */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -239,7 +239,7 @@
 			);
 			name = Compass;
 			productName = "Hello World";
-			productReference = DF5E7F97270DA4F800050767 /* SAM.app */;
+			productReference = DF5E7F97270DA4F800050767 /* SAM-LMU.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -437,23 +437,27 @@
 				CODE_SIGN_ENTITLEMENTS = Compass/Compass.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = AM6AWCQXB7;
 				INFOPLIST_FILE = Compass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.num.egepan.ios;
-				PRODUCT_NAME = SAM;
+				PRODUCT_BUNDLE_IDENTIFIER = de.num.egepan.lmu;
+				PRODUCT_NAME = "SAM-LMU";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Compass-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -467,21 +471,25 @@
 				CODE_SIGN_ENTITLEMENTS = Compass/Compass.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AM6AWCQXB7;
 				INFOPLIST_FILE = Compass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 0.0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.num.egepan.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = de.num.egepan.lmu;
 				PRODUCT_NAME = SAM;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Compass-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

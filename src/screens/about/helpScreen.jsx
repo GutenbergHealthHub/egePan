@@ -13,7 +13,11 @@ class HelpScreen extends PureComponent {
     const { navigation } = this.props;
     return (
       <View style={localStyle.wrapper}>
-        <Banner nav={navigation} title="Hilfe in Notfällen" />
+        <Banner
+          nav={navigation}
+          title="Anlaufstellen für akute Krisen"
+          noMenu
+        />
         <View style={{ ...localStyle.flexi, ...localStyle.wrapper }}>
           <ScrollIndicatorWrapper
             contentData={

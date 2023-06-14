@@ -114,7 +114,7 @@ class Banner extends PureComponent {
             {/* The title string. */}
             {title !== "" && (
               <Text
-                numberOfLines={1}
+                numberOfLines={2}
                 style={localStyle.bannerTitle}
                 accessibilityRole={config.text.accessibility.types.header}
               >

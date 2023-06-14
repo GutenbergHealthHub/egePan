@@ -16,6 +16,7 @@ import WebViewScreen from "./webViewScreen";
 import LegalInformationScreen from "./legalInformationScreen";
 import * as aboutActions from "./aboutActions";
 import HelpScreen from "./helpScreen";
+import SupportScreen from "./supportScreen";
 
 /***********************************************************************************************
 component:
@@ -112,6 +113,8 @@ class AboutContainer extends Component {
         return <WebViewScreen navigation={navigation} />; // if on WebView route
       case "Help":
         return <HelpScreen navigation={navigation} />;
+      case "Support":
+        return <SupportScreen navigation={navigation} />;
       default:
         return null;
     }
