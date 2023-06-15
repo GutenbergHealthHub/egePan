@@ -17,6 +17,7 @@ import ScrollIndicatorWrapper from "../../components/scrollIndicatorWrapper/scro
 import store from "../../store";
 
 import config from "../../config/configProvider";
+import { Routes } from "../../navigation/constants";
 
 let localStyle;
 
@@ -108,7 +109,7 @@ class AboutScreen extends PureComponent {
                   ))}
                   <ListItem
                     containerStyle={localStyle.containerStyle}
-                    onPress={() => navigation.navigate("Help")}
+                    onPress={() => navigation.navigate(Routes.HELP)}
                   >
                     {/* title & subtitle of the listItem - the strings a identified by the webView*/}
                     <ListItem.Content>
@@ -134,7 +135,7 @@ class AboutScreen extends PureComponent {
                   </ListItem>
                   <ListItem
                     containerStyle={localStyle.containerStyle}
-                    onPress={() => navigation.navigate("Support")}
+                    onPress={() => navigation.navigate(Routes.SUPPORT)}
                   >
                     <ListItem.Content>
                       <ListItem.Title style={localStyle.title}>
@@ -161,7 +162,9 @@ class AboutScreen extends PureComponent {
                   {config.appConfig.allowAccessToLegalInformationScreen && (
                     <ListItem
                       containerStyle={localStyle.containerStyle}
-                      onPress={() => navigation.navigate("LegalInformation")}
+                      onPress={() =>
+                        navigation.navigate(Routes.LEGAL_INFORMATION)
+                      }
                     >
                       {/* title & subtitle of the listItem - the strings a identified by the webView*/}
                       <ListItem.Content>

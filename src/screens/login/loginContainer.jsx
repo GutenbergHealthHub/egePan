@@ -15,6 +15,8 @@ import LoginScreen from "./loginScreen";
 import LandingScreen from "./landingScreen";
 import * as loginActions from "./loginActions";
 
+import { Stacks, Routes } from "../../navigation/constants";
+
 /***********************************************************************************************
 component:
 container for the login screen
@@ -41,16 +43,13 @@ class LoginContainer extends Component {
    * configured in appConfig.js
    */
   componentDidMount() {
-    const { subjectId, actions, navigation } = this.props;
+    const { subjectId, actions, route } = this.props;
 
     // logout of an existing user
     if (subjectId) actions.logout();
 
     // triggers the auto-login when on the login-screen (only on DEV)
-    if (
-      config.appConfig.automateQrLogin &&
-      navigation.state.routeName === "Login"
-    ) {
+    if (config.appConfig.automateQrLogin && route.name === Routes.LOGIN) {
       // parses the input string to determine the subjectId (from the qr-code)
       const scannedId = this.checkQrCodeForUsername(
         config.appConfig.automateQrLoginSubjectId || ""
@@ -69,7 +68,8 @@ class LoginContainer extends Component {
    */
   componentDidUpdate() {
     const { loggedIn, navigation } = this.props;
-    if (loggedIn) navigation.navigate("CheckIn");
+    if (loggedIn)
+      navigation.navigate(Stacks.SIGNED_IN, { screen: Routes.CHECK_IN });
   }
 
   // class methods
@@ -140,9 +140,10 @@ class LoginContainer extends Component {
       loginUnauthorized,
       loginError,
       manualId,
+      route,
     } = this.props;
     // checks the currently selected route
-    return navigation.state.routeName === "Login" ? (
+    return route.name === Routes.LOGIN ? (
       // if on Login route
       <LoginScreen
         actions={actions}

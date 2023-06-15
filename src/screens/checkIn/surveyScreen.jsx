@@ -12,6 +12,7 @@ import config from "../../config/configProvider";
 import Banner from "../../components/banner/banner";
 import QuestionnaireModal from "../../components/modal/questionnaireModal";
 import ScrollIndicatorWrapper from "../../components/scrollIndicatorWrapper/scrollIndicatorWrapper";
+import { Routes } from "../../navigation/constants";
 
 let localStyle;
 
@@ -87,7 +88,7 @@ class SurveyScreen extends Component {
     const { user, navigation, exportAndUploadQuestionnaireResponse } =
       this.props;
     if (user.current_questionnaire_id.indexOf("weekly") >= 0) {
-      navigation.navigate("Summary");
+      navigation.navigate(Routes.SUMMARY);
     } else {
       exportAndUploadQuestionnaireResponse();
     }

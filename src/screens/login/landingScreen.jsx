@@ -12,6 +12,7 @@ import config from "../../config/configProvider";
 import Banner from "../../components/banner/banner";
 import Spinner from "../../components/spinner/spinner";
 import ScrollIndicatorWrapper from "../../components/scrollIndicatorWrapper/scrollIndicatorWrapper";
+import { Routes } from "../../navigation/constants";
 
 let localStyle;
 
@@ -96,7 +97,7 @@ class LandingScreen extends PureComponent {
                       testID="registerButton"
                       style={localStyle.button}
                       onPress={() => {
-                        navigation.navigate("Login");
+                        navigation.navigate(Routes.LOGIN);
                       }}
                       accessibilityLabel={config.text.login.landing.buttonText}
                       accessibilityRole={config.text.accessibility.types.button}

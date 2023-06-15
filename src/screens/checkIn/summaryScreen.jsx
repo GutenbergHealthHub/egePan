@@ -10,6 +10,7 @@ import { Slider } from "react-native-elements";
 import config from "../../config/configProvider";
 import Banner from "../../components/banner/banner";
 import ScrollIndicatorWrapper from "../../components/scrollIndicatorWrapper/scrollIndicatorWrapper";
+import { Routes } from "../../navigation/constants";
 
 class SummaryScreen extends React.Component {
   constructor(props) {
@@ -301,7 +302,7 @@ class SummaryScreen extends React.Component {
                   accessibilityLabel="Anlaufstellen für akute Krisen"
                   accessibilityRole={config.text.accessibility.types.button}
                   accessibilityHint="Anlaufstellen für akute Krisen"
-                  onPress={() => navigation.navigate("Help")}
+                  onPress={() => navigation.navigate(Routes.HELP)}
                   style={[localStyle.button, localStyle.buttonSupport]}
                 >
                   <Text
@@ -314,7 +315,7 @@ class SummaryScreen extends React.Component {
                   accessibilityLabel="Anlaufstellen für seelische Unterstützung"
                   accessibilityRole={config.text.accessibility.types.button}
                   accessibilityHint="Anlaufstellen für seelische Unterstützung"
-                  onPress={() => navigation.navigate("Support")}
+                  onPress={() => navigation.navigate(Routes.SUPPORT)}
                   style={[localStyle.button, localStyle.buttonSupport]}
                 >
                   <Text

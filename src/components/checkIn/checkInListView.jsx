@@ -11,6 +11,8 @@ import { ListItem } from "react-native-elements";
 import config from "../../config/configProvider";
 import { formatDateString } from "../../services/utils";
 
+import { Routes } from "../../navigation/constants";
+
 let localStyle;
 
 /***********************************************************************************************
@@ -130,7 +132,7 @@ class CheckInListView extends PureComponent {
                 // get additional styling depending on the state of the questionnaire
                 ...this.getListItemStyle(),
               }}
-              onPress={() => navigation.navigate("Survey")}
+              onPress={() => navigation.navigate(Routes.SURVEY)}
               accessibilityLabel={`${
                 user.firstTime
                   ? config.text.survey.surveyTitleFirstTime

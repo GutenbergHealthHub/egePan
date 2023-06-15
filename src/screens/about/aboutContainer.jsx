@@ -17,6 +17,7 @@ import LegalInformationScreen from "./legalInformationScreen";
 import * as aboutActions from "./aboutActions";
 import HelpScreen from "./helpScreen";
 import SupportScreen from "./supportScreen";
+import { Stacks, Routes } from "../../navigation/constants";
 
 /***********************************************************************************************
 component:
@@ -49,7 +50,7 @@ class AboutContainer extends Component {
           onPress: () => {
             actions.logout();
             actions.deleteLocalData();
-            navigation.navigate("Landing");
+            navigation.navigate(Stacks.SIGNED_OUT, { screen: Routes.LANDING });
           },
         },
         {
@@ -76,7 +77,9 @@ class AboutContainer extends Component {
           onPress: () => {
             actions.logout();
             setTimeout(() => {
-              navigation.navigate("Landing");
+              navigation.navigate(Stacks.SIGNED_OUT, {
+                screen: Routes.LANDING,
+              });
             }, 0);
           },
         },
@@ -93,8 +96,8 @@ class AboutContainer extends Component {
   /*-----------------------------------------------------------------------------------*/
 
   render() {
-    const { navigation, showModal, modalLink, actions } = this.props;
-    switch (navigation.state.routeName) {
+    const { navigation, route, showModal, modalLink, actions } = this.props;
+    switch (route.name) {
       case "About":
         return (
           <AboutScreen

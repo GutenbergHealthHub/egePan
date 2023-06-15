@@ -41,62 +41,13 @@ class CheckInTiles extends PureComponent {
   /*-----------------------------------------------------------------------------------*/
 
   render() {
-    const {
-      noNewQuestionnaireAvailableYet,
-      categoriesLoaded,
-      loading,
-      questionnaireItemMap,
-      user,
-      navigation,
-      exportAndUploadQuestionnaireResponse,
-      deleteLocalDataAndLogout,
-    } = this.props;
+    const { user, deleteLocalDataAndLogout } = this.props;
     return (
       <View style={localStyle.tileWrapper}>
         {/* checks if the user is still on the study */}
         {
           <View style={localStyle.tileContainer}>
-            {/* if there is a completed questionnaire render the button to transmit the it*/}
-            {!noNewQuestionnaireAvailableYet &&
-              categoriesLoaded &&
-              user?.status !== "off-study" &&
-              !loading &&
-              questionnaireItemMap.done && (
-                <View>
-                  <TouchableOpacity
-                    style={{ ...localStyle.tile, ...localStyle.buttonGreen }}
-                    disabled={user && noNewQuestionnaireAvailableYet}
-                    onPress={() => {
-                      if (
-                        user.current_questionnaire_id.indexOf("weekly") >= 0
-                      ) {
-                        navigation.navigate("Summary");
-                      } else {
-                        exportAndUploadQuestionnaireResponse();
-                      }
-                    }}
-                    accessibilityLabel={config.text.survey.send}
-                    accessibilityRole={config.text.accessibility.types.button}
-                    accessibilityHint={
-                      config.text.accessibility.questionnaire.sendHint
-                    }
-                  >
-                    <View style={localStyle.buttonWrapper}>
-                      <Icon
-                        name="school"
-                        color={config.theme.colors.white}
-                        iconStyle={localStyle.buttonIcon}
-                      />
-
-                      <Text style={localStyle.tileText}>
-                        {config.text.survey.send}
-                      </Text>
-                    </View>
-                  </TouchableOpacity>
-                </View>
-              )}
-
-            {/* the 'send report' button */}
+            {/* button to delete & logout */}
             {user?.status === "off-study" &&
               config.appConfig.allowRemovalOfDataAtEndOfStudy && (
                 <TouchableOpacity

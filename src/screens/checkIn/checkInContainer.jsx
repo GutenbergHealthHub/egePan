@@ -22,6 +22,8 @@ import CheckInScreen from "./checkInScreen";
 import config from "../../config/configProvider";
 import SummaryScreen from "./summaryScreen";
 
+import { Stacks, Routes } from "../../navigation/constants";
+
 /***********************************************************************************************
 component:
 container for the login screen.
@@ -37,8 +39,8 @@ class CheckInContainer extends Component {
    * triggers the update of the user after mounting the checkIn-template
    */
   componentDidMount() {
-    const { navigation } = this.props;
-    if (navigation.state.routeName === "CheckIn") {
+    const { route } = this.props;
+    if (route.name === Routes.CHECK_IN) {
       setTimeout(() => {
         this.updateUser();
       }, 0);
@@ -52,7 +54,8 @@ class CheckInContainer extends Component {
    */
   componentDidUpdate() {
     const { questionnaireItemMap, navigation } = this.props;
-    if (!questionnaireItemMap) navigation.navigate("CheckIn");
+    if (!questionnaireItemMap)
+      navigation.navigate(Stacks.SIGNED_IN, { screen: Routes.CHECK_IN });
   }
 
   // methods: push
@@ -379,7 +382,6 @@ class CheckInContainer extends Component {
      * @type {ExportData}
      */
     const exportData = documentCreator.createResponseJSON();
-
     // sends the questionnaire
     await loggedInClient
       .sendQuestionnaire(
@@ -582,7 +584,9 @@ class CheckInContainer extends Component {
 
             setTimeout(() => {
               actions.logout();
-              navigation.navigate("Landing");
+              navigation.navigate(Stacks.SIGNED_OUT, {
+                screen: Routes.LANDING,
+              });
             }, 0);
           },
         },
@@ -604,6 +608,7 @@ class CheckInContainer extends Component {
   render() {
     const {
       actions,
+      route,
       navigation,
       user,
       loading,
@@ -618,7 +623,7 @@ class CheckInContainer extends Component {
       showQuestionnaireModal,
       noNewQuestionnaireAvailableYet,
     } = this.props;
-    if (navigation.state.routeName === "CheckIn")
+    if (route.name === Routes.CHECK_IN)
       return (
         // if on CheckIn route
         <CheckInScreen
@@ -643,7 +648,7 @@ class CheckInContainer extends Component {
         />
       );
     // if on Survey route
-    if (navigation.state.routeName === "Survey")
+    if (route.name === Routes.SURVEY)
       return (
         <SurveyScreen
           navigation={navigation}

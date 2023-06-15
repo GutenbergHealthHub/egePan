@@ -48,9 +48,7 @@ class CheckInScreen extends PureComponent {
       questionnaireError,
       questionnaireItemMap,
       user,
-      sendReport,
       noNewQuestionnaireAvailableYet,
-      exportAndUploadQuestionnaireResponse,
       deleteLocalDataAndLogout,
     } = this.props;
 
@@ -102,18 +100,7 @@ class CheckInScreen extends PureComponent {
                     {/* renders the button at the bottom */}
                     <CheckInTiles
                       user={user}
-                      loading={loading}
-                      navigation={navigation}
-                      categoriesLoaded={categoriesLoaded}
-                      sendReport={sendReport}
                       deleteLocalDataAndLogout={deleteLocalDataAndLogout}
-                      exportAndUploadQuestionnaireResponse={
-                        exportAndUploadQuestionnaireResponse
-                      }
-                      questionnaireItemMap={questionnaireItemMap}
-                      noNewQuestionnaireAvailableYet={
-                        noNewQuestionnaireAvailableYet
-                      }
                     />
                   </View>
                 )}

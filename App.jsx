@@ -12,7 +12,7 @@ import { StyleSheet, View, StatusBar, LogBox, Platform } from "react-native";
 import config from "./src/config/configProvider";
 
 import reduxStore from "./src/store";
-import createAppNavigator from "./src/navigation/appNavigator";
+import AppNavigator from "./src/navigation/appNavigator";
 
 /***********************************************************************************************
 Component
@@ -28,9 +28,6 @@ class App extends PureComponent {
   render() {
     // hides the splash screen
     SplashScreen.hide();
-
-    // creates the navigator
-    const Navigator = createAppNavigator();
 
     // and returns the basic view that contains the navigator
     return (
@@ -49,7 +46,7 @@ class App extends PureComponent {
         )}
 
         <Provider store={reduxStore}>
-          <Navigator style={localStyle.container} />
+          <AppNavigator style={localStyle.container} />
         </Provider>
       </View>
     );
