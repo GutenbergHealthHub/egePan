@@ -69,11 +69,11 @@ const conf = {
 
   /** dev-option:
    * shows a button to erase all data (in the about-menu) - dev-only */
-  showEraseAll: true,
+  showEraseAll: __DEV__ && true,
 
   /** dev-option:
    * shows a button to log out the user (in the about-menu) - dev-only */
-  showLogout: true,
+  showLogout: __DEV__ && true,
 
   /** dev-option:
    * logs out the response-json parsed as an object in the developer console

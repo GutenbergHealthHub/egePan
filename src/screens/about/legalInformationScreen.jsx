@@ -73,8 +73,7 @@ class LegalInformationScreen extends PureComponent {
                       <Text style={[localStyle.p, localStyle.center]}>
                         „Selbstmonitoring-App für Mitarbeitergesundheit im
                         Gesundheitswesen“ (S.A.M.) im Rahmen von PREPARED (NUM
-                        2.0) Selbstmonitoring für Mitarbeitergesundheit (S.A.M.)
-                        im Rahmen von egePan
+                        2.0)
                       </Text>
                       <Text style={[localStyle.h3]}>
                         Sehr geehrte lesende Person,

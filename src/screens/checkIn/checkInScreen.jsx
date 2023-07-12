@@ -157,9 +157,8 @@ localStyle = StyleSheet.create({
   logoBottom: {
     position: "relative",
     alignSelf: "center",
-    width: 300,
-    height: 65,
-    marginBottom: 30,
+    marginVertical: 5,
+    flex: 1 / 6,
   },
 });
 

@@ -52,7 +52,7 @@ class LandingScreen extends PureComponent {
         />
 
         {/* scrollIndicator */}
-        <View style={{ ...localStyle.flexi, ...localStyle.wrapper }}>
+        <View style={{ ...localStyle.flexi }}>
           <ScrollIndicatorWrapper
             contentData={
               loginError ? (
@@ -177,7 +177,6 @@ localStyle = StyleSheet.create({
     justifyContent: "flex-end",
     marginBottom: 36,
     height: "100%",
-    marginTop: 20,
   },
 
   infoText: {

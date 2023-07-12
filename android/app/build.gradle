@@ -102,8 +102,8 @@ android {
         applicationId "de.num.sam.lmu"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 3
-        versionName '1.0.1'
+        versionCode 4
+        versionName '1.0.2'
         manifestPlaceholders = [
                 appAuthRedirectScheme: "host.exp.exponent"
         ]
@@ -160,8 +160,8 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation "com.facebook.react:react-native:+"
-    implementation 'org.webkit:android-jsc:+'
+    implementation "com.facebook.react:react-native:0.68.3"
+    implementation 'org.webkit:android-jsc:'
 }
 
 

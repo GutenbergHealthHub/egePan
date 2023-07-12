@@ -127,7 +127,7 @@ class CheckInContainer extends Component {
   /**
    * tries to procure the current questionnaire
    */
-  getQuestionnaire = async () => {
+  getQuestionnaire = async (id) => {
     const { actions, user } = this.props;
     let response;
 
@@ -136,7 +136,7 @@ class CheckInContainer extends Component {
 
     // gets the questionnaire with the correct id
     await loggedInClient
-      .getBaseQuestionnaire(user.current_questionnaire_id)
+      .getBaseQuestionnaire(id ?? user.current_questionnaire_id)
       // success
       .then((resp) => {
         setTimeout(async () => {
@@ -246,7 +246,7 @@ class CheckInContainer extends Component {
         // tries to procure a new questionnaire if possible
         if (!noNewQuestionnaireAvailableYet) {
           setTimeout(async () => {
-            await this.getQuestionnaire();
+            await this.getQuestionnaire(data.current_questionnaire_id);
           }, 0);
         }
       }
