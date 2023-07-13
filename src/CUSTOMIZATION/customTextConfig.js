@@ -228,7 +228,7 @@ export default {
     sessionTimeout: "Your user could not re recognized",
     reloadingQuestionnaire: "Fragebogen wird erneut geladen",
     welcomeTitleFirstTime: "Willkommen in der S.A.M.-App",
-    surveryTitleFirstTime: "Ihr erster Fragebogen",
+    surveyTitleFirstTime: "Ihr erster Fragebogen",
     welcomeTextFirstTimeUser2: "",
     noUserText:
       "Ihre ID konnte nicht verifiziert werden, Bitte versuche Sie es erneut.",

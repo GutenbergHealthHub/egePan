@@ -117,6 +117,7 @@ class CheckInListView extends PureComponent {
     const {
       categoriesLoaded,
       noNewQuestionnaireAvailableYet,
+      questionnaireItemMap,
       navigation,
       user,
     } = this.props;
@@ -137,7 +138,7 @@ class CheckInListView extends PureComponent {
                 user.firstTime
                   ? config.text.survey.surveyTitleFirstTime
                   : config.text.survey.surveyTitle
-              }. ${
+              }: ${questionnaireItemMap.title}. ${
                 config.text.survey.surveySubTitle +
                 formatDateString(new Date(user.due_date))
               }`}
@@ -150,6 +151,7 @@ class CheckInListView extends PureComponent {
                   {user.firstTime
                     ? config.text.survey.surveyTitleFirstTime
                     : config.text.survey.surveyTitle}
+                  : {`\n${questionnaireItemMap.title}`}
                 </ListItem.Title>
 
                 {/* subtitle with formatted due date of the questionnaire */}

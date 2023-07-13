@@ -80,6 +80,7 @@ const generateQuestionnaireItemMap = (
   questionnaireItemMap.version = questionnaire.version;
   // used to build the questionnaire-response
   questionnaireItemMap.identifier = questionnaire.identifier;
+  questionnaireItemMap.title = questionnaire.title;
 
   // persists the last known questionnaireId in the LocalStorage
   setTimeout(async () => {

@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Linking,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Slider } from "react-native-elements";
 import config from "../../config/configProvider";
 import Banner from "../../components/banner/banner";
@@ -64,7 +58,7 @@ class SummaryScreen extends React.Component {
     return (
       <View style={{ ...localStyle.flexi, ...localStyle.wrapper }}>
         {/* render the top banner */}
-        <Banner nav={navigation} title="Zusammenfassung" />
+        <Banner nav={navigation} title="Zusammenfassung" noWayBack />
         <View style={{ flex: 3 }}>
           <ScrollIndicatorWrapper
             contentData={
@@ -285,19 +279,6 @@ class SummaryScreen extends React.Component {
                   das Ergebnis auch im durchschnittlichen oder auffälligen
                   Bereich liegen.
                 </Text>
-                <Text style={localStyle.p}>
-                  Sollten Sie hierzu weitere Fragen haben, wenden Sie sich gerne
-                  an das Studien-Team:
-                </Text>
-                <TouchableOpacity
-                  onPress={() =>
-                    Linking.openURL("mailto://PSY.NUM@med.uni-muenchen.de")
-                  }
-                >
-                  <Text style={[localStyle.link, { textAlign: "center" }]}>
-                    PSY.NUM@med.uni-muenchen.de
-                  </Text>
-                </TouchableOpacity>
                 <TouchableOpacity
                   accessibilityLabel="Anlaufstellen für akute Krisen"
                   accessibilityRole={config.text.accessibility.types.button}

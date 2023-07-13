@@ -154,7 +154,7 @@ class SurveyScreen extends Component {
     return (
       <View style={{ ...localStyle.flexi, ...localStyle.wrapper }}>
         {/* render the top banner */}
-        <Banner nav={navigation} title={config.text.survey.title} />
+        <Banner nav={navigation} title={questionnaireItemMap?.title ?? ""} />
 
         {/* the questionnaire modal */}
         <QuestionnaireModal
