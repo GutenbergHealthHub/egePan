@@ -1,4 +1,4 @@
-package de.num.egepan.android;
+package de.num.sam.lmu;
 
 import android.app.Application;
 
