@@ -35,6 +35,18 @@
         "licenseUrl": "https://github.com/react-native-picker/picker/raw/master/LICENSE",
         "parents": "egepan"
     },
+    "@react-navigation/native-stack@6.9.12": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-navigation/react-navigation",
+        "licenseUrl": "https://github.com/react-navigation/react-navigation/raw/master/LICENSE",
+        "parents": "egepan"
+    },
+    "@react-navigation/native@6.1.6": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-navigation/react-navigation",
+        "licenseUrl": "https://github.com/react-navigation/react-navigation/raw/master/LICENSE",
+        "parents": "egepan"
+    },
     "axios@0.27.2": {
         "licenses": "MIT",
         "repository": "https://github.com/axios/axios",
@@ -123,18 +135,6 @@
         "licenses": "MIT",
         "repository": "github:facebook/react-native",
         "licenseUrl": "github:facebook/react-native",
-        "parents": "egepan"
-    },
-    "react-navigation-stack@2.10.4": {
-        "licenses": "MIT",
-        "repository": "https://github.com/react-navigation/react-navigation-stack",
-        "licenseUrl": "https://github.com/react-navigation/react-navigation-stack/raw/master/LICENSE",
-        "parents": "egepan"
-    },
-    "react-navigation@4.4.4": {
-        "licenses": "MIT",
-        "repository": "https://github.com/react-navigation/react-navigation",
-        "licenseUrl": "https://github.com/react-navigation/react-navigation/raw/master/LICENSE",
         "parents": "egepan"
     },
     "react-redux@8.0.2": {

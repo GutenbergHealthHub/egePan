@@ -83,13 +83,13 @@ class CheckInContainer extends Component {
     ) {
       // requests the permission and gets the token
       const authStatus = await messaging().requestPermission();
-      const newlyGeneratedToken = await messaging().getToken();
 
       // if the authStatus checks out...
       if (
         authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
         authStatus === messaging.AuthorizationStatus.PROVISIONAL
       ) {
+        const newlyGeneratedToken = await messaging().getToken();
         // ... check if there is a new token
         if (newlyGeneratedToken !== FCMToken) {
           // redux output
@@ -111,8 +111,6 @@ class CheckInContainer extends Component {
               // logs out the error
               actions.setupPushServiceFail(error);
             });
-
-          return;
         }
 
         // in case there is nothing to update
@@ -198,7 +196,8 @@ class CheckInContainer extends Component {
    * @param {any} data
    */
   updateUserSuccess = async (data) => {
-    const { user, actions, noNewQuestionnaireAvailableYet } = this.props;
+    const { user, actions } = this.props;
+    const newQuestionnaireAvailable = new Date() > new Date(data.start_date);
     // TODO: remove workaround
     // eslint-disable-next-line no-param-reassign
     data.subjectId = data.study_id || data.subjectId || null;
@@ -221,7 +220,7 @@ class CheckInContainer extends Component {
 
     setTimeout(() => {
       // if we have locally persisted questionnaire
-      if (lastQuestionnaireId && !noNewQuestionnaireAvailableYet) {
+      if (lastQuestionnaireId && newQuestionnaireAvailable) {
         // checks if the id of the persisted questionnaire matches the one of the
         // questionnaire the user is supposed to look at now
         if (
@@ -244,7 +243,7 @@ class CheckInContainer extends Component {
           this.deleteLocalQuestionnaireData();
         }
         // tries to procure a new questionnaire if possible
-        if (!noNewQuestionnaireAvailableYet) {
+        if (newQuestionnaireAvailable) {
           setTimeout(async () => {
             await this.getQuestionnaire(data.current_questionnaire_id);
           }, 0);

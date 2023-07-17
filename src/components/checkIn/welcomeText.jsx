@@ -72,11 +72,6 @@ class WelcomeText extends PureComponent {
               )}
 
               {/* if this is not a first-time-user and NO new questionnaire is currently available */}
-              {!user.firstTime && noNewQuestionnaireAvailableYet && (
-                <Text style={localStyle.infoText}>
-                  {config.text.survey.noNewQuestionnaireAvailableYet}
-                </Text>
-              )}
 
               {/* if this is not a first-time-user and A questionnaire is currently available */}
               {!user.firstTime && !noNewQuestionnaireAvailableYet && (
